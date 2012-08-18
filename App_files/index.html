@@ -1,15 +1,69 @@
 <!DOCTYPE HTML>
 
 <head>
+<link rel="stylesheet" type="text/css" href="./styles/browserstyle.css" />
+
 <title>	Browser Test </title>
 
 <script type="text/javascript" src="./js/modernizr.js"></script>
 <script type="text/javascript" src="./js/jquery.js"> </script>
+<script type="text/javascript" src="./js/browserdetect.js"> </script>
+<script type="text/javascript">
+
+
+
+$(document).ready(function() {
+
+$('#browserImage').css('display','block');
+
+//alert(BrowserDetect.browser);
+if(BrowserDetect.browser == "Safari")
+{
+	
+	$('#browserImage').attr('src','./images/browsers/safari.png');
+	$('#browserImage:hidden:first').fadeIn(1000);
+	$('h2').text(BrowserDetect.browser);
+}
+
+else if(BrowserDetect.browser == "Chrome")
+{
+	//$('#browserImage').css('visibility','visible');
+	$('#browserImage').attr('src','./images/browsers/chrome.jpeg');
+	$('#browserImage:hidden:first').fadeIn(1000);
+	$('.browserInfo').text(BrowserDetect.browser);
+}
+
+else if(BrowserDetect.browser == "Opera")
+{
+	//$('#browserImage').css('visibility','visible');
+	$('#browserImage').attr('src','./images/browsers/opera.png');
+	$('#browserImage:hidden:first').fadeIn(1000);
+	$('.browserInfo').text(BrowserDetect.browser);
+}
+
+else if(BrowserDetect.browser == "Firefox")
+{
+	//$('#browserImage').css('visibility','visible');
+	$('#browserImage').attr('src','./images/browsers/firefox.png');
+	$('#browserImage:hidden:first').fadeIn(1000);
+	$('.browserInfo').text(BrowserDetect.browser);
+}
+
+
+});
+
+
+</script>
+
 
 </head>
 <body>
 
-<p> hello world </p>
+<div id="browserSection">
+<img src="" id="browserImage" />
+<h2 class="browserInfo"></h2>
+
+</div>
 
 </body>
 
