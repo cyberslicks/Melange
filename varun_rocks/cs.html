@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<script type="text/javascript">
+function Melange(value)
+{
+ //document.write(value);
+} 
+Melange.prototype.method = function(){
+document.write("hello there");
+};
+//function canvas(){
+//Melange.call(this);
+//}
+//canvas.prototype =new Melange();
+//canvas.prototype.constructor = canvas;
+Melange.prototype.canvas = function(){
+document.write("m in canvas now ");
+};
+var myMelange = new Melange(4);
+myMelange.canvas();
+</script>
+</body>
+</html>

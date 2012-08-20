@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<div style="position:absolute;height:500px;width:250px;background-color:orange;pointer;" id="target">&nbsp;</div>
+<script src="http://www.google.com/jsapi"></script>
+<script>
+  // In case you don't have it already, make sure you load jQuery!
+  google.load("jquery", "1");
+</script>
+
+<script type="text/javascript">
+	var dragging = false
+	
+	$(function () {
+		var target = $('#target')
+		
+		target.mousedown(function() { dragging = true })
+		$(document).mouseup(function() { dragging = false })
+		$(document).mousemove(function(e) { 
+			if(dragging){ 
+				target.css('left', e.pageX) 
+				target.css('top', e.pageY) 
+			}
+		})	
+	})
+
+</script>	
+</body>
+</html>

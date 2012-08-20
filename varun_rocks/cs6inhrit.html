@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<script type="text/javascript">
+function Melange(value)
+{
+ document.write("value");
+} 
+Melange.prototype.method = function(){
+document.write("hello there");
+};
+
+function mel()
+{ document.write("called");
+}
+mel.inheritsFrom (Melange);
+var my = new Melange();
+var mel = new mel();
+mel.method();
+</script>
+</body>
+</html>
