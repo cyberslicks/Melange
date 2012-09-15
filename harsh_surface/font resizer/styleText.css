@@ -10,4 +10,15 @@ top:0px;
 right:0%;
 color:white
 }
+#but
+{
+margin-left:10px;
+background:#85B6FF;
+border:2px solid;
+border-radius:2px;
+}
 
+#but:hover
+{
+background:#6C94CF;
+}
