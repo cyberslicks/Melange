@@ -160,31 +160,36 @@ Surface.prototype.dropEventHandler = function(event) {
 	
 	var leftOffset = $('#'+event.target.id).offset().left;
 	var topOffset = $('#'+event.target.id).offset().top;
-	alert(leftOffset);
 	
-	var rightBoundry = parseInt(leftOffset,10) + parseInt(event.target.style.width,10);
-	var bottomBoundry = parseInt(topOffset,10) + parseInt(event.target.style.height,10);
+	//alert(event.target.id);
+	var rightBoundry = parseInt(leftOffset,10) + parseInt($('#'+event.target.id).width(),10);
+	var bottomBoundry = parseInt(topOffset,10) + parseInt($('#'+event.target.id).height(),10);
 	
 	
 	
 	if(offx < (parseInt(leftOffset,10)+5))
-	{
+	
 		caller.style.left =  parseInt(leftOffset,10)+5+'px';
 	
-	}
 	
-	else if(offx + parseInt(caller.style.width,10) > rightBoundry) 
-		{	
-		caller.style.left = rightBoundery - parseInt(caller.style.width,10);
-		}
+	
+	else if(offx + parseInt($('#'+caller.id).width(),10) > rightBoundry) 
+			
+		caller.style.left = rightBoundery - parseInt($('#'+caller.id).width(),10);
+		
+	
 	else
-	{
-	caller.style.left =  offx + 'px';
 	
-	}
+		caller.style.left =  offx + 'px';
+	
+	
 
 	if(offy < (parseInt(topOffset,10)+5))
 		caller.style.top =  parseInt(this.topOffset,10)+5+'px';
+	
+	else if (offy + parseInt($('#'+caller.id).height()) > bottomBoundry)
+		caller.style.top = bottomBoundry - parseInt($('#'+caller.id).height(),10);
+	
 	else
 	caller.style.top =  offy + 'px';
 
