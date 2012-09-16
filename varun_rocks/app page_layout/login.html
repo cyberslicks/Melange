@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="jquery.js">
+<script type="text/javascript">
+$(document).ready(function(){
+$("#tooltip span").fadeIn(3000);
+);
+</script>
+<style>
+body
+{ 
+}
+p
+{
+color:black;
+font-weight:bold;
+margin-left:10px;
+}
+
+#box
+{background:#D6D6FF;
+height:300px;
+width:300px;
+margin-left:450px;
+margin-top:130px;
+border-radius:4px;
+border:2px solid;
+color:black;
+}
+
+#mel
+{
+color:#818181;
+margin-left:230px;
+
+}
+
+#field
+{
+height:20px;
+width:150px;
+background:;
+margin-left:0px;
+margin-top:1px;
+}
+#field:hover
+{
+background:#E6E6E6;
+border:1px solid;
+height:22px;
+width:152px;
+transition:2s;
+-moz-transition:2s; /* Firefox 4 */
+-webkit-transition:2s; /* Safari and Chrome */
+}
+#sub
+{
+height:30px;
+width:79px;
+border-radius:4px;
+border:2px  solid;
+background:#4775FF;
+border-color:#4775ff;
+color:white;
+margin-left:5px;
+}
+#sub:hover
+{
+background:#476BB2;
+}
+.tooltip {
+			 color: #000000; outline: none;
+		    text-decoration: none;
+			position: relative;
+		}
+		.tooltip span {
+			margin-left: -999em;
+			transition:2s;
+-moz-transition:2s; /* Firefox 4 */
+-webkit-transition:s; /* Safari and Chrome */
+			position: absolute;
+		}
+		.tooltip:hover span {
+			border-radius: 5px 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; 
+			box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1); -webkit-box-shadow: 5px 5px rgba(0, 0, 0, 0.1); -moz-box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+			font-family: Calibri, Tahoma, Geneva, sans-serif;
+			position: absolute; left: 8em; top: -0.5em; z-index: 99;
+			margin-left: 0; width: 120px;height:8px;color:white;
+			opacity:0.75;
+		}
+		.tooltip:hover img {
+			border: 0; margin: -10px 0 0 -55px;
+			float: left; position: absolute;
+		}
+		.tooltip:hover em {
+			font-family: Candara, Tahoma, Geneva, sans-serif; font-size: 1.2em; font-weight: bold;
+			display: block; padding: 0.2em 0 0.6em 0;
+		}
+		.classic { padding: 0.8em 1em; }
+		.custom { padding: 0.5em 0.8em 0.8em 2em; }
+		* html a:hover { background: transparent; }
+		.classic {background: #000000; border: 1px solid #FFAD33; }
+		.critical { background: #FFCCAA; border: 1px solid #FF3334;	}
+		.help { background: #9FDAEE; border: 1px solid #2BB0D7;	}
+		.info { background: #9FDAEE; border: 1px solid #2BB0D7;	}
+		.warning { background: #FFFFAA; border: 1px solid #FFAD33; }
+</style>
+</head>
+<body>
+<div id="box">
+<p>Sign in</p>
+<p id="mel">Melange</p>
+
+<form >
+<p>Username<br>
+<a class="tooltip" href="#"><input type="text" id="field" class="tooltip" onmouseover=function()/><span class="classic">Fill ur name</span></a>
+<p>Password</br>
+<a class="tooltip" href="#"><input type="password" class="tooltip" onmouseover=function() id="field"/><span class="classic">ur password plz</span></a>
+</p>
+<input type="submit" id="sub" value="Sign in"/>
+</form>
+</div>
+</body>
+</html>
