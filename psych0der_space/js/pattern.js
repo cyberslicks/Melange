@@ -2,13 +2,13 @@
 	
 
 
-/*if(!Backbone)
+if(!Backbone)
 	{
 	
 	alert("Backbone.js not loaded");	
 	return;
 	}
-*/
+
 context = this;
 
 var Pattern = context.Pattern = {} ; /*Initializing empty object can be used for checking script availabilty  */
@@ -18,7 +18,7 @@ Pattern.VERSION = '0.0.1';
 
 Pattern.availablePatterns = ['Abstract Factory'];
 
-
+context.Pattern.abstractFactory = Pattern.abstractFactory = {};
 Pattern.abstractFactory = Backbone.Model.extend({
 	
 initialize : function() {
@@ -43,7 +43,6 @@ addProductFamily : function(productFamilyName) {
 	this.productFamilyNames[this.supportedProductFamilies] =productFamilyName;
 	this.incrementProductFamilies();
 },
-
 
 addProductFamilyImplementation:function(productFamilyName) {
 	
