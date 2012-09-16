@@ -161,7 +161,7 @@ Surface.prototype.dropEventHandler = function(event) {
 	var leftOffset = $('#'+event.target.id).offset().left;
 	var topOffset = $('#'+event.target.id).offset().top;
 	
-	//alert(event.target.id);
+	
 	var rightBoundry = parseInt(leftOffset,10) + parseInt($('#'+event.target.id).width(),10);
 	var bottomBoundry = parseInt(topOffset,10) + parseInt($('#'+event.target.id).height(),10);
 	
@@ -247,9 +247,59 @@ Surface.prototype.eventBinder = function() {
 
 Surface.prototype.deleteObject = function(id) {
 	
-	$('#'+this.id).remove(id); 		// object deleted
 	
 	
+	document.getElementById(this.id).removeChild(document.getElementById(id)); 		// object deleted
+	$('#dustbin').effect("shake", { times:5 }, 5); 
+
+	
+};
+
+function Dustbin() {
+	
+	this.name = "dustbin";
+	
+	
+};
+
+
+Dustbin.prototype.eventBinder = function () {
+	
+	
+	document.getElementById('dustbin').addEventListener('drop',Dustbin.removeObject,false);
+    document.getElementById('dustbin').addEventListener('dragover',Dustbin.dragOverHandler,false);
+	
+	
+}
+
+Dustbin.id = 'dustbin';
+
+Dustbin.dragOverHandler = function(event) {
+	
+	
+	event.dataTransfer.dropEffect = 'move';
+	event.preventDefault();
+	return false;
+
+	
+	
+}
+
+
+Dustbin.removeObject = function(event) {
+	
+	var callerId = event.dataTransfer.getData("text/plain").split('$');
+	//alert("here");	
+	var tempSurface = new Surface();
+	tempSurface.deleteObject(callerId[2]);
+	
+	
+	delete tempSurface;	
+	
+	event.preventDefault();
+	return false;
+
+
 }
 
 

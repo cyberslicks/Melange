@@ -30,8 +30,15 @@
 	border: thick dotted #f8c1c1;
 	width:600px;
 	height: 600px;
+	display: inline-block;
 	
 	
+}
+
+#dustbin {
+	
+	
+	margin-left:100px;
 }
 
 
@@ -42,6 +49,7 @@
 
 <script src="./js/modernizr.js"></script>
 <script src="./js/jquery.js"></script>
+<script src="./js/jquery-ui-1.js"></script>
 <script src="./js/surfaceDND.js"></script>
 <!--<script src="./js/dnd.js"></script> -->
 
@@ -56,7 +64,9 @@ $(document).ready(function() {
  surface.createObject("aside");
  surface.createObject("aside");
 
-
+ var dustbin = new Dustbin();
+ dustbin.eventBinder();
+ 
 
 
 
@@ -76,6 +86,7 @@ $(document).ready(function() {
 <!--<aside id="dragme" draggable="true">Hey there ,move me !
 </aside>-->
 </section>
+<img id="dustbin" src="./images/dbin.png">
 </body>
 
 
