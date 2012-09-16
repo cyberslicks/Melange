@@ -42,14 +42,39 @@
 
 <script src="./js/modernizr.js"></script>
 <script src="./js/jquery.js"></script>
-<script src="./js/dnd.js"></script>
+<script src="./js/surfaceDND.js"></script>
+<!--<script src="./js/dnd.js"></script> -->
+
+<script type="text/javascript" >
+$(document).ready(function() {
+ 
+ 
+ 
+ var surface = new Surface();
+ surface.eventBinder();
+ surface.createObject("aside");
+ surface.createObject("aside");
+ surface.createObject("aside");
+
+
+
+
+
+
+
+
+});
+
+
+
+</script>
 
 
 </head>
 <body>
 <section id="surface">
-<aside id="dragme" draggable="true">Hey there ,move me !
-</aside>
+<!--<aside id="dragme" draggable="true">Hey there ,move me !
+</aside>-->
 </section>
 </body>
 
