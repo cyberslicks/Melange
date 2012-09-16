@@ -28,8 +28,8 @@
 	
 	margin:10px;
 	border: thick dotted #f8c1c1;
-	width:600px;
-	height: 600px;
+	width:400px;
+	height: 400px;
 	display: inline-block;
 	
 	
@@ -63,13 +63,17 @@ $(document).ready(function() {
  surface.createObject("aside");
  surface.createObject("aside");
  surface.createObject("aside");
+ 
+ document.getElementById('but').onclick = surface.createObject("aside");
+
+ //$('#button').click("aside",surface.createObject());
 
  var dustbin = new Dustbin();
  dustbin.eventBinder();
  
 
 
-
+surface.createObject("header");
 
 
 
@@ -86,6 +90,7 @@ $(document).ready(function() {
 <!--<aside id="dragme" draggable="true">Hey there ,move me !
 </aside>-->
 </section>
+<button id="but" onclick="surface.createObject('aside');">new aside</button>
 <img id="dustbin" src="./images/dbin.png">
 </body>
 
