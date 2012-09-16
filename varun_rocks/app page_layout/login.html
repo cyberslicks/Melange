@@ -52,9 +52,9 @@ background:#E6E6E6;
 border:1px solid;
 height:22px;
 width:152px;
-transition:2s;
--moz-transition:2s; /* Firefox 4 */
--webkit-transition:2s; /* Safari and Chrome */
+transition:1s;
+-moz-transition:1s; /* Firefox 4 */
+-webkit-transition:1s; /* Safari and Chrome */
 }
 #sub
 {
@@ -74,14 +74,21 @@ background:#476BB2;
 .tooltip {
 			 color: #000000; outline: none;
 		    text-decoration: none;
+			border-radius: 5px 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; 
+			box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1); -webkit-box-shadow: 5px 5px rgba(0, 0, 0, 0.1); -moz-box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+			font-family: Calibri, Tahoma, Geneva, sans-serif;
 			position: relative;
 		}
 		.tooltip span {
-			margin-left: -999em;
-			transition:2s;
--moz-transition:2s; /* Firefox 4 */
--webkit-transition:s; /* Safari and Chrome */
+			margin-left: 10px;
+			
+			position: absolute; left: 8em; top: -0.5em; z-index: 99;
+			margin-left: 0; width: 120px;height:8px;color:white;
+			transition:0.5s;
+-moz-transition:0.5s; /* Firefox 4 */
+-webkit-transition:1s; /* Safari and Chrome */
 			position: absolute;
+			opacity:0.0;
 		}
 		.tooltip:hover span {
 			border-radius: 5px 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; 
@@ -107,7 +114,10 @@ background:#476BB2;
 		.help { background: #9FDAEE; border: 1px solid #2BB0D7;	}
 		.info { background: #9FDAEE; border: 1px solid #2BB0D7;	}
 		.warning { background: #FFFFAA; border: 1px solid #FFAD33; }
-</style>
+img
+{margin-left:10px;
+}
+		</style>
 </head>
 <body>
 <div id="box">
@@ -116,9 +126,9 @@ background:#476BB2;
 
 <form >
 <p>Username<br>
-<a class="tooltip" href="#"><input type="text" id="field" class="tooltip" onmouseover=function()/><span class="classic">Fill ur name</span></a>
+<a class="tooltip" href="#"><input type="text" id="field" class="tooltip" /><span class="classic">Fill ur name</span></a>
 <p>Password</br>
-<a class="tooltip" href="#"><input type="password" class="tooltip" onmouseover=function() id="field"/><span class="classic">ur password plz</span></a>
+<a class="tooltip" href="#"><input type="password" class="tooltip"  id="field"/><span class="classic">ur password plz</span></a>
 </p>
 <input type="submit" id="sub" value="Sign in"/>
 </form>
