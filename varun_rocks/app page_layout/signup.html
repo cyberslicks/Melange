@@ -1,0 +1,81 @@
+<html>
+<head>
+<style>
+div
+{
+width:300px;
+height:500px;
+background:#D6D6FF;
+margin-left:500px;
+margin-top:100px;
+opacity:1.0;
+}
+
+#field:hover
+{
+background:#E6E6E6;
+border:1px solid;
+
+transition:0.4s;
+-moz-transition:0.7s; /* Firefox 4 */
+-webkit-transition:0.7s; /* Safari and Chrome */
+}
+</style>
+<script type="text/javascript">
+function name()
+{var x=document.forms["signupform"]["first"].value;
+if (x=="")
+  {
+  alert("First name must be filled out");
+  return false;
+  }
+}
+</script>
+</head>
+<body >
+<div>
+<form onsubmit="" action="" method="POST" name="signupform">
+Name<br/>
+<input type="text" placeholder="First" name="first" id="field" size="15">
+<input type="text" placeholder="Last" name="last" id="field">
+<br/><br/>
+Choose your username<br/>
+<input type="text"  name="username" size="25px" placeholder="varun.malhotra" id="field">@melange.com<br/><br/>
+Create a password<br/>
+<input type="password" name="pass1" id="field">
+<br/><br/>
+Confirm your password<br/>
+<input type="password" name="pass2" id="field">
+<br/><br/>
+Birthday<br/>
+<select name="month" placeholder="Month">
+<option value="January">January</option>
+<option value="Febraury">Febraury</option>
+<option value="March">March</option>
+<option value="April">April</option>
+<option value="May">May</option>
+<option value="June">June</option>
+<option value="July">July</option>
+<option value="August">August</option>
+<option value="September">September</option>
+<option value="October">October</option>
+<option value="November">November</option>
+<option value="December">December</option>
+<option value="" selected="selected">Month</option>
+</select>
+<input type="text" placeholder="Day" name="day" size="4"id="field">
+<input type="text" placeholder="Year" name="year" id="field" size="4">
+<br/><br/>
+Gender<br/>
+<select name="gender">
+<option value="Male">Male</option>
+<option value="Female">Female</option>
+<option value="I'm " selected="selected">I'm</option>
+</select>
+<br/><br/>
+<input type="checkbox" name="t&c" value="t&c" id="field" />I agree to the Melange <a href="#">Terms of service</a> and <a href="#">Privacy Policy</a><br />
+<br/><br/><input type="submit" name="submit" value="Next step" id="field">
+</form>
+</div>
+</body>
+</html>

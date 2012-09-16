@@ -1,0 +1,52 @@
+
+#box
+{background:#D6D6FF;
+height:300px;
+width:300px;
+margin-left:450px;
+margin-top:130px;
+border-radius:4px;
+border:2px solid;
+color:black;
+}
+
+#mel
+{
+color:#818181;
+margin-left:230px;
+
+}
+
+#field
+{
+height:20px;
+width:150px;
+background:;
+margin-left:0px;
+margin-top:1px;
+}
+#field:hover
+{
+background:#E6E6E6;
+border:1px solid;
+height:20px;
+width:150px;
+transition:0.7s;
+-moz-transition:0.7s; /* Firefox 4 */
+-webkit-transition:0.7s; /* Safari and Chrome */
+}
+#sub
+{
+height:30px;
+width:79px;
+border-radius:4px;
+border:2px  solid;
+background:#4775FF;
+border-color:#4775ff;
+color:white;
+margin-left:5px;
+}
+#sub:hover
+{
+background:#476BB2;
+}
