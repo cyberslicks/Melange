@@ -54,9 +54,8 @@
 <!--<script src="./js/dnd.js"></script> -->
 
 <script type="text/javascript" >
-$(document).ready(function() {
  
- 
+ $(document).ready(function() {
  
  var surface = new Surface();
  surface.eventBinder();
@@ -64,16 +63,15 @@ $(document).ready(function() {
  surface.createObject("aside");
  surface.createObject("aside");
  
- document.getElementById('but').onclick = surface.createObject("aside");
+document.getElementById('but').onclick = $.proxy(function() {surface.createObject('aside');},this);
 
- //$('#button').click("aside",surface.createObject());
+
 
  var dustbin = new Dustbin();
  dustbin.eventBinder();
  
 
 
-surface.createObject("header");
 
 
 
@@ -90,7 +88,7 @@ surface.createObject("header");
 <!--<aside id="dragme" draggable="true">Hey there ,move me !
 </aside>-->
 </section>
-<button id="but" onclick="surface.createObject('aside');">new aside</button>
+<button id="but">new aside</button>
 <img id="dustbin" src="./images/dbin.png">
 </body>
 
