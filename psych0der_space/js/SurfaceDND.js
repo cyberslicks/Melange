@@ -158,24 +158,18 @@ Surface.prototype.dropEventHandler = function(event) {
 	var offx = event.clientX - parseInt(positionObject[0],10);
 	var offy = event.clientY - parseInt(positionObject[1],10);
 	
-	var leftOffset = $('#'+event.target.id).offset().left;
-	var topOffset = $('#'+event.target.id).offset().top;
+		
 	
 	
-	var rightBoundry = parseInt(leftOffset,10) + parseInt($('#'+event.target.id).width(),10);
-	var bottomBoundry = parseInt(topOffset,10) + parseInt($('#'+event.target.id).height(),10);
+	if(offx < (parseInt(this.leftOffset,10)+5))
 	
-	
-	
-	if(offx < (parseInt(leftOffset,10)+5))
-	
-		caller.style.left =  parseInt(leftOffset,10)+5+'px';
+		caller.style.left =  parseInt(this.leftOffset,10)+5+'px';
 	
 	
 	
-	else if(offx + parseInt($('#'+caller.id).width(),10) > rightBoundry) 
+	else if(offx + parseInt($('#'+caller.id).width(),10) > this.rightBoundry) 
 			
-		caller.style.left = rightBoundery - parseInt($('#'+caller.id).width(),10);
+		caller.style.left = this.rightBoundery - parseInt($('#'+caller.id).width(),10);
 		
 	
 	else
@@ -184,11 +178,11 @@ Surface.prototype.dropEventHandler = function(event) {
 	
 	
 
-	if(offy < (parseInt(topOffset,10)+5))
+	if(offy < (parseInt(this.topOffset,10)+5))
 		caller.style.top =  parseInt(this.topOffset,10)+5+'px';
 	
-	else if (offy + parseInt($('#'+caller.id).height()) > bottomBoundry)
-		caller.style.top = bottomBoundry - parseInt($('#'+caller.id).height(),10);
+	else if (offy + parseInt($('#'+caller.id).height()) > this.bottomBoundry)
+		caller.style.top = this.bottomBoundry - parseInt($('#'+caller.id).height(),10);
 	
 	else
 	caller.style.top =  offy + 'px';
@@ -240,7 +234,7 @@ Surface.prototype.eventBinder = function() {
 	
 	
 	document.getElementById(this.id).addEventListener('dragover',this.dragOverEventHandler,false);
-	document.getElementById(this.id).addEventListener('drop',this.dropEventHandler,false);
+	document.getElementById(this.id).addEventListener('drop',$.proxy(this.dropEventHandler,this),false); //preserving namespace
 	
 	
 };
