@@ -1,0 +1,63 @@
+<html>
+<head> 
+<link rel="stylesheet" href="css/colorpicker.css" type="text/css" />
+     
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/colorpicker.js"></script>
+    <script type="text/javascript" src="js/eye.js"></script>
+    <script type="text/javascript" src="js/utils.js"></script>
+    <script type="text/javascript" src="js/layout.js?ver=1.0.2"></script>
+
+<link rel="stylesheet" href="styleText.css" type="text/css" />
+<script type="text/javascript" src="js/jquery.js">
+</script>
+<script type="text/javascript" src="styleText.js">
+
+</script>
+</head>
+<body>
+
+<p id= "but1" onclick=fucntion()>
+this is my text :) <br>
+this is my world :)
+</p>
+<div class="cssbox" id="cssbox"	>
+<h2><center>
+Properties
+</h2>
+<input type="button" id="FontInc" value="Size++" onclick=increaseFontSize()>
+<input type="button" id="Fontdec" value="Size--" onclick=decreaseFontSize()>
+<!--input type="text" id="Fontval" value=s --><br>
+<input type="button" id="Bold" value="B" onclick=FontBold()>
+<input type="button" id="Italic" value="I" onclick=FontItalic()>
+<input type="button" id="Underline" value="U" onclick=FontUnderline()>
+<input type="button" id="Overline" value="O" onclick=FontOverline()>
+<input type="button" id="Reset" value="Reset" onclick=FontReset()><br>
+Font Face:(not working)
+<select id="SelectFontFace" onclick=FontFace()>
+  <option value="Times New Roma">Times New Roman</option>
+  <option value="Arial">Arial</option>
+  <option value="Impact">Impact</option>
+  <option value="Cursiva">Cursiva</option>
+  <select>
+  <br>
+Font Color:(work delayed due to major problems)
+<div id="colorSelector">
+<div style="background-color: #0000ff"></div></div>
+<br>
+Alignment :
+<input type="button" id="Left" value="Left" onclick=FontAlignLeft()>
+<input type="button" id="Center" value="Center" onclick=FontAlignCenter()>
+<input type="button" id="Right" value="Right" onclick=FontAlignRight()><br>
+Spacing:
+<input type="button" id="LineInc" value="Increase" onclick=LineSpaceIncrease()>
+<br>
+Font-Shadow:(work in Progress dropdown to be inserted)
+<input type="button" id="AddShadow" value="Addshadow" onclick=FontShadow()>
+<input type="button" id="RemoveShadow" value="Removeshadow" onclick=FontShadowR()>
+</div>
+
+
+</body>
+</html>
+
