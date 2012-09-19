@@ -20,7 +20,8 @@ if ( password.match(/.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/) ) score++;
 
 if (password.length > 12) score++;
 
-passwordStrength.innerHTML = desc[score];
+if (password.length==0) score=0;
+//passwordStrength.innerHTML = desc[score];
 passwordStrength.className = "strength" + score;
 }
 
