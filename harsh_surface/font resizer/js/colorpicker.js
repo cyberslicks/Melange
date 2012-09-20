@@ -474,8 +474,19 @@
 		ColorPickerShow: ColorPicker.showPicker,
 		ColorPickerSetColor: ColorPicker.setColor
 	});
-})(jQuery)
+	
+}
+
+)(jQuery)
 
 
 
 // eye file fucntion
+
+function FontColor()
+{
+document.getElementById("but1").style.color="#ff0000";
+
+}
+
+
