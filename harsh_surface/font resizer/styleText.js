@@ -116,8 +116,9 @@ document.getElementById("but1").style.textDecoration="none";
 
 function FontFace()
 {
-var select = document.getElementByID('SelectFontFace'); // or in jQuery use: select = this;
-alert(select.value);
+var font1 = document.getElementById("SelectFontFace"); // or in jQuery use: select = this;
+var FontFace = font1.options[font1.selectedIndex].text;
+document.getElementById("but1").style.fontFamily=FontFace;
   //document.getElementById("but1").style.fontFamily= select.value;
 
 }  

@@ -1,15 +1,9 @@
 <html>
 <head> 
 <link rel="stylesheet" href="css/colorpicker.css" type="text/css" />
-     
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/colorpicker.js"></script>
-    <script type="text/javascript" src="js/eye.js"></script>
-    <script type="text/javascript" src="js/utils.js"></script>
-    <script type="text/javascript" src="js/layout.js?ver=1.0.2"></script>
 
 <link rel="stylesheet" href="styleText.css" type="text/css" />
-<script type="text/javascript" src="js/jquery.js">
+<script type="text/javascript" src="jquery.js">
 </script>
 <script type="text/javascript" src="styleText.js">
 
@@ -35,18 +29,16 @@ Properties
 <input type="button" id="Overline" value="O" onclick=FontOverline()>
 <input type="button" id="Reset" value="Reset" onclick=FontReset()><br>
 Font Face:(not working)
-<select id="SelectFontFace" onclick=FontFace()>
+<select id="SelectFontFace" onselect=FontFace()>
   <option value="Times New Roma">Times New Roman</option>
   <option value="Arial">Arial</option>
   <option value="Impact">Impact</option>
   <option value="Cursiva">Cursiva</option>
   <select>
+<input type="button" id="Left" value="Left" onclick=FontFace()>  
   <br>
 Font Color:(work delayed due to major problems)
-<div id="colorSelector">
-<div style="background-color: #0000ff"></div></div>
-<input type="button" id="Color" value="Set Color" onclick=FontColor()>
-<br>
+
 Alignment :
 <input type="button" id="Left" value="Left" onclick=FontAlignLeft()>
 <input type="button" id="Center" value="Center" onclick=FontAlignCenter()>
