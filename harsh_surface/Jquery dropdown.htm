@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+   <link rel="stylesheet" href="./Dropdown/master.css" type="text/css">
+   <script src="./Dropdown/jquery-1.7.2.min.js" type="text/javascript"></script>
+   
+</head>
+<body>
+
+
+<div id="header">
+    <div class="wrap">
+     
+<div class="menu">
+    
+	<a class="menu-item menu-item-about" ><span class="icon i-about"> </span><span class="label">About</span></a>
+            
+	<a class="menu-item menu-item-developer" ><span class="icon i-developer"> </span><span class="label">Developer</span></a>
+    
+        
+	<a class="menu-item menu-item-community" ><span class="icon i-community"> </span><span class="label">Community</span></a>
+     
+	<a class="menu-item menu-item-app" ><span class="icon i-app"> </span><span class="label">Apps</span></a>
+     
+	<a class="menu-item menu-item-support" ><span class="icon i-support"> </span><span class="label">Support</span></a>
+     
+	<div class="menu-select">
+	    <form>
+        	<select onchange="location = this.options[this.selectedIndex].value;">
+                <option value="/">Home</option>
+        	    
+                        <option value="/about">About</option>
+                         
+                            <option value="/about/feature">- Features</option>
+                        
+                            <option value="/about/faq">- FAQs</option>
+                        
+                            <option value="/about/artwork">- Artwork</option>
+                        
+                            <option value="/about/license">- License</option>
+                        
+                            <option value="/about/contact">- Contact</option>
+                        
+                    
+                        
+                        <option value="/developer">Developer</option>
+                        
+                            
+                            <option >- Get Started</option>
+                        
+                            
+                            <option >- Downloads</option>
+                        
+                            
+                            <option >- Docs</option>
+                        
+                            
+                            <option >- Tools</option>
+                        
+                            
+                            <option >- Wiki</option>
+                        
+                    
+                
+                    
+                        
+                        <option >Community</option>
+                        
+                            
+                            <option >- Events</option>
+                        
+                            
+                            <option >- Blog</option>
+                        
+                            
+                            <option >- Books</option>
+                        
+                            
+                            <option >- Newsletter</option>
+                        
+                            
+                            <option >- Google Groups</option>
+                        
+                    
+                
+                    
+                        
+                        <option>Apps</option>
+                        
+                            
+                            <option >- Featured Apps</option>
+                        
+                            
+                            <option >- Case Studies</option>
+                        
+                            
+                            <option >- Submit</option>
+                        
+                    
+                
+                    
+                        
+                        <option >Support</option>
+                        
+                            
+                            <option >- Support Packages</option>
+                        
+                    
+                
+			</select>
+		</form>
+	</div>
+</div>
+
+    
+        
+    <div class="dropdown dropdown-about">
+        <div class="inner">
+            
+                
+                <a >Features</a>
+            
+                
+                <a >FAQs</a>
+            
+                
+                <a >Artwork</a>
+            
+                
+                <a>License</a>
+            
+                
+                <a >Contact</a>
+            
+        </div>
+    </div>
+    
+
+    
+        
+    <div class="dropdown dropdown-developer">
+        <div class="inner">
+            
+                
+                <a >Get Started<span class="ext"> </span></a>
+            
+                
+                <a>Downloads</a>
+            
+                
+                <a >Docs<span class="ext"> </span></a>
+            
+                
+                <a>Tools</a>
+            
+                
+                <a>Wiki<span class="ext"> </span></a>
+            
+        </div>
+    </div>
+    
+
+    
+        
+    <div class="dropdown dropdown-community">
+        <div class="inner">
+            
+                
+                <a>Events</a>
+            
+                
+                <a>Blog</a>
+            
+                
+                <a>Books</a>
+            
+                
+                <a>Newsletter</a>
+            
+                
+                <a>Google Groups<span class="ext"> </span></a>
+            
+        </div>
+    </div>
+    
+
+    
+        
+    <div class="dropdown dropdown-app">
+        <div class="inner">
+            
+                
+                <a>Featured Apps</a>
+            
+                
+                <a>Case Studies</a>
+            
+                
+                <a>Submit</a>
+            
+        </div>
+    </div>
+    
+
+    
+        
+    <div class="dropdown dropdown-support">
+        <div class="inner">
+            
+                
+                <a>Support Packages</a>
+            
+        </div>
+    </div>
+    
+
+
+
+<script type="text/javascript">
+
+    function activateDropDown(target, height) {
+        var animate = true;
+        var prefix = '.dropdown-' + target;
+        var menuPrefix = '.menu-item-' + target;
+        var menu = $(prefix);
+        var height = 0;
+        height = $(prefix + ' .inner').height()+4+4+8;
+        
+        $(prefix +', ' + '.menu-item-' + target).hover(function(r){
+            var item = $(this);
+            if (item[0].className && item[0].className.indexOf('menu') > -1) {
+                var left = item.position().left;
+                menu.css('left', left+'px');
+                menu.clearQueue().animate({height:height+'px'}, 200);
+                $(menuPrefix).addClass('active')
+            }
+            animate = false;
+            setTimeout(function(){animate = true;},1);
+            menu.css('display', 'block');
+        }, function(r) {
+            setTimeout(function(){
+                if (animate) {
+                    menu.animate({height:'0px'}, 200);
+                    $(menuPrefix).removeClass('active');
+                }
+            }, 0);
+        });
+    }
+     
+        activateDropDown('about'); 
+     
+        activateDropDown('developer'); 
+     
+        activateDropDown('community'); 
+     
+        activateDropDown('app'); 
+     
+        activateDropDown('support'); 
+    
+</script>
+    </div>
+</div>  
+
+
+	
+    
+        
+
+
+</body></html>
