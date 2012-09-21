@@ -218,11 +218,17 @@ Surface.prototype.createObject = function(type) {
 	newElement.innerHTML = "Object ID :" + newElement.id ;
 	
 	
+	newElement.setAttribute("class","ui-widget-content");
+	
 	
 	newElement.addEventListener('click',Surface.clickResponder,false);     // binding click events to clcik response handler
 	newElement.addEventListener('dragstart',Surface.dragEventHandler,false);
 	
 	$('#'+this.id).append(newElement);
+	
+	$('#'+newElement.id).resizable();// jquery-ui dependency: resizing function
+	
+	
 	Surface.localObject.loadObject(newElement.id);
 	
 	
