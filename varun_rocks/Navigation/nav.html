@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="nav.css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+$("#but1").click(function(){
+$("#cssbox").fadeIn(3000);
+});
+
+});
+$(document).ready(function()
+{
+	  
+	
+	  $("#Border").mouseover(function(){
+		$("#BorderAtr").slideToggle("slow");
+	  });
+	 $("#NavInner").mouseover(function(){
+		$("#NavInnerAtr").slideToggle("slow");
+	  });
+	 
+});
+function BorderStyle()
+{
+document.getElementById("but1").style.borderStyle="dotted double";
+}
+function Border()
+{
+var a = document.forms["for"]["width"].value;
+var b = document.forms["for"]["style"].value;
+var c = document.forms["for"]["color"].value;
+var d= a + " " + b + " " + c ;
+document.getElementById("but1").style.border=d;
+document.getElementById("but1").style.boxSizing="inherit";
+}
+function NavInner()
+{
+var c = document.forms["for2"]["color"].value;
+var d = document.forms["for2"]["text-align"].value;
+var e = document.forms["for2"]["text"].value;
+var f = document.forms["for2"]["text-color"].value;
+
+document.getElementById("but1").style.background=c;
+document.getElementById("txt").style.textAlign=d;
+document.getElementById("txt").style.color=f;
+}
+
+function loadXMLDoc()
+{
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("txt").innerHTML=xmlhttp.responseText;
+    }
+  }
+xmlhttp.open("GET","ajax_info.txt",true);
+xmlhttp.send();
+}
+
+function nav()
+{
+	this.id = null;
+	this.height = null;
+	this.width = null;
+	this.color=null;
+	this.backgroundcolor=null;
+	this.url=null;
+	
+}
+nav.protoype.bind=function()
+{
+
+}
+</script>
+</head>
+<body>
+
+<div id= "but1" onclick=fucntion()>
+<div id="txt">Hello</div>
+</div>
+<div class="cssbox" id="cssbox"	>
+
+<h2><center>
+Properties
+</h2>
+<div Class="Property" id="Border">
+Border
+</div>
+<form name="for" >
+<div class="PropertyContent" id="BorderAtr">
+
+<input type="text" id="width" placeholder="border-width"  />
+<input type="text" id="style" placeholder="border-style"  />
+<input type="text" id="color" placeholder="border-color"  />
+<input type="button" id="submit" value="submit" onclick=Border() />
+
+<br></div></form>
+<div Class="Property" id="NavInner">
+Inner
+</div>
+<form name="for2">
+<div class="PropertyContent" id="NavInnerAtr">
+<input type="text" id="text" placeholder="your-text(not working)" />
+<input type="button" value="text-submit" onclick=loadXMLDoc() />
+<input type="text" id="text-color" placeholder="text-color" />
+<input type="text" id="text-align" placeholder="text-align" />
+<input type="text" id="color" placeholder="background-color" />
+<input type="button" value="submit" onclick=NavInner() />
+</div></form>
+</div>
+</div>
+</body>
+</html>
