@@ -38,10 +38,13 @@ return info;
 SurfaceObject.prototype.loadObject = function (id) {
 
 this.id = id;
-this.height = $('#'+this.id).height();
-this.width = $('#'+this.id).width();
+var object = $('#'+this.id);
 
-var offset = $('#'+this.id).offset();
+this.type = object.type;
+this.height = object.height();
+this.width = object.width();
+
+var offset = object.offset();
 this.left = offset.left;
 this.top = offset.top 
 
@@ -124,6 +127,7 @@ Surface.dragEventHandler = function(event) {
 	
 var id = event.target.id;  
 Surface.localObject.loadObject(id);
+//alert(Surface.localObject.top);
 
 event.dataTransfer.setData("text/plain",Surface.localObject.informationEncoder());	
 	
@@ -195,10 +199,33 @@ Surface.prototype.dropEventHandler = function(event) {
 	
 };
 
+Surface.prototype.addAttributes = function (id,attr) {
+	
+	
+	var object = document.getElementById(id);
+	//alert(object.ondragstart);
+	
+	for (var name in attr) 
+	{
+		if (attr.hasOwnProperty(name)) {
+			
+			
+			object.setAttribute(name, attr[name]);	
+			//alert(object.name);
+			
+		}
+	}	
+	
+	
+	
+};
 
 
-Surface.prototype.createObject = function(type) {
 
+
+Surface.prototype.createObject = function(type,args) {
+
+	args = args || {};   		// operation for making it optional
 	
 	newElement = document.createElement(type);
 	newElement.id = this.idPrefix + this.idNumber;
@@ -207,7 +234,10 @@ Surface.prototype.createObject = function(type) {
 	
 	newElement.draggable = "true";
 	
+	
 	newElement.style.position = "absolute";
+	
+	newElement.type = type ;// adding a type property
 	
 	newElement.style.left = parseInt(this.leftOffset,10)+5+"px";
 	newElement.style.top = parseInt(this.topOffset,10)+5+"px";
@@ -226,7 +256,16 @@ Surface.prototype.createObject = function(type) {
 	
 	$('#'+this.id).append(newElement);
 	
-	$('#'+newElement.id).resizable();// jquery-ui dependency: resizing function
+	this.addAttributes(newElement.id,args);
+	
+	if(type != "img")			// due to critical bug in jquery ui
+	{
+	
+			$('#'+newElement.id).resizable({ containment: "parent" });// jquery-ui dependency: resizing function
+			//newElement.contentEditable="true";
+	
+	}
+	
 	
 	
 	Surface.localObject.loadObject(newElement.id);

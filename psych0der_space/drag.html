@@ -59,11 +59,11 @@
  
  var surface = new Surface();
  surface.eventBinder();
- surface.createObject("aside");
- surface.createObject("aside");
- surface.createObject("aside");
+ surface.createObject("img",{src:"images/browsers/chrome.jpeg",height:"200px",width:"300px"});
+ //surface.createObject("aside",{name:"lol"});
+ //surface.createObject("aside",{name:"lol"});
  
-document.getElementById('but').onclick = $.proxy(function() {surface.createObject('div');},this);
+document.getElementById('but').onclick = $.proxy(function() {surface.createObject('div',{name:"lol"});},this);
 
 
 
