@@ -1,0 +1,28 @@
+color
+direction
+font
+
+
+
+
+
+
+
+
+
+
+
+
+Done:
+wordspacing
+letterspacing
+whitespace
+text transform
+textindent
+text decoration
+textalign
+fontweight
+lineheight
+fontStyle
+font family
+fontsize

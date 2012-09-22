@@ -19,3 +19,19 @@ width:20px;
 .body{
 color:red;
 }
+.PropertyContent,.Property
+{
+padding:5px;
+text-align:left;
+background-color:#000000;
+border:solid 1px #c3c3c3;
+}
+.PropertyContent
+{
+padding:5px;
+display:none;
+}
+#TextTransformContent,#AlignmentContent
+{
+text-align:center;
+}

@@ -12,8 +12,9 @@
 <body>
 
 <p id= "but1" onclick=fucntion()>
-this is my text :) <br>
-this is my world :)
+this is              my text :) <br>
+this is my 
+world :)
 </p>
 <div class="cssbox" id="cssbox"	>
 <h2><center>
@@ -27,8 +28,9 @@ Properties
 <input type="button" id="Italic" value="I" onclick=FontItalic()>
 <input type="button" id="Underline" value="U" onclick=FontUnderline()>
 <input type="button" id="Overline" value="O" onclick=FontOverline()>
-<input type="button" id="Reset" value="Reset" onclick=FontReset()><br>
-Font Face:
+<input type="button" id="Linethrough" value="T" onclick=Fontlinethrough()>
+<br>
+Font Face:<br>
 <select id="SelectFontFace" onselect=FontFace()>
  <option>academy engraved let
 <option>algerian
@@ -143,16 +145,72 @@ Font Face:
   <br>
 Font Color:(work delayed due to major problems)
 
+<br>
+<div Class="Property" id="Alignment">
 Alignment :
+</div>
+<div class="PropertyContent" id="AlignmentContent">
 <input type="button" id="Left" value="Left" onclick=FontAlignLeft()>
 <input type="button" id="Center" value="Center" onclick=FontAlignCenter()>
 <input type="button" id="Right" value="Right" onclick=FontAlignRight()><br>
-Spacing:
+<input type="button" id="Whitespace" value="Whitespace" onclick=WhiteSpace()>
+<input type="button" id="Linebreak" value="Linebreak" onclick=LineBreak()>
+<br></div>
+
+
+<div Class="Property" id="Spacing">
+Spacing :</div>
+<div class="PropertyContent" id="SpacingContent">
+Line Spacing :
 <input type="button" id="LineInc" value="Increase" onclick=LineSpaceIncrease()>
+<input type="button" id="LineDec" value="Decrease" onclick=LineSpaceDecrease()>
 <br>
-Font-Shadow:(work in Progress dropdown to be inserted)
+Letter Spacing :
+<input type="button" id="LetterInc" value="Increase" onclick=LetterSpaceIncrease()>
+<input type="button" id="LetterDec" value="Decrease" onclick=LetterSpaceDecrease()>
+<br>
+Word Spacing :
+<input type="button" id="WordInc" value="Increase" onclick=WordSpaceIncrease()>
+<input type="button" id="WordDec" value="Decrease" onclick=WordSpaceDecrease()>
+</div>
+
+<div class="Property" id="TextTransform">
+Text Tranformation :</div>
+<div class="PropertyContent" id="TextTransformContent">
+
+<input type="button" id="uppercase" value="Uppercase" onclick=Uppercase()>
+<input type="button" id="lowercase" value="Lowercase" onclick=Lowercase()><br>
+<input type="button" id="capitalize" value="Capitalize" onclick=Capitalize()>
+<input type="button" id="capitalize" value="AsWritten" onclick=TransformNone()>
+</div>
+
+<div class="Property" id="TextIndentation">
+Text Indentation :</div>
+<div class="PropertyContent" id="TextIndentationContent">
+
+<input type="button" id="TextIndentInc" value="Increase" onclick=TextIndentIncrease()>
+<input type="button" id="TextIndentDec" value="Decrease" onclick=TextIndentDecrease()><br>
+
+</div>
+
+<div class="Property" id="TextDirection">
+Text Direction :</div>
+<div class="PropertyContent" id="TextDirectionContent">
+
+<input type="button" id="Right-Left" value="Right-Left" onclick=R2L()>
+<input type="button" id="Left-Right" value="Left-Right" onclick=L2R()><br>
+
+</div>
+
+
+<div class="Property" id="Shadow">
+Font Shadow :</div>
+<div class="PropertyContent" id="ShadowContent">
 <input type="button" id="AddShadow" value="Addshadow" onclick=FontShadow()>
 <input type="button" id="RemoveShadow" value="Removeshadow" onclick=FontShadowR()>
+</div>
+<br>
+<input type="button" id="Reset" value="Reset" onclick=FontReset()>
 </div>
 </div>
 
