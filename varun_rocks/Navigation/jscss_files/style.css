@@ -1,0 +1,34 @@
+BODY {background-color: #ffffff; color: #000000; background: url('../../../../gifs/blgrstone1.gif') }
+A:link { color: #0000ff; }
+A:visited { color: #7f007f; }
+A:active { color: #ff0000; }
+H1, H2 { text-align: center }
+H3 { text-align: left; color: #800080 }
+H3.red { text-align: center; color: #ff0000 }
+BLOCKQUOTE { color: #0000ff }
+PRE { color: #0000ff }
+.indent { margin-right: 5%; margin-left: 5%; color: #0000ff }
+.indent1 { margin-right: 5%; margin-left: 5% }
+.eindent { margin-right: 5%; margin-left: 5%; color: #006000; font-size: 18}
+.center { text-align: center }
+.firstindent { text-indent: 2em}
+.document { color: black; font-weight: 800; font-size: 24; padding: 1em }
+.header { font-weight: 800; font-size: 20; color: #CC0000; padding: 1em }
+.subheader { font-weight: 800; font-size: 18; color: #CC0000; padding: 1em }
+.version { color: black; font-weight: 400; font-size: 18 }
+.author { color: black; font-weight: 600; font-size: 18 }
+.tindex1 { vertical-align: top; width: 20% }
+.tindex2 { vertical-align: top; width: 50% }
+.dindex2 { vertical-align: top; width: 60% }
+.space { vertical-align: top; width: 5px }
+.lastt { vertical-align: top }
+.dot { color: #ff0000 }
+.title { color: #008000 }
+.title1 { color: #0000ff }
+.bold { font-weight: 600 }
+div.outline { border-top: solid medium navy }
+HR { color: #0000B0; height: 2; width: 100%; text-align: center }
+HR.half { color: #D00000; height: 5; width: 50%; text-align: center }
+HR.other { color: #0000ff; height: 5; width: 100%; text-align: center }
+HR.firsthr { color: #0000c0; height: 15; width: 100% }
+IMG { border-width: 0; margin-top: 3px }
