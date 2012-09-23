@@ -44,11 +44,11 @@ this.type = object.type;
 this.height = object.height();
 this.width = object.width();
 
+
 var offset = object.offset();
 this.left = offset.left;
-this.top = offset.top 
-
-
+this.top = offset.top;
+//console.log(this.left+","+$('#'+this.id).offset().left);
 
 };
 
@@ -261,8 +261,30 @@ Surface.prototype.createObject = function(type,args) {
 	if(type != "img")			// due to critical bug in jquery ui
 	{
 	
-			$('#'+newElement.id).resizable({ containment: "parent" });// jquery-ui dependency: resizing function
+			$('#'+newElement.id).resizable({ stop: function(event,ui) {
+				
+				var surface = $('#surface');
+				//alert(ui.width);
+				var element = $('#'+event.target.id);
+				if(ui.position.left + ui.size.width > parseInt(surface.width(),10) + 18)
+				{
+					
+					//ui.size.width = surface.width() - ui.position.left;
+					element.width(surface.width() - ui.position.left+18);
+				}
+				
+				if(ui.position.top + ui.size.height > parseInt(surface.height(),10) + 18)
+				{
+										//ui.size.width = surface.width() - ui.position.left;
+					element.height(surface.height() - ui.position.top+18);
+				}
+				
+				
+				
+				
+			} }); // jquery-ui dependency: resizing function
 			//newElement.contentEditable="true";
+	
 	
 	}
 	
