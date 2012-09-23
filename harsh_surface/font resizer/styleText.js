@@ -1,4 +1,4 @@
-//var s= window.event.clientX 
+
 var b=-1;
 var u=-1;
 var i=-1;
@@ -13,6 +13,7 @@ var whitespace=-1;
 var linebreak=-1;
 var unicodebidi=-1;
 var textindent =1;
+
 //toggle slide 
 $(document).ready(function()
 {
@@ -42,12 +43,16 @@ $(document).ready(function()
 });
 
 //css box apperance
+
 $(document).ready(function(){
 $("#but1").click(function(){
 $("#cssbox").fadeIn(3000);
 });
 
 });
+
+
+
 
 
 
@@ -172,6 +177,7 @@ document.getElementById("but1").style.fontFamily=FontFace;
 function FontAlignCenter()
 {
 document.getElementById("but1").style.textAlign="center";
+
 }
 
 function FontAlignLeft()
