@@ -13,6 +13,7 @@ var whitespace=-1;
 var linebreak=-1;
 var unicodebidi=-1;
 var textindent =1;
+var fontsize=20;
 
 //toggle slide 
 $(document).ready(function()
@@ -52,47 +53,14 @@ $("#cssbox").fadeIn(3000);
 });
 
 
-
-
-
-
 function increaseFontSize() {
- 
-   var p = document.getElementsByTagName('p');
-   for(i=0;i<p.length;i++) {
- 
-      if(p[i].style.fontSize) {
-         var s = parseInt(p[i].style.fontSize.replace("px",""));
-      } else {
- 
-         var s = 20;
-      }
-      if(s!=max) {
- 
-         s += 1;
-      }
-      p[i].style.fontSize = s+"px"
- 
-   }
+ fontsize=fontsize+1;
+   $("#but1").css("font-size",fontsize);
 }
 
 function decreaseFontSize() {
-   var p = document.getElementsByTagName('p');
-   for(i=0;i<p.length;i++) {
- 
-      if(p[i].style.fontSize) {
-         var s = parseInt(p[i].style.fontSize.replace("px",""));
-      } else {
- 
-         var s = 20;
-      }
-      if(s!=min) {
- 
-         s -= 1;
-      }
-      p[i].style.fontSize = s+"px"
- 
-   }
+   fontsize=fontsize-1;
+   $("#but1").css("font-size",fontsize);
 }
 
 
@@ -321,6 +289,7 @@ document.getElementById("but1").style.lineHeight=1;
 document.getElementById("but1").style.textShadow="none";
 document.getElementById("but1").style.textIndent=1;
 document.getElementById("but1").style.direction="ltr";
+document.getElementById("but1").style.color="#ff0000";
   }
 
 
