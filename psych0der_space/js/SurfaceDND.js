@@ -115,6 +115,7 @@ this.leftOffset = $('#'+this.id).offset().left;
 this.topOffset  = $('#'+this.id).offset().top;
 
 
+
 this.width = $('#'+this.id).width();
 this.height = $('#'+this.id).height();
 
@@ -132,6 +133,7 @@ Surface.maximumZIndex = 10;      //  this corresponds to element in focus ,so th
 Surface.localObject =  new SurfaceObject(); // static member
 Surface.parent = new ParentContainer('surface');
 
+Surface.elements=[];
 
 
 Surface.incrementZIndex = function() {
@@ -275,6 +277,8 @@ Surface.prototype.createObject = function(type,args) {
 	
 	newElement = document.createElement(type);
 	newElement.id = this.idPrefix + this.idNumber;
+	Surface.elements.push(newElement.id);
+	
 	this.incrementIdNumber();
 	Surface.incrementZIndex();
 	
@@ -400,7 +404,10 @@ Dustbin.removeObject = function(event) {
 	var tempSurface = new Surface();
 	tempSurface.deleteObject(callerId[2]);
 	
+	var index = Surface.elements.indexOf(callerId[2]);
+	Surface.elements.splice(index, 1);
 	
+	alert(Surface.elements);
 	delete tempSurface;	
 	
 	event.preventDefault();
