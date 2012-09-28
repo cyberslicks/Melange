@@ -3,8 +3,6 @@
 psych0der work_space
 
 
-
-
 */
 
 
@@ -31,7 +29,6 @@ SurfaceObject.prototype.informationEncoder  = function()
 return info;
 	
 	
-	
 };
 
 
@@ -48,7 +45,7 @@ this.width = object.width();
 var offset = object.offset();
 this.left = offset.left;
 this.top = offset.top;
-//console.log(this.left+","+$('#'+this.id).offset().left);
+
 
 };
 
@@ -58,6 +55,53 @@ SurfaceObject.prototype.updateZIndex = function(zindex) {
 	$('#'+this.id).css('z-index',parseInt(zindex,10));
 	
 };
+
+
+
+
+function ParentContainer(id) {
+	
+this.id = id;
+this.height = null;
+this.width = null;
+
+this.leftOffset = null;
+this.topOffset = null;	
+
+this.rightBoundry = null;
+this.bottomBoundry = null;
+
+
+//this.loadParent(this.id);
+	
+};
+
+
+ParentContainer.prototype.loadAttributes = function(id) {
+	
+	var parent = $('#'+id);
+	this.height = parent.height();
+	this.width = parent.width();
+	
+
+	var offset = parent.offset();
+	this.leftOffset = offset.left;
+	this.topOffset = offset.top;
+	
+	this.rightBoundry = parseInt(this.leftOffset,10) + parseInt(this.width,10);
+	this.bottomBoundry = parseInt(this.topOffset,10) + parseInt(this.height,10);	
+	//alert(this.id);
+	
+}
+
+
+ParentContainer.prototype.loadParent = function(id) {
+	
+	this.id = id;
+	this.loadAttributes(this.id);
+	
+}
+
 
 
 
@@ -86,6 +130,7 @@ Surface.maximumZIndex = 10;      //  this corresponds to element in focus ,so th
 
 
 Surface.localObject =  new SurfaceObject(); // static member
+Surface.parent = new ParentContainer('surface');
 
 
 
@@ -112,6 +157,7 @@ Surface.clickResponder= function(event) {
 	
 var id = event.target.id;    // id of the caller object	
 Surface.localObject.loadObject(id);
+//Surface.parent.loadParent(id);
 
 if(!($('#'+id).css('z-index') == Surface.maximumZIndex))
 {
@@ -261,7 +307,7 @@ Surface.prototype.createObject = function(type,args) {
 	if(type != "img")			// due to critical bug in jquery ui
 	{
 	
-			$('#'+newElement.id).resizable({ stop: function(event,ui) {
+			$('#'+newElement.id).resizable({ stop: $.proxy(function(event,ui) {
 				
 				var surface = $('#surface');
 				//alert(ui.width);
@@ -279,10 +325,10 @@ Surface.prototype.createObject = function(type,args) {
 					element.height(surface.height() - ui.position.top+18);
 				}
 				
+				//alert(Surface.parent.id);
 				
 				
-				
-			} }); // jquery-ui dependency: resizing function
+			},this) }); // jquery-ui dependency: resizing function
 			//newElement.contentEditable="true";
 	
 	
@@ -302,7 +348,7 @@ Surface.prototype.eventBinder = function() {
 	
 	document.getElementById(this.id).addEventListener('dragover',this.dragOverEventHandler,false);
 	document.getElementById(this.id).addEventListener('drop',$.proxy(this.dropEventHandler,this),false); //preserving namespace
-	
+	//document.getElementById(this.id).addEventListener('click',$.proxy(function(){var id =this.id;Surface.parent.loadParent(id);},this),false);
 	
 };
 
