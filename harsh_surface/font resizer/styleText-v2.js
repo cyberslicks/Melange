@@ -1,18 +1,18 @@
 
-var b=-1;
-var u=-1;
-var i=-1;
-var o=-1;
-var t=-1;
-var min=15;
-var max=180;
-var linespace=1;
-var letterspace=0;
-var wordspace=0;
-var whitespace=-1;
-var linebreak=-1;
-var unicodebidi=-1;
-var textindent =1;
+var b=-1; //for bold
+var u=-1;// underline
+var i=-1; // italic
+var o=-1;//overline
+var t=-1; //linethrough
+var min=15; //min font size
+var max=180; //max font size
+var linespace=1; //predefined linespace
+var letterspace=0; //predefined letterspace
+var wordspace=0;// predefined wordspace
+var whitespace=-1;//predefined whitespace
+var linebreak=-1;//predefined linebreak
+var unicodebidi=-1; //not used (will be using for font shadow
+var textindent =1; // predefined text indentation
 
 //toggle slide 
 $(document).ready(function()
