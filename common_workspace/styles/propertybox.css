@@ -1,0 +1,46 @@
+
+
+/*cssbox property*/
+
+#cssbox{
+opacity:0.8;
+background-color:black;
+height:100%;
+width:350px;
+display:none;
+z-index:999;
+position:fixed;
+top:0px;
+right:0%;
+color:white;
+overflow: scroll;
+}
+
+#textproperties {
+	
+	display: none;
+	
+}
+
+.Fontval{
+height:20px;
+width:20px;
+}
+
+
+.PropertyContent,.Property
+{
+padding:5px;
+text-align:left;
+background-color:#000000;
+border:solid 1px #c3c3c3;
+}
+.PropertyContent
+{
+padding:5px;
+display:none;
+}
+#TextTransformContent,#AlignmentContent
+{
+text-align:center;
+}

@@ -131,7 +131,7 @@ this.propertyPane = new PropertyBox('cssbox');
 };
 
 Surface.maximumZIndex = 10;      //  this corresponds to element in focus ,so that it comes to front
-
+Surface.id = "surface";
 
 Surface.localObject =  new SurfaceObject(); // static member
 Surface.parent = new ParentContainer('surface');
@@ -364,11 +364,11 @@ Surface.prototype.eventBinder = function() {
 	
 };
 
-Surface.prototype.deleteObject = function(id) {
+Surface.deleteObject = function(id) {
 	
 	
 	
-	document.getElementById(this.id).removeChild(document.getElementById(id)); 		// object deleted
+	document.getElementById(Surface.id).removeChild(document.getElementById(id)); 		// object deleted
 	//$('#dustbin').effect("shake", { times:5 }, 5); 
 	
 	/*animation*/
@@ -432,14 +432,13 @@ Dustbin.removeObject = function(event) {
 	
 	var callerId = event.dataTransfer.getData("text/plain").split('$');
 	//alert("here");	
-	var tempSurface = new Surface();
-	tempSurface.deleteObject(callerId[2]);
+	
+	Surface.deleteObject(callerId[2]);
 	
 	var index = Surface.elements.indexOf(callerId[2]);
 	Surface.elements.splice(index, 1);
 	
-	//alert(Surface.elements);
-	delete tempSurface;	
+	
 	
 	event.preventDefault();
 	return false;

@@ -19,8 +19,8 @@ this.whitespace=-1;
 this.linebreak=-1;
 this.unicodebidi=-1; 
 this.textindent =1; 
-	
-	
+
+this.textSegmentTransitionInitializer();	
 }
 
 PropertyBox.prototype.showTextProperties = function () {
@@ -55,6 +55,8 @@ PropertyBox.prototype.refreshColorPicker = function(id) {					// for introducing
 
 
 PropertyBox.prototype.textSegmentTransitionInitializer = function() {
+
+	
 	
 	  $("#Spacing").click(function(){
 		$("#SpacingContent").slideToggle("slow");
@@ -517,7 +519,7 @@ var type = document.getElementById(id).type;
 
 if(type!='img') 
 {
-this.textSegmentTransitionInitializer();
+
 this.textPropertiesBinder(id);
 this.showTextProperties();
 

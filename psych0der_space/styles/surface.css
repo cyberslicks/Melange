@@ -1,0 +1,36 @@
+[draggable] {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+#dragme {
+	position:absolute;
+	padding:5px;
+	top:0;
+	left:0;
+	width:200px;
+	background: #e3e1df;
+	opacity: 0.6;
+	border: solid thin blue;
+	border-radius:3px;
+	color: #046107;
+
+}
+
+#surface {
+	
+	margin:10px;
+	border: thick dotted #f8c1c1;
+	width:400px;
+	height: 400px;
+	display: inline-block;
+	
+	
+}
+
+#dustbin {
+	
+	
+	margin-left:100px;
+}
