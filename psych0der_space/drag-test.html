@@ -1,37 +1,162 @@
-<html>
-<head> 
-<link rel="stylesheet" href="css/colorpicker.css" type="text/css" />
+<!DOCTYPE html>
+<head>
 
-<link rel="stylesheet" href="styleText.css" type="text/css" />
-<link rel="stylesheet" media="screen" type="text/css" href="css/colorpicker.css" />
+<title>drag-test</title>
 
-<script type="text/javascript" src="jquery.js">
+<style>
+[draggable] {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+#dragme {
+	position:absolute;
+	padding:5px;
+	top:0;
+	left:0;
+	width:200px;
+	background: #e3e1df;
+	opacity: 0.6;
+	border: solid thin blue;
+	border-radius:3px;
+	color: #046107;
+
+}
+
+#surface {
+	
+	margin:10px;
+	border: thick dotted #f8c1c1;
+	width:400px;
+	height: 400px;
+	display: inline-block;
+	
+	
+}
+
+#dustbin {
+	
+	
+	margin-left:100px;
+}
+
+/*cssbox property*/
+
+#cssbox{
+opacity:0.8;
+background-color:black;
+height:100%;
+width:350px;
+display:none;
+z-index:999;
+position:fixed;
+top:0px;
+right:0%;
+color:white;
+overflow: scroll;
+}
+
+#textproperties {
+	
+	display: none;
+	
+}
+
+.Fontval{
+height:20px;
+width:20px;
+}
+
+.body{
+color:red;
+}
+.PropertyContent,.Property
+{
+padding:5px;
+text-align:left;
+background-color:#000000;
+border:solid 1px #c3c3c3;
+}
+.PropertyContent
+{
+padding:5px;
+display:none;
+}
+#TextTransformContent,#AlignmentContent
+{
+text-align:center;
+}
+
+</style>
+
+<link rel="stylesheet" type="text/css" href="./styles/jquery-ui.css"/>
+<link rel="stylesheet" type="text/css" href="./styles/colorpicker.css"/>
+
+<script src="./js/modernizr.js"></script>
+<script src="./js/jquery.js"></script>
+<script src="./js/jquery-ui-1.js"></script>
+<script src="./js/rotate.js"></script>
+<script src="./js/colorpicker.js"></script>
+<script src="./js/propertybox.js"></script>
+<script src="./js/surfaceDND.js"></script>
+
+<!--<script src="./js/dnd.js"></script> -->
+
+<script type="text/javascript" >
+ 
+ $(document).ready(function() {
+ 
+ var surface = new Surface();
+ surface.eventBinder();
+ surface.createObject("img",{src:"images/browsers/safari.png",height:"200px",width:"300px"});
+ //surface.createObject("aside",{name:"lol"});
+ //surface.createObject("aside",{name:"lol"});
+ 
+document.getElementById('but').onclick = $.proxy(function() {surface.createObject('aside');},this);
+
+
+
+ var dustbin = new Dustbin();
+ dustbin.eventBinder();
+ 
+
+
+
+
+
+});
+
+
+
 </script>
-<script type="text/javascript" src="colorpicker.js"></script>
-<script type="text/javascript" src="styleText-v2.js">
 
-</script>
+
 </head>
 <body>
+<section id="surface">
+<!--<aside id="dragme" draggable="true">Hey there ,move me !
+</aside>-->
+</section>
+<button id="but">new aside</button>
+<img id="dustbin" src="./images/dbin.png">
 
-<p id= "but1">
-this is              my text :) <br>
-this is my 
-world :)
-</p>
+<!--  property box -->
+
 <div class="cssbox" id="cssbox"	>
+<div id="textproperties">
 <h2><center>
 Properties
 </h2>
 <div id="text">
-<input type="button" id="FontInc" value="Size++" onclick=increaseFontSize()>
-<input type="button" id="Fontdec" value="Size--" onclick=decreaseFontSize()>
+<input type="button" id="FontInc" value="Size++">
+<input type="button" id="Fontdec" value="Size--">
 <!--input type="text" id="Fontval" value=s --><br>
-<input type="button" id="Bold" value="B" onclick=FontBold()>
-<input type="button" id="Italic" value="I" onclick=FontItalic()>
-<input type="button" id="Underline" value="U" onclick=FontUnderline()>
-<input type="button" id="Overline" value="O" onclick=FontOverline()>
-<input type="button" id="Linethrough" value="T" onclick=Fontlinethrough()>
+<input type="button" id="Bold" value="B">
+<input type="button" id="Italic" value="I" >
+<input type="button" id="Underline" value="U">
+<input type="button" id="Overline" value="O" >
+<input type="button" id="Linethrough" value="T">
 <br>
 Font Color:
 <br>
@@ -39,7 +164,7 @@ Font Color:
 	<input type="button" id="color-changer" style="background-color:#000000; border:thin solid white;height:50px;width:50px;margin-left:5px;">	
 </div>
 Font Face:<br>
-<select id="SelectFontFace" onselect=FontFace()>
+<select id="SelectFontFace">
  <option>academy engraved let
 <option>algerian
 <option>amaze</option>
@@ -149,51 +274,51 @@ Font Face:<br>
   
   
   </select>
-<input type="button" id="fontface" value="Set Font" onclick=FontFace()>  
+<input type="button" id="fontface" value="Set Font">  
   
 <div Class="Property" id="Alignment">
 Alignment :
 </div>
 <div class="PropertyContent" id="AlignmentContent">
-<input type="button" id="Left" value="Left" onclick=FontAlignLeft()>
-<input type="button" id="Center" value="Center" onclick=FontAlignCenter()>
-<input type="button" id="Right" value="Right" onclick=FontAlignRight()><br>
-<input type="button" id="Whitespace" value="Whitespace" onclick=WhiteSpace()>
-<input type="button" id="Linebreak" value="Linebreak" onclick=LineBreak()>
+<input type="button" id="Left" value="Left">
+<input type="button" id="Center" value="Center">
+<input type="button" id="Right" value="Right"><br>
+<input type="button" id="Whitespace" value="Whitespace">
+<input type="button" id="Linebreak" value="Linebreak">
 </div>
 
 <div Class="Property" id="Spacing">
 Spacing :</div>
 <div class="PropertyContent" id="SpacingContent">
 Line Spacing :
-<input type="button" id="LineInc" value="Increase" onclick=LineSpaceIncrease()>
-<input type="button" id="LineDec" value="Decrease" onclick=LineSpaceDecrease()>
+<input type="button" id="LineInc" value="Increase">
+<input type="button" id="LineDec" value="Decrease">
 <br>
 Letter Spacing :
-<input type="button" id="LetterInc" value="Increase" onclick=LetterSpaceIncrease()>
-<input type="button" id="LetterDec" value="Decrease" onclick=LetterSpaceDecrease()>
+<input type="button" id="LetterInc" value="Increase">
+<input type="button" id="LetterDec" value="Decrease">
 <br>
 Word Spacing :
-<input type="button" id="WordInc" value="Increase" onclick=WordSpaceIncrease()>
-<input type="button" id="WordDec" value="Decrease" onclick=WordSpaceDecrease()>
+<input type="button" id="WordInc" value="Increase">
+<input type="button" id="WordDec" value="Decrease">
 </div>
 
 <div class="Property" id="TextTransform">
 Text Tranformation :</div>
 <div class="PropertyContent" id="TextTransformContent">
 
-<input type="button" id="uppercase" value="Uppercase" onclick=Uppercase()>
-<input type="button" id="lowercase" value="Lowercase" onclick=Lowercase()><br>
-<input type="button" id="capitalize" value="Capitalize" onclick=Capitalize()>
-<input type="button" id="normal" value="normal" onclick=TransformNone()>
+<input type="button" id="uppercase" value="Uppercase">
+<input type="button" id="lowercase" value="Lowercase" ><br>
+<input type="button" id="capitalize" value="Capitalize">
+<input type="button" id="normal" value="normal">
 </div>
 
 <div class="Property" id="TextIndentation">
 Text Indentation :</div>
 <div class="PropertyContent" id="TextIndentationContent">
 
-<input type="button" id="TextIndentInc" value="Increase" onclick=TextIndentIncrease()>
-<input type="button" id="TextIndentDec" value="Decrease" onclick=TextIndentDecrease()><br>
+<input type="button" id="TextIndentInc" value="Increase">
+<input type="button" id="TextIndentDec" value="Decrease"><br>
 
 </div>
 
@@ -201,8 +326,8 @@ Text Indentation :</div>
 Text Direction :</div>
 <div class="PropertyContent" id="TextDirectionContent">
 
-<input type="button" id="Right-Left" value="Right-Left" onclick=R2L()>
-<input type="button" id="Left-Right" value="Left-Right" onclick=L2R()><br>
+<input type="button" id="Right-Left" value="Right-Left">
+<input type="button" id="Left-Right" value="Left-Right"><br>
 
 </div>
 
@@ -210,30 +335,31 @@ Text Direction :</div>
 Margin :</div>
 <div class="PropertyContent" id="MarginContent">
 
-<input type="button" id="Right-Left" value="Right-Left" onclick=R2L()>
-<input type="button" id="Left-Right" value="Left-Right" onclick=L2R()><br>
+<input type="button" id="Right-Left" value="Right-Left">
+<input type="button" id="Left-Right" value="Left-Right"><br>
 
 </div>
 
 <div class="Property" id="Shadow">
 Font Shadow :</div>
 <div class="PropertyContent" id="ShadowContent">
-<input type="button" id="AddShadow" value="Addshadow" onclick=FontShadow()>
-<input type="button" id="RemoveShadow" value="Removeshadow" onclick=FontShadowR()>
+<input type="button" id="AddShadow" value="Addshadow">
+<input type="button" id="RemoveShadow" value="Removeshadow">
 </div>
 <br>
-<input type="button" id="Reset" value="Reset" onclick=FontReset()>
+<input type="button" id="Reset" value="Reset">
 </div>
 
 
 
 
 
-
 </div>
-
-
+</div>
 
 </body>
-</html>
 
+
+
+
+</html>
