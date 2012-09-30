@@ -41,6 +41,12 @@ $(document).ready(function()
 	  $("#TextDirection").click(function(){
 		$("#TextDirectionContent").slideToggle("slow");
 	  });
+	  
+	  $("#Margin").click(function(){
+		$("#MarginContent").slideToggle("slow");
+	  });
+	  
+	  
 });
 
 //css box apperance
@@ -275,6 +281,10 @@ function FontShadowR()
 {
 document.getElementById("but1").style.textShadow="none";
 }
+
+//Margin setting
+
+
 
 //reset button
 function FontReset() 
