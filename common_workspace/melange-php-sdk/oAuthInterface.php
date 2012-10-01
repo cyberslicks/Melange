@@ -109,7 +109,7 @@ class oAuthLogin
 	public function printLoginButton($url) 
 	{
 		
-		echo "<a href=\"".$url."\">Login Facebook</a>";
+		echo "<a href=\"".$url."\"><img src=\"./images/fb.png\"></a>";
 		
 		
 	}
