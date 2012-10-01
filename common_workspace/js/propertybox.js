@@ -511,7 +511,7 @@ document.getElementById(id).style.direction="ltr";
 PropertyBox.prototype.clickResponder = function(id) {
 	
 this.hidePropertyBox();
-this.propertyBoxTransition();
+//this.propertyBoxTransition();
 var type = document.getElementById(id).type;
 
 
