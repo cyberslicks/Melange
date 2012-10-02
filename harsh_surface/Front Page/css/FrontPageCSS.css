@@ -1,13 +1,17 @@
 *{margin:0;padding:0;-webkit-touch-callout:none;}
-html,body{height:100%;}
+html,body{height:100%;margin:0;padding:0}
 body,a{color:#2d3033;
 }
 .menu-select select{width:90%;
-box-shadow: 10px 10px 5px #888888;}
+}
 
-#wrap,.wrap{width:996px;margin:0 auto;} 
-#header,#footer{height:47px;margin:0 0px 0px;position:relative;background:#2d3033;
-box-shadow: 10px 10px 5px #888888;}
+#logoPlace,.logoPlace{width:996px;margin:0 auto;} 
+#header{
+height:47px;
+margin:0 0px 0px;
+position:relative;
+background:#2d3033;
+box-shadow: 0px 10px 5px #888888;}
 .menu{text-align:right;}
 .menu .menu-item
 {float:left;color:#fff;height:47px;width:auto;text-shadow:#444444 0 -1px 0;
@@ -194,10 +198,14 @@ margin-top:50px;
 text-decoration:blink;
 }
 
-#button1 {
-  background: #6292c2;
+#signupbutton {
+  background: #41a3dc;
+  position:absolute;
   height: 28px;
   width: 115px;
+  margin-left:700px;
+  margin-top:10px;
+  
   padding: 0 0 0 7px;
   overflow: hidden;
   display: block;
@@ -211,9 +219,10 @@ text-decoration:blink;
  
 }
 
-#button1:hover {
+#signupbutton:hover {
   width: 200px;
-  
+  background: #c6e3f4;
+  cursor:pointer;
 }
 
 .buttonText {
@@ -221,3 +230,8 @@ text-decoration:blink;
   Text-align:left;
 }
 
+.textinfo{
+height:100%;}
+
+#footer { background-color: black; color: white; text-align: left; line-height: 1.5em; paddding: 3px;}
+#footer { clear: both; position: relative; z-index: 10; height: 60px; margin-top: -3em;font-size:12px; }
