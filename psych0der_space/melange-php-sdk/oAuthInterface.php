@@ -61,14 +61,23 @@ class oAuthLogin
 	  try {
 			    
 		    $this->user_profile = $this->facebook->api('/me');
-			$email1 = $this->facebook->api('/me?fields=email');
-			print_r($email1['email']);
+			
 			
 		  } catch (FacebookApiException $e) {
 		    $this->printError($e);
-		    $user = null;
-		  }
+		    $user = null;}
+			catch (OAuthException $e) 
+			{
+					    header('location:'.'http://'.$_path.'/logout.php');
+		    }
+			catch (Exception $e) 
+			{
+				unset($_SESSION['logged_in']);
+						header('location:'.'http://'.$_path.'/logout.php');
+		    }
 			
+	
+	
 	if($this->user_profile !=null)
 		{
 			include 'oauth_config.php';
@@ -77,10 +86,10 @@ class oAuthLogin
   		  	  $_SESSION['oauth_token'] = $this->facebook->getAccessToken();
 			  $this->status = 1; // logged in using facebook
 			
-			$url = $this->facebook->getLogoutUrl(array('req_perms' => 'email','next' =>'http://'.$_path.'/logout.php'));
+			$url = $this->facebook->getLogoutUrl(array('next' =>'http://'.$_path.'/logout.php'));
 			$this->printFbLogOutButton($url);
 			//$this->printFbUserData($this->user_profile);
-			print_r($email1);
+			
 				
 		}	
 			
@@ -94,7 +103,14 @@ class oAuthLogin
 		
 		if (isset($_GET['code'])) {
 			
-		  $this->google->authenticate();
+		  try 
+		  {$this->google->authenticate();
+		  }
+		  catch (Exception $e) 
+		  {
+				    header('location:'.'http://'.$_path.'/logout.php');
+	       }
+		  
 		  
 		  $_SESSION['token'] = $this->google->getAccessToken();
 		  $to =  json_decode($this->google->getAccessToken());
@@ -156,7 +172,7 @@ class oAuthLogin
 		
 		 if($this->status == 0)
 		{
-			$url = $this->facebook->getLoginUrl();
+			$url = $this->facebook->getLoginUrl(array('scope' => 'email'));
 			$this->printFbLoginButton($url);
 			$url = $this->google->createAuthUrl();
 			$this->printGoogleLoginButton($url);
@@ -195,23 +211,6 @@ class oAuthLogin
 		
 	}
 	
-	public function printFbUserData($userdet) 
-	{
-		
-		echo "<h3>You</h3></br>
-      <img src=\"https://graph.facebook.com/".$this->user."/picture\">";
-	  echo "<br><br>";
-	  echo "<ul><li>".$this->user_profile["name"]."</li><li>".$this->user_profile["username"]."</li></ul>";
-		
-	}
-	
-	public function printGOAuthData($data)
-	{
-		echo "</br></br";
-		print $data;
-		
-	}
-	
 	public function printLogOutButton()
 	{
 		include 'oauth_config.php';
@@ -244,6 +243,18 @@ class oAuthLogin
   			 $userData['img'] = $img.'?sz=50';
 			 $userData['name'] = filter_var($user['name'], FILTER_VALIDATE_URL);
 			 $userData['email'] = filter_var($user['email'], FILTER_SANITIZE_EMAIL);
+			 $userData['id'] = $user['id'];
+			return $userData;
+			
+			
+		}
+			
+	}
+	
+	
+}
+
+?>ILTER_SANITIZE_EMAIL);
 			 $userData['id'] = $user['id'];
 			return $userData;
 			

@@ -12,7 +12,7 @@ if (isset($_SERVER['HTTP_COOKIE'])) {
         setcookie($name, '', time()-1000, '/');
     }
 }
-
+unset($_SESSION['logged_in']);
 header('Location: '.'http://'.$_path.'/oAuthtester.php');
 
 
