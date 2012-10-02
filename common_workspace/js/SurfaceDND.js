@@ -319,7 +319,7 @@ Surface.prototype.createObject = function(type,args) {
 	if(type != "img")			// due to critical bug in jquery ui
 	{
 	
-			$('#'+newElement.id).resizable({ stop: $.proxy(function(event,ui) {
+		/*	$('#'+newElement.id).resizable({ stop: $.proxy(function(event,ui) {
 				
 				var surface = $('#surface');
 				//alert(ui.width);
@@ -343,7 +343,7 @@ Surface.prototype.createObject = function(type,args) {
 			},this) }); // jquery-ui dependency: resizing function
 			//newElement.contentEditable="true";
 	
-	
+	*/
 	}
 	
 	
