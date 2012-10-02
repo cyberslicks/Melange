@@ -4,7 +4,7 @@
 require './base_sdk/facebook.php';
 require_once './base_sdk/apiClient.php';
 require_once './base_sdk/contrib/apiOauth2Service.php';
-
+ob_start();
 
 
 
@@ -21,6 +21,9 @@ class oAuthLogin
 	private $user_profile = null;   
 	private $_hostname = null;
 	private $_request_url = null;
+	private $_username = null;
+	private $_useremailid = null;
+	private $_user_dp = null;
 	
 	
 	
@@ -50,12 +53,37 @@ class oAuthLogin
 	
 	public function fbSessionManager() 
 	{
-		
+		$enail1 = null;
 		$this->user = $this->facebook->getUser(); 		// fetches the status
 		if($this->user)
-			$this->status = 1;
+			
 		
-		
+	  try {
+			    
+		    $this->user_profile = $this->facebook->api('/me');
+			$email1 = $this->facebook->api('/me?fields=email');
+			print_r($email1['email']);
+			
+		  } catch (FacebookApiException $e) {
+		    $this->printError($e);
+		    $user = null;
+		  }
+			
+	if($this->user_profile !=null)
+		{
+			include 'oauth_config.php';
+  			  $_SESSION['oauth_vendor'] = "facebook";
+  		  	  $_SESSION['logged_in'] = 1;
+  		  	  $_SESSION['oauth_token'] = $this->facebook->getAccessToken();
+			  $this->status = 1; // logged in using facebook
+			
+			$url = $this->facebook->getLogoutUrl(array('req_perms' => 'email','next' =>'http://'.$_path.'/logout.php'));
+			$this->printFbLogOutButton($url);
+			//$this->printFbUserData($this->user_profile);
+			print_r($email1);
+				
+		}	
+			
 		
 	}
 	
@@ -69,12 +97,19 @@ class oAuthLogin
 		  $this->google->authenticate();
 		  
 		  $_SESSION['token'] = $this->google->getAccessToken();
+		  $to =  json_decode($this->google->getAccessToken());
+		  $_SESSION['oauth_vendor'] = "google";
+		  $_SESSION['logged_in'] = 1;
+		  $_SESSION['oauth_token'] = $to->access_token;
+		  
+				  
 		  $redirect = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
-		 // header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
+		  header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
+		  ob_flush();
 		}
 
 		if (isset($_SESSION['token'])) {
-			echo "<h1>lol</h1>";
+			
 		 $this->google->setAccessToken($_SESSION['token']);
 		}
 
@@ -85,26 +120,25 @@ class oAuthLogin
 
 		if ($this->google->getAccessToken()) {
 		  $user = $this->goauth->userinfo->get();
+		  print_r($user);
 		 
 		  $email = filter_var($user['email'], FILTER_SANITIZE_EMAIL);
 		  $img = filter_var($user['picture'], FILTER_VALIDATE_URL);
 		  $usr = filter_var($user['name'], FILTER_VALIDATE_URL);
 		  $personMarkup = "$email<div><img src='$img?sz=50'></div>";
-		  echo $email;
+		  //echo $email;
 		  echo "<br>".$user['name'];
 		  
 		  $this->status = 2;
-		  $this->printGOAuthData($personMarkup);
+		 // $this->printGOAuthData($personMarkup);
 		  // The access token may have been updated lazily.
 		  $_SESSION['token'] = $this->google->getAccessToken();
 		  echo "     ";
-		  print "<a class='logout' href=\"".'http://localhost:8888/php_sandbox/melange-php-sdk/logout.php'."\">google Logout</a>";
-		} else {
-		  $authUrl = $this->google->createAuthUrl();
-		  print "<a class='login' href='$authUrl'>gConnect Me!</a>"; 
-		  
-		  
-		}
+		  //echo "<a class='logout' href=\""."http://".$_path."/logout.php"."\">google Logout</a>";
+		  $this->printLogOutButton();
+		
+		} 
+		
 		
 		
 		
@@ -114,29 +148,8 @@ class oAuthLogin
 	{
 		
 		$this->fbSessionManager();
-		if($this->status == 1)
-		{
-		  try {
-			    
-			    $this->user_profile = $this->facebook->api('/me');
-			  } catch (FacebookApiException $e) {
-			    $this->printError($e);
-			    $user = null;
-			  }
-			
-		if($this->user_profile !=null)
-			{
-				include 'oauth_config.php';
-				
-				$url = $this->facebook->getLogoutUrl(array( 'next' =>'http://'.$_path.'/logout.php'));
-				$this->printLogOutButton($url);
-				$this->printUserData($this->user_profile);
-				
-			}	
-			
-			
-			
-		}
+		
+		
 		
 		if($this->status ==0)
 			$this->googleSessionManager();
@@ -144,7 +157,9 @@ class oAuthLogin
 		 if($this->status == 0)
 		{
 			$url = $this->facebook->getLoginUrl();
-			$this->printLoginButton($url);
+			$this->printFbLoginButton($url);
+			$url = $this->google->createAuthUrl();
+			$this->printGoogleLoginButton($url);
 			
 			
 		}
@@ -157,7 +172,7 @@ class oAuthLogin
 		
 	}
 	
-	public function printLogOutButton($url) 
+	public function printFbLogOutButton($url) 
 	{
 		
 		echo "<a href=\"".$url."\">logout</a>";
@@ -165,7 +180,7 @@ class oAuthLogin
 		
 	}
 	
-	public function printLoginButton($url) 
+	public function printFbLoginButton($url) 
 	{
 		
 		echo "<a href=\"".$url."\"><img src=\"./images/fb.png\"></a>";
@@ -173,7 +188,14 @@ class oAuthLogin
 		
 	}
 	
-	public function printUserData($userdet) 
+	public function printGoogleLoginButton($url)
+	{
+		
+		echo "<a href=\"".$url."\"><img src=\"./images/google.png\"></a>";
+		
+	}
+	
+	public function printFbUserData($userdet) 
 	{
 		
 		echo "<h3>You</h3></br>
@@ -190,9 +212,47 @@ class oAuthLogin
 		
 	}
 	
+	public function printLogOutButton()
+	{
+		include 'oauth_config.php';
+		echo "<a class='logout' href=\""."http://".$_path."/logout.php"."\">google Logout</a>";
+		
+	}
+	
+	public function getUserData()
+	{
+		if($this->status == 1)
+		{
+			$userData =  array();
+			$userData['img'] = "https://graph.facebook.com/".$this->user."/picture\">";
+			$userData['name'] = $this->user_profile["name"];
+			$userData['email'] = $this->user_profile["email"];
+			$userData['id'] = $this->user_profile["id"];
+			return $userData;
+			
+			
+		}
+		
+		else if($this->status ==2)
+		{
+			
+			$user = $this->goauth->userinfo->get();
+			$userData =  array();
+			
+  		 
+  		 	 $img = filter_var($user['picture'], FILTER_VALIDATE_URL);
+  			 $userData['img'] = $img.'?sz=50';
+			 $userData['name'] = filter_var($user['name'], FILTER_VALIDATE_URL);
+			 $userData['email'] = filter_var($user['email'], FILTER_SANITIZE_EMAIL);
+			 $userData['id'] = $user['id'];
+			return $userData;
+			
+			
+		}
+			
+	}
+	
 	
 }
-
-
 
 ?>
