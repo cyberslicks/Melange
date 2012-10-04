@@ -4,7 +4,7 @@
 
 #cssbox{
 opacity:0.8;
-background-color:black;
+background-image:url('propertyback.jpg');
 height:100%;
 width:350px;
 display:none;
@@ -32,7 +32,8 @@ width:20px;
 {
 padding:5px;
 text-align:left;
-background-color:#000000;
+/*background-color:#000000;*/
+background-image:url('propertyback.jpg');
 border:solid 1px #c3c3c3;
 }
 .PropertyContent
@@ -43,4 +44,61 @@ display:none;
 #TextTransformContent,#AlignmentContent
 {
 text-align:center;
+}
+
+
+.propbutton {
+    
+    font-family: 'PT Sans', time new roman, serif;
+    color:#ffffff;
+    text-align:center;
+    font-size:15px;
+    font-weight:bold;
+	opacity:0.7;
+
+    padding:10px;
+
+    text-shadow: /* Simulating Text Stroke */
+        -1px -1px 0 #000, 
+        1px -1px 0 #000, 
+        -1px 1px 0 #000, 
+        1px 1px 0 #000;
+
+    border: 1px solid rgba(0,0,0,0.5);
+    border-bottom: 3px solid rgba(0,0,0,0.5);
+
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+
+    background: rgba(0,0,0,0.25);
+
+    box-shadow: 
+        0 2px 8px rgba(0,0,0,0.5), /* Exterior Shadow */
+        inset 0 1px rgba(255,255,255,0.3), /* Top light Line */
+        inset 0 10px rgba(255,255,255,0.2), /* Top Light Shadow */
+        inset 0 10px 20px rgba(255,255,255,0.25), /* Sides Light Shadow */
+        inset 0 -15px 30px rgba(0,0,0,0.3); /* Dark Background */
+
+    -o-box-shadow: 
+        0 2px 8px rgba(0,0,0,0.5),
+        inset 0 1px rgba(255,255,255,0.3),
+        inset 0 10px rgba(255,255,255,0.2),
+        inset 0 10px 20px rgba(255,255,255,0.25),
+        inset 0 -15px 30px rgba(0,0,0,0.3);
+
+    -webkit-box-shadow: 
+        0 2px 8px rgba(0,0,0,0.5),
+        inset 0 1px rgba(255,255,255,0.3),
+        inset 0 10px rgba(255,255,255,0.2),
+        inset 0 10px 20px rgba(255,255,255,0.25),
+        inset 0 -15px 30px rgba(0,0,0,0.3);
+
+    -moz-box-shadow:
+        0 2px 8px rgba(0,0,0,0.5),
+        inset 0 1px rgba(255,255,255,0.3),
+        inset 0 10px rgba(255,255,255,0.2),
+        inset 0 10px 20px rgba(255,255,255,0.25),
+        inset 0 -15px 30px rgba(0,0,0,0.3);
+
 }

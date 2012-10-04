@@ -722,9 +722,7 @@ PropertyBox.prototype.colorPickerBinder = function(previewId,targetId,targetType
 				$("#ImageSpaceContent").slideToggle("slow");
 			  });
 			
-			$("#ImageSource").click(function(){
-				$("#ImageSourceContent").slideToggle("slow");
-			  });
+			
 			$("#ImageBorder").click(function(){
 				$("#ImageBorderContent").slideToggle("slow");
 			  });
