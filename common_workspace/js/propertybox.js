@@ -128,6 +128,15 @@ PropertyBox.prototype.colorPickerBinder = function(previewId,targetId,targetType
 			
 			
 		}
+		
+		PropertyBox.prototype.hideTextProperties = function () {
+			
+			$('#textproperties').hide();
+			
+			
+		}
+		
+		
 
 		PropertyBox.prototype.hidePropertyBox = function() {
 			
@@ -857,6 +866,7 @@ this.showTextProperties();
 
 else
 {
+this.hideTextProperties();
 this.imagePropertiesBinder(id);
 this.showImageProperties();
 }
