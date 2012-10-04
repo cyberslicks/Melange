@@ -62,218 +62,317 @@ document.getElementById('but').onclick = $.proxy(function() {surface.createObjec
 <!--  property box -->
 
 <div class="cssbox" id="cssbox"	>
-<div id="textproperties">
-<h2><center>
-Properties
-</h2>
-<div id="text">
-<input type="button" id="FontInc" value="Size++">
-<input type="button" id="Fontdec" value="Size--">
-<!--input type="text" id="Fontval" value=s --><br>
-<input type="button" id="Bold" value="B">
-<input type="button" id="Italic" value="I" >
-<input type="button" id="Underline" value="U">
-<input type="button" id="Overline" value="O" >
-<input type="button" id="Linethrough" value="T">
-<br>
-Font Color:
-<br>
-<div class="color-section" id="color-section">
-	<input type="button" id="color-changer" style="background-color:#000000; border:thin solid white;height:50px;width:50px;margin-left:5px;">	
-</div>
-Font Face:<br>
-<select id="SelectFontFace">
- <option>academy engraved let
-<option>algerian
-<option>amaze</option>
-<option>arial</option>
-<option>arial black</option>
-<option>balthazar</option>
-<option>bankgothic lt bt</option>
-<option>bart</option>
-<option>bimini</option>
-<option>comic sans ms</option>
-<option>book antiqua</option>
-<option>bookman old style</option>
-<option>braggadocio</option>
-<option>britannic bold</option>
-<option>brush script mt</option>
-<option>century gothic</option>
-<option>century schoolbook</option>
-<option>chasm</option>
-<option>chicago</option>
-<option>colonna mt</option>
-<option>comic sans ms</option>
-<option>commercialscript bt</option>
-<option>coolsville</option>
-<option>courier</option>
-<option>courier new</option>
-<option>cursive</option>
-<option>dayton</option>
-<option>desdemona</option>
-<option>fantasy</option>
-<option>flat brush</option>
-<option>footlight mt light</option>
-<option>futurablack bt</option>
-<option>futuralight bt</option>
-<option>garamond</option>
-<option>gaze</option>
-<option>geneva</option>
-<option>georgia</option>
-<option>geotype tt</option>
-<option>helterskelter</option>
-<option>helvetica</option>
-<option>herman</option>
-<option>highlight let</option>
-<option>impact</option>
-<option>jester</option>
-<option>joan</option>
-<option>john handy let</option>
-<option>jokerman let</option>
-<option>kelt</option>
-<option>kids</option>
-<option>kino mt</option>
-<option>la bamba let</option>
-<option>lithograph</option>
-<option>lucida console</option>
-<option>map symbols</option>
-<option>marlett</option>
-<option>matteroffact</option>
-<option>matisse itc</option>
-<option>matura mt script capitals</option>
-<option>mekanik let</option>
-<option>monaco</option>
-<option>monospace</option>
-<option>monotype sorts</option>
-<option>ms linedraw</option>
-<option>new york</option>
-<option>olddreadfulno7 bt</option>
-<option>orange let</option>
-<option>palatino</option>
-<option>playbill</option>
-<option>pump demi bold let</option>
-<option>puppylike</option>
-<option>roland</option>
-<option>sans-serif</option>
-<option>scripts</option>
-<option>scruff let</option>
-<option>serif</option>
-<option>short hand</option>
-<option>signs normal</option>
-<option>simplex</option>
-<option>simpson</option>
-<option>stylus bt</option>
-<option>superfrench</option>
-<option>surfer</option>
-<option>swis721 bt</option>
-<option>swis721 blkoul bt</option>
-<option>symap</option>
-<option>symbol</option>
-<option>tahoma</option>
-<option>technic</option>
-<option>tempus sans itc</option>
-<option>terk</option>
-<option>times</option>
-<option selected="selected">times new roman</option>
-<option>trebuchet ms</option>
-<option>trendy</option>
-<option>txt</option>
-<option>verdana</option>
-<option>victorian let</option>
-<option>vineta bt</option>
-<option>vivian</option>
-<option>webdings</option>
-<option>wingdings</option>
-<option>western</option>
-<option>westminster</option>
-<option>westwood let</option>
-<option>wide latin</option>
-<option>zapfellipt bt</option>
-  
-  
-  </select>
-<input type="button" id="fontface" value="Set Font">  
-  
-<div Class="Property" id="Alignment">
-Alignment :
-</div>
-<div class="PropertyContent" id="AlignmentContent">
-<input type="button" id="Left" value="Left">
-<input type="button" id="Center" value="Center">
-<input type="button" id="Right" value="Right"><br>
-<input type="button" id="Whitespace" value="Whitespace">
-<input type="button" id="Linebreak" value="Linebreak">
-</div>
+	<h2><center>
+		Properties
+		</h2>
+	<!--Text Property Division starts here-->
+	<div id="textproperties"> 
+		
+		
+			<input type="button" id="FontInc" value="Size++">
+			<input type="button" id="Fontdec" value="Size--">
+			<!--input type="text" id="Fontval" value=s --><br>
+			<input type="button" id="Bold" value="B">
+			<input type="button" id="Italic" value="I" >
+			<input type="button" id="Underline" value="U">
+			<input type="button" id="Overline" value="O" >
+			<input type="button" id="Linethrough" value="T">
+			<br>
+			Font Color:
+			<br>
+			<div class="color-section" id="color-section">
+				<input type="button" id="color-changer" style="background-color:#000000; border:thin solid white;height:50px;width:50px;margin-left:5px;">	
+			</div>
+			Font Face:<br>
+			<select id="SelectFontFace">
+				<option>academy engraved let
+				<option>algerian
+				<option>amaze</option>
+				<option>arial</option>
+				<option>arial black</option>
+				<option>balthazar</option>
+				<option>bankgothic lt bt</option>
+				<option>bart</option>
+				<option>bimini</option>
+				<option>comic sans ms</option>
+				<option>book antiqua</option>
+				<option>bookman old style</option>
+				<option>braggadocio</option>
+				<option>britannic bold</option>
+				<option>brush script mt</option>
+				<option>century gothic</option>
+				<option>century schoolbook</option>
+				<option>chasm</option>
+				<option>chicago</option>
+				<option>colonna mt</option>
+				<option>comic sans ms</option>
+				<option>commercialscript bt</option>
+				<option>coolsville</option>
+				<option>courier</option>
+				<option>courier new</option>
+				<option>cursive</option>
+				<option>dayton</option>
+				<option>desdemona</option>
+				<option>fantasy</option>
+				<option>flat brush</option>
+				<option>footlight mt light</option>
+				<option>futurablack bt</option>
+				<option>futuralight bt</option>
+				<option>garamond</option>
+				<option>gaze</option>
+				<option>geneva</option>
+				<option>georgia</option>
+				<option>geotype tt</option>
+				<option>helterskelter</option>
+				<option>helvetica</option>
+				<option>herman</option>
+				<option>highlight let</option>
+				<option>impact</option>
+				<option>jester</option>
+				<option>joan</option>
+				<option>john handy let</option>
+				<option>jokerman let</option>
+				<option>kelt</option>
+				<option>kids</option>
+				<option>kino mt</option>
+				<option>la bamba let</option>
+				<option>lithograph</option>
+				<option>lucida console</option>
+				<option>map symbols</option>
+				<option>marlett</option>
+				<option>matteroffact</option>
+				<option>matisse itc</option>
+				<option>matura mt script capitals</option>
+				<option>mekanik let</option>
+				<option>monaco</option>
+				<option>monospace</option>
+				<option>monotype sorts</option>
+				<option>ms linedraw</option>
+				<option>new york</option>
+				<option>olddreadfulno7 bt</option>
+				<option>orange let</option>
+				<option>palatino</option>
+				<option>playbill</option>
+				<option>pump demi bold let</option>
+				<option>puppylike</option>
+				<option>roland</option>
+				<option>sans-serif</option>
+				<option>scripts</option>
+				<option>scruff let</option>
+				<option>serif</option>
+				<option>short hand</option>
+				<option>signs normal</option>
+				<option>simplex</option>
+				<option>simpson</option>
+				<option>stylus bt</option>
+				<option>superfrench</option>
+				<option>surfer</option>
+				<option>swis721 bt</option>
+				<option>swis721 blkoul bt</option>
+				<option>symap</option>
+				<option>symbol</option>
+				<option>tahoma</option>
+				<option>technic</option>
+				<option>tempus sans itc</option>
+				<option>terk</option>
+				<option>times</option>
+				<option selected="selected">times new roman</option>
+				<option>trebuchet ms</option>
+				<option>trendy</option>
+				<option>txt</option>
+				<option>verdana</option>
+				<option>victorian let</option>
+				<option>vineta bt</option>
+				<option>vivian</option>
+				<option>webdings</option>
+				<option>wingdings</option>
+				<option>western</option>
+				<option>westminster</option>
+				<option>westwood let</option>
+				<option>wide latin</option>
+				<option>zapfellipt bt</option>
+				  
+				  
+			</select>
+			<input type="button" id="fontface" value="Set Font">  
+			<div Class="Property" id="Alignment">
+				Alignment :
+			</div>
+			<div class="PropertyContent" id="AlignmentContent">
+				<input type="button" id="Left" value="Left">
+				<input type="button" id="Center" value="Center">
+				<input type="button" id="Right" value="Right"><br>
+				<input type="button" id="Whitespace" value="Whitespace">
+				<input type="button" id="Linebreak" value="Linebreak">
+			</div>
 
-<div Class="Property" id="Spacing">
-Spacing :</div>
-<div class="PropertyContent" id="SpacingContent">
-Line Spacing :
-<input type="button" id="LineInc" value="Increase">
-<input type="button" id="LineDec" value="Decrease">
-<br>
-Letter Spacing :
-<input type="button" id="LetterInc" value="Increase">
-<input type="button" id="LetterDec" value="Decrease">
-<br>
-Word Spacing :
-<input type="button" id="WordInc" value="Increase">
-<input type="button" id="WordDec" value="Decrease">
-</div>
+			<div Class="Property" id="Spacing">
+				Spacing :
+			</div>
+			<div class="PropertyContent" id="SpacingContent">
+				Line Spacing :
+				<input type="button" id="LineInc" value="Increase">
+				<input type="button" id="LineDec" value="Decrease">
+				<br>
+				Letter Spacing :
+				<input type="button" id="LetterInc" value="Increase">
+				<input type="button" id="LetterDec" value="Decrease">
+				<br>
+				Word Spacing :
+				<input type="button" id="WordInc" value="Increase">
+				<input type="button" id="WordDec" value="Decrease">
+			</div>
 
-<div class="Property" id="TextTransform">
-Text Tranformation :</div>
-<div class="PropertyContent" id="TextTransformContent">
+			<div class="Property" id="TextTransform">
+			Text Tranformation :
+			</div>
+			<div class="PropertyContent" id="TextTransformContent">
+				<input type="button" id="uppercase" value="Uppercase">
+				<input type="button" id="lowercase" value="Lowercase" ><br>
+				<input type="button" id="capitalize" value="Capitalize">
+				<input type="button" id="normal" value="normal">
+			</div>
 
-<input type="button" id="uppercase" value="Uppercase">
-<input type="button" id="lowercase" value="Lowercase" ><br>
-<input type="button" id="capitalize" value="Capitalize">
-<input type="button" id="normal" value="normal">
-</div>
+			<div class="Property" id="TextIndentation">
+			Text Indentation :
+			</div>
+			<div class="PropertyContent" id="TextIndentationContent">
 
-<div class="Property" id="TextIndentation">
-Text Indentation :</div>
-<div class="PropertyContent" id="TextIndentationContent">
+				<input type="button" id="TextIndentInc" value="Increase">
+				<input type="button" id="TextIndentDec" value="Decrease"><br>
 
-<input type="button" id="TextIndentInc" value="Increase">
-<input type="button" id="TextIndentDec" value="Decrease"><br>
+			</div>
 
-</div>
+			<div class="Property" id="TextDirection">
+			Text Direction :
+			</div>
+			<div class="PropertyContent" id="TextDirectionContent">
 
-<div class="Property" id="TextDirection">
-Text Direction :</div>
-<div class="PropertyContent" id="TextDirectionContent">
+				<input type="button" id="Right-Left" value="Right-Left">
+				<input type="button" id="Left-Right" value="Left-Right"><br>
 
-<input type="button" id="Right-Left" value="Right-Left">
-<input type="button" id="Left-Right" value="Left-Right"><br>
+			</div>
 
-</div>
+			<div class="Property" id="TextMargin">
+			Margin :
+			</div>
+			<div class="PropertyContent" id="TextMarginContent">
+				Left:-
+				<input type="button" id="TextMarginLeftInc" value="Increase">
+				<input type="button" id="TextMarginLeftDec" value="Decrease">
+				<br>
+				Right:-
+				<input type="button" id="TextMarginRightInc" value="Increase">
+				<input type="button" id="TextMarginRightDec" value="Decrease">
+				<br>
+				Top:-
+				<input type="button" id="TextMarginTopInc" value="Increase">
+				<input type="button" id="TextMarginTopDec" value="Decrease">
+				<br>
+				Bottom:-
+				<input type="button" id="TextMarginBottomInc" value="Increase">
+				<input type="button" id="TextMarginBottomDec" value="Decrease">
+				<br>
+			</div>
+			
+			<div class="Property" id="TextPadding">
+			Padding :
+			</div>
+			<div class="PropertyContent" id="TextPaddingContent">
+				Left:-
+				<input type="button" id="TextPaddingLeftInc" value="Increase">
+				<input type="button" id="TextPaddingLeftDec" value="Decrease">
+				<br>
+				Right:-
+				<input type="button" id="TextPaddingRightInc" value="Increase">
+				<input type="button" id="TextPaddingRightDec" value="Decrease">
+				<br>
+				Top:-
+				<input type="button" id="TextPaddingTopInc" value="Increase">
+				<input type="button" id="TextPaddingTopDec" value="Decrease">
+				<br>
+				Bottom:-
+				<input type="button" id="TextPaddingBottomInc" value="Increase">
+				<input type="button" id="TextPaddingBottomDec" value="Decrease">
+				<br>
+			</div>
 
-<div class="Property" id="Margin">
-Margin :</div>
-<div class="PropertyContent" id="MarginContent">
-
-<input type="button" id="Right-Left" value="Right-Left">
-<input type="button" id="Left-Right" value="Left-Right"><br>
-
-</div>
-
-<div class="Property" id="Shadow">
-Font Shadow :</div>
-<div class="PropertyContent" id="ShadowContent">
-<input type="button" id="AddShadow" value="Addshadow">
-<input type="button" id="RemoveShadow" value="Removeshadow">
-</div>
-<br>
-<input type="button" id="Reset" value="Reset">
-</div>
-
-
-
-
-
-</div>
-</div>
+			<div class="Property" id="Shadow">
+			Font Shadow :
+			</div>
+			<div class="PropertyContent" id="ShadowContent">
+				<input type="button" id="AddShadow" value="Addshadow">
+				<input type="button" id="RemoveShadow" value="Removeshadow">
+			</div>
+			<br>
+			
+			<input type="button" id="Reset" value="Reset Text">
+		
+	</div>
+	<!--Text Property Division ends here-->
+	
+	<!--Image Property Division Starts here-->
+	<div id="imageproperties"> 
+		<div Class="Property" id="ImageAlignment">
+				Alignment :
+			</div>
+			<div class="PropertyContent" id="ImageAlignmentContent">
+				<input type="button" id="ImageLeft" value="Left">
+				<input type="button" id="ImageMiddle" value="Middle">
+				<input type="button" id="ImageRight" value="Right"><br>
+				<input type="button" id="ImageTop" value="Top">
+				<input type="button" id="ImageBottom" value="Bottom">
+			</div>
+		
+			<div Class="Property" id="ImageSize">
+				Size :
+			</div>
+			<div class="PropertyContent" id="ImageSizeContent">
+				<input type="button" id="ImageHeightInc" value="Height++">
+				<input type="button" id="ImageWidthInc" value="Width++"><br>
+				<input type="button" id="ImageHeightDec" value="Height--">
+				<input type="button" id="ImageWidthDec" value="Width--">
+			</div>
+			
+			<div Class="Property" id="ImageSpace">
+				Spacing :
+			</div>
+			<div class="PropertyContent" id="ImageSpaceContent">
+				<input type="button" id="ImageHSpaceInc" value="H-Space ++">
+				<input type="button" id="ImageVSpaceInc" value="V-Space ++"><br>
+				<input type="button" id="ImageHSpaceDec" value="H-Space --">
+				<input type="button" id="ImageVSpaceDec" value="V-Space --">
+			</div>
+			
+			<div Class="Property" id="ImageSource">
+				Change Image :
+			</div>
+			<div class="PropertyContent" id="ImageSourceContent">
+				Image link
+				<input type="Text" id="ImageSourceText" placeholder="Url of Image"><br>
+				<input type="button" id="ImageSourceURLSet" value="Set Image"><br>
+				or upload from your computer <br>
+				<input type="Text" id="ImageSourceText" placeholder="Location on Computer">
+				<input type="button" id="ImageSourceBrowse" value="Browse">
+				<br>
+				<input type="button" id="ImageSourceLocalSet" value="Set Image">
+			</div>
+			
+			<div Class="Property" id="ImageBorder">
+				Border :
+			</div>
+			<div class="PropertyContent" id="ImageBorderContent">
+				<!--add color picker-->
+				<!--input type="button" id="ImageBorder" value="Set Border"--><br>
+				OPPS !! Sorry this section is Under construction 
+			</div>
+			
+			
+	</div>
+	<!--Image properties end here-->
+	
+	
+</div> <!--cssbox division ends here-->
 
 </body>
 
