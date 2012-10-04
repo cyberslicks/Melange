@@ -30,6 +30,12 @@ this.whitespace=-1;
 this.linebreak=-1;
 this.unicodebidi=-1; 
 this.textindent =1; 
+
+/*   dummy variable for color values   */
+this.dummy_var = null;
+
+
+
 /*calling the intializer foa all the attribute*/
 this.textSegmentTransitionInitializer();
 this.ImageSegmentTransitionInitializer();	
@@ -37,22 +43,26 @@ this.ImageSegmentTransitionInitializer();
 
 
 
-PropertyBox.prototype.refreshColorPicker = function(id) {					// for introducing dynamicity in binding color picker
+
+
+PropertyBox.prototype.refreshColorPicker = function(color_picker,id) {					// for introducing dynamicity in binding color picker
 	
 	/*color changer=the id of color of box shown*/
-	var colorpicker_id = $("#color-changer").data('colorpickerId');
+	var colorpicker_id = $("#"+color_picker).data('colorpickerId');
 	if(colorpicker_id) {
 		$("#"+colorpicker_id).remove();
-		$('#color-changer').removeData();
+		$('#'+color_picker).removeData();
 
 		}
 		var _color = document.getElementById(id).style.color;
-		document.getElementById("color-changer").style.backgroundColor = _color;
+		document.getElementById(color_picker).style.backgroundColor = _color;
 	
 }
 
 PropertyBox.prototype.colorPickerBinder = function(previewId,targetId,targetType) {
 			/*calling every time we use colorpicker*/
+			
+			var _colorValue = null;
 			
 		
 			$('#'+previewId).ColorPicker({
@@ -110,13 +120,15 @@ PropertyBox.prototype.colorPickerBinder = function(previewId,targetId,targetType
 				
 					
 					case 9:
-					document.getElementById(targetId).style.outlineColor='#'+hex;
+					document.getElementById('dummy').value='#'+hex;
 					break;
 				
 				}
 	        
 	        }
 	    });
+	    
+	    
 
 }
 
@@ -230,7 +242,7 @@ PropertyBox.prototype.colorPickerBinder = function(previewId,targetId,targetType
 		document.getElementById("Overline").onclick = $.proxy(function(){ this.setFontOverline(id);},this);
 		document.getElementById("Linethrough").onclick = $.proxy(function(){ this.setFontlinethrough(id);},this);
 
-		this.refreshColorPicker(id);
+		this.refreshColorPicker("color-changer",id);
 		this.colorPickerBinder("color-changer",id,1);
 
 		document.getElementById("fontface").onclick = $.proxy(function(){ this.setFontFace(id);},this);	
@@ -284,7 +296,7 @@ PropertyBox.prototype.colorPickerBinder = function(previewId,targetId,targetType
 		
 		
 		document.getElementById("Reset").onclick = $.proxy(function(){ this.setFontReset(id);},this);
-		
+				
 		}
 
 		// Text functions descriptions
@@ -709,6 +721,10 @@ PropertyBox.prototype.colorPickerBinder = function(previewId,targetId,targetType
 		document.getElementById("ImageVSpaceInc").onclick = $.proxy(function(){ this.increaseImageVSpace(id);},this);
 		document.getElementById("ImageVSpaceDec").onclick = $.proxy(function(){ this.decreaseImageVSpace(id);},this);
 		
+		this.refreshColorPicker("border-color",id);
+		this.colorPickerBinder("border-color",id,9);
+		document.getElementById("image-border").onclick = $.proxy(function(){ this.setImageBorder(id);},this);
+
 		
 		
 		}
@@ -842,6 +858,23 @@ PropertyBox.prototype.colorPickerBinder = function(previewId,targetId,targetType
 		document.getElementById(id).src="image.jpg";
 		
 		}
+		
+		//border
+		
+		
+		PropertyBox.prototype.setImageBorder =function(id)
+		{
+		var ele = document.getElementById('image-border-style');
+		var border_type = ele.options[ele.selectedIndex].text;
+		document.getElementById(id).style.border = document.getElementById('image-border-width').value+"px "+border_type+" "+document.getElementById('dummy').value;
+		
+		
+		//alert(document.getElementById('dummy').value+"~~"+document.getElementById('image-border-width').value);
+		
+		}
+		
+		
+		
 		
 		
 //Image segment ends here

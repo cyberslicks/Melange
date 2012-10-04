@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<head>
+
+<title>drag-test</title>
+
+
+
+<link rel="stylesheet" type="text/css" href="./styles/jquery-ui.css"/>
+<link rel="stylesheet" type="text/css" href="./styles/colorpicker.css"/>
+<link rel="stylesheet" type="text/css" href="./styles/surface.css"/>
+<link rel="stylesheet" type="text/css" href="./styles/propertybox.css"/>
+<!-- toolbar css -->
+<style type="text/css">
+#box
+{
+opacity:0.8;
+background-color:black;
+height:100%;
+width:20px;
+left:0%;
+position:fixed;
+top:0px;
+color:white;
+
+}
+#btxt
+{
+text-decoration:blink;
+margin-top:300px;
+color:#33ADFF;
+-webkit-transform:rotate(-90deg);
+-moz-transform:rotate(-90deg);
+-o-transform: rotate(-90deg);
+}
+#toolbox{
+opacity:0.8;
+background-color:black;
+height:100%;
+width:50px;
+display:none;
+z-index:999;
+position:fixed;
+top:0px;
+left:20px;
+color:white;
+}
+.tool
+{
+width:50px;
+height:49px;
+background:green;
+border:1px solid;
+border-radius:2px;
+border-color:black;
+}
+</style>
+
+
+
+
+
+<script src="./js/modernizr.js"></script>
+<script src="./js/jquery.js"></script>
+<script src="./js/jquery-ui-1.js"></script>
+<script src="./js/rotate.js"></script>
+<script src="./js/colorpicker.js"></script>
+<script src="./js/propertybox.js"></script>
+<script src="./js/surfaceDND.js"></script>
+
+<!--<script src="./js/dnd.js"></script> -->
+
+<script type="text/javascript" >
+ 
+// $(document).ready(function() {
+$(function() {
+
+$("#box").mouseover(function(){
+$("#toolbox").animate({
+      width:'toggle'
+	  });
+});
+
+// alert("ok");
+ var surface = new Surface();
+ surface.eventBinder();
+ surface.createObject("img",{src:"images/browsers/safari.png",height:"200px",width:"300px"});
+ surface.createObject('button',{height:"50px",width:"200px"});
+ //surface.createObject("aside",{name:"lol"});
+ //surface.createObject("aside",{name:"lol"});
+ 
+document.getElementById('but').onclick = $.proxy(function() {surface.createObject('aside');},this);
+
+
+
+ var dustbin = new Dustbin();
+ dustbin.eventBinder();
+ 
+/*   varunda's toolbar   */
+
+
+});
+
+// varunda's toolbar
+
+//var surface1 = new Surface();
+
+var surface = new Surface();
+ surface.eventBinder();
+
+
+
+function tool(c)
+{
+//this.state.c=1;
+this.id = c;
+var object = $("#"+ this.id);
+this.state=1;
+this.height = object.height();
+this.width = object.width();
+//alert(this.height);
+alloff();
+var obj1=new sel(c);
+var obj2=new imag(c);
+var obj3=new but(c);
+var obj4=new log(c);
+var obj5=new nav(c);
+var obj6=new sea(c);
+var obj7=new boxx(c);
+var obj8=new txt(c);
+var obj9=new a(c);
+var obj10=new b(c);
+var obj11=new c1(c);
+var obj12=new d(c);
+var obj13=new e(c);
+}
+function alloff()
+{
+document.getElementById("sel").style.opacity=1.0;
+document.getElementById("imag").style.opacity=1.0;
+document.getElementById("new_button").style.opacity=1.0;
+document.getElementById("log").style.opacity=1.0;
+document.getElementById("nav").style.opacity=1.0;
+document.getElementById("sea").style.opacity=1.0;
+document.getElementById("boxx").style.opacity=1.0;
+document.getElementById("txt").style.opacity=1.0;
+document.getElementById("a").style.opacity=1.0;
+document.getElementById("b").style.opacity=1.0;
+document.getElementById("c1").style.opacity=1.0;
+document.getElementById("d").style.opacity=1.0;
+document.getElementById("e").style.opacity=1.0;
+
+}
+function sel(o)
+{
+if(o=="sel")
+document.getElementById(o).style.opacity=0.6;
+}
+function but(o)
+{
+if(o=="new_button")
+{document.getElementById(o).style.opacity=0.6;
+
+
+ surface.createObject('button',{height:"50px",width:"200px"});
+
+
+}
+}
+function imag(o)
+{
+if(o=="imag")
+document.getElementById(o).style.opacity=0.6;
+
+}
+function log(o)
+{
+if(o=="log")
+document.getElementById(o).style.opacity=0.6;
+
+}
+function nav(o)
+{
+if(o=="nav")
+document.getElementById(o).style.opacity=0.6;
+
+}
+function sea(o)
+{
+if(o=="sea")
+document.getElementById(o).style.opacity=0.6;
+
+}
+function boxx(o)
+{
+if(o=="boxx")
+document.getElementById(o).style.opacity=0.6;
+
+}
+function txt(o)
+{
+if(o=="txt")
+document.getElementById(o).style.opacity=0.6;
+
+}
+function a(o)
+{
+if(o=="a")
+document.getElementById(o).style.opacity=0.6;
+
+}
+function b(o)
+{
+if(o=="b")
+document.getElementById(o).style.opacity=0.6;
+
+}
+function c1(o)
+{
+if(o=="c1")
+document.getElementById(o).style.opacity=0.6;
+
+}
+function d(o)
+{
+if(o=="d")
+document.getElementById(o).style.opacity=0.6;
+
+}
+function e(o)
+{
+if(o=="e")
+document.getElementById(o).style.opacity=0.6;
+
+}
+
+
+
+
+
+
+
+</script>
+
+
+</head>
+<body>
+<section id="surface">
+<!--<aside id="dragme" draggable="true">Hey there ,move me !
+</aside>-->
+</section>
+<button id="but">new aside</button>
+<img id="dustbin" src="./images/dbin.png">
+
+<!--  property box -->
+
+<div class="cssbox" id="cssbox"	>
+<div id="textproperties">
+<h2><center>
+Properties
+</h2>
+<div id="text">
+<input type="button" id="FontInc" value="Size++">
+<input type="button" id="Fontdec" value="Size--">
+<!--input type="text" id="Fontval" value=s --><br>
+<input type="button" id="Bold" value="B">
+<input type="button" id="Italic" value="I" >
+<input type="button" id="Underline" value="U">
+<input type="button" id="Overline" value="O" >
+<input type="button" id="Linethrough" value="T">
+<br>
+Font Color:
+<br>
+<div class="color-section" id="color-section">
+	<input type="button" id="color-changer" style="background-color:#000000; border:thin solid white;height:50px;width:50px;margin-left:5px;">	
+</div>
+Font Face:<br>
+<select id="SelectFontFace">
+ <option>academy engraved let
+<option>algerian
+<option>amaze</option>
+<option>arial</option>
+<option>arial black</option>
+<option>balthazar</option>
+<option>bankgothic lt bt</option>
+<option>bart</option>
+<option>bimini</option>
+<option>comic sans ms</option>
+<option>book antiqua</option>
+<option>bookman old style</option>
+<option>braggadocio</option>
+<option>britannic bold</option>
+<option>brush script mt</option>
+<option>century gothic</option>
+<option>century schoolbook</option>
+<option>chasm</option>
+<option>chicago</option>
+<option>colonna mt</option>
+<option>comic sans ms</option>
+<option>commercialscript bt</option>
+<option>coolsville</option>
+<option>courier</option>
+<option>courier new</option>
+<option>cursive</option>
+<option>dayton</option>
+<option>desdemona</option>
+<option>fantasy</option>
+<option>flat brush</option>
+<option>footlight mt light</option>
+<option>futurablack bt</option>
+<option>futuralight bt</option>
+<option>garamond</option>
+<option>gaze</option>
+<option>geneva</option>
+<option>georgia</option>
+<option>geotype tt</option>
+<option>helterskelter</option>
+<option>helvetica</option>
+<option>herman</option>
+<option>highlight let</option>
+<option>impact</option>
+<option>jester</option>
+<option>joan</option>
+<option>john handy let</option>
+<option>jokerman let</option>
+<option>kelt</option>
+<option>kids</option>
+<option>kino mt</option>
+<option>la bamba let</option>
+<option>lithograph</option>
+<option>lucida console</option>
+<option>map symbols</option>
+<option>marlett</option>
+<option>matteroffact</option>
+<option>matisse itc</option>
+<option>matura mt script capitals</option>
+<option>mekanik let</option>
+<option>monaco</option>
+<option>monospace</option>
+<option>monotype sorts</option>
+<option>ms linedraw</option>
+<option>new york</option>
+<option>olddreadfulno7 bt</option>
+<option>orange let</option>
+<option>palatino</option>
+<option>playbill</option>
+<option>pump demi bold let</option>
+<option>puppylike</option>
+<option>roland</option>
+<option>sans-serif</option>
+<option>scripts</option>
+<option>scruff let</option>
+<option>serif</option>
+<option>short hand</option>
+<option>signs normal</option>
+<option>simplex</option>
+<option>simpson</option>
+<option>stylus bt</option>
+<option>superfrench</option>
+<option>surfer</option>
+<option>swis721 bt</option>
+<option>swis721 blkoul bt</option>
+<option>symap</option>
+<option>symbol</option>
+<option>tahoma</option>
+<option>technic</option>
+<option>tempus sans itc</option>
+<option>terk</option>
+<option>times</option>
+<option selected="selected">times new roman</option>
+<option>trebuchet ms</option>
+<option>trendy</option>
+<option>txt</option>
+<option>verdana</option>
+<option>victorian let</option>
+<option>vineta bt</option>
+<option>vivian</option>
+<option>webdings</option>
+<option>wingdings</option>
+<option>western</option>
+<option>westminster</option>
+<option>westwood let</option>
+<option>wide latin</option>
+<option>zapfellipt bt</option>
+  
+  
+  </select>
+<input type="button" id="fontface" value="Set Font">  
+  
+<div Class="Property" id="Alignment">
+Alignment :
+</div>
+<div class="PropertyContent" id="AlignmentContent">
+<input type="button" id="Left" value="Left">
+<input type="button" id="Center" value="Center">
+<input type="button" id="Right" value="Right"><br>
+<input type="button" id="Whitespace" value="Whitespace">
+<input type="button" id="Linebreak" value="Linebreak">
+</div>
+
+<div Class="Property" id="Spacing">
+Spacing :</div>
+<div class="PropertyContent" id="SpacingContent">
+Line Spacing :
+<input type="button" id="LineInc" value="Increase">
+<input type="button" id="LineDec" value="Decrease">
+<br>
+Letter Spacing :
+<input type="button" id="LetterInc" value="Increase">
+<input type="button" id="LetterDec" value="Decrease">
+<br>
+Word Spacing :
+<input type="button" id="WordInc" value="Increase">
+<input type="button" id="WordDec" value="Decrease">
+</div>
+
+<div class="Property" id="TextTransform">
+Text Tranformation :</div>
+<div class="PropertyContent" id="TextTransformContent">
+
+<input type="button" id="uppercase" value="Uppercase">
+<input type="button" id="lowercase" value="Lowercase" ><br>
+<input type="button" id="capitalize" value="Capitalize">
+<input type="button" id="normal" value="normal">
+</div>
+
+<div class="Property" id="TextIndentation">
+Text Indentation :</div>
+<div class="PropertyContent" id="TextIndentationContent">
+
+<input type="button" id="TextIndentInc" value="Increase">
+<input type="button" id="TextIndentDec" value="Decrease"><br>
+
+</div>
+
+<div class="Property" id="TextDirection">
+Text Direction :</div>
+<div class="PropertyContent" id="TextDirectionContent">
+
+<input type="button" id="Right-Left" value="Right-Left">
+<input type="button" id="Left-Right" value="Left-Right"><br>
+
+</div>
+
+<div class="Property" id="Margin">
+Margin :</div>
+<div class="PropertyContent" id="MarginContent">
+
+<input type="button" id="Right-Left" value="Right-Left">
+<input type="button" id="Left-Right" value="Left-Right"><br>
+
+</div>
+
+<div class="Property" id="Shadow">
+Font Shadow :</div>
+<div class="PropertyContent" id="ShadowContent">
+<input type="button" id="AddShadow" value="Addshadow">
+<input type="button" id="RemoveShadow" value="Removeshadow">
+</div>
+<br>
+<input type="button" id="Reset" value="Reset">
+</div>
+
+
+
+
+
+</div>
+</div>
+
+<!-- toolbar -->
+
+<div id="box"><div id="btxt"><h1><b>TOOLBAR</b></h1></div></div>
+<div class="toolbox" id="toolbox"	>
+<div class="tool" align="center" id="sel" onclick=tool("sel")>Sel</div>
+<div class="tool" align="center" id="imag" onclick=tool("imag")>Img</div>
+<div class="tool" align="center" id="new_button" onclick=tool("new_button")>But</div>
+<div class="tool" align="center" id="log" onclick=tool("log")>Log</div>
+<div class="tool" align="center" id="nav" onclick=tool("nav")>Nav</div>
+<div class="tool" align="center" id="sea" id="" onclick=tool("sea")>Sea</div>
+<div class="tool" align="center" id="boxx" onclick=tool("boxx")>Box</div>
+<div class="tool" align="center" id="txt" onclick=tool("txt")>Txt</div>
+<div class="tool" align="center" id="a"  onclick=tool("a")>A</div>
+<div class="tool" align="center" id="b" onclick=tool("b")>B</div>
+<div class="tool" align="center" id="c1" onclick=tool("c1")>C1</div>
+<div class="tool" align="center" id="d" onclick=tool("d")>D</div>
+<div class="tool" align="center" id="e" onclick=tool("e")>E</div>
+</div>
+
+
+
+</body>
+
+
+
+
+</html>

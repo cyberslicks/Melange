@@ -87,8 +87,8 @@ document.getElementById('but').onclick = $.proxy(function() {surface.createObjec
 			</center>
 			Font Face:<br>
 			<select id="SelectFontFace">
-				<option>academy engraved let
-				<option>algerian
+				<option>academy engraved let</option>
+				<option>algerian</option>
 				<option>amaze</option>
 				<option>arial</option>
 				<option>arial black</option>
@@ -358,17 +358,38 @@ document.getElementById('but').onclick = $.proxy(function() {surface.createObjec
 				Border :
 			</div>
 			<div class="PropertyContent" id="ImageBorderContent">
-				<center>
-				<!--add color picker-->
-				<!--input type="button" id="ImageBorder" value="Set Border"--><br>
-				OPPS !! Sorry this section is Under construction 
-			</div>
+				
+				<input type="button" id="border-color" style="background-color:#000000; border:thin solid white;height:50px;width:50px;margin-left:5px;">
+				&nbsp; &nbsp;
+				
+				<select id="image-border-style">
+				
+				<option>none</option>
+				<option>hidden</option>
+				<option>dotted</option>
+				<option>dashed</option>
+				<option>solid</option>
+				<option>double</option>
+				<option>groove</option>
+				<option>ridge</option>
+				<option>inset</option>
+				<option>outset</option>
+				</select>
+				<br><br>
+				<input type="range" id="image-border-width" min="1" max="20" width="100px" value="0">
+				<br>
+				
+				
+				<input type="button" class="propbutton" id="image-border" value="set">
+				
+				
+							</div>
 	</div>
 	<!--Image properties end here-->
 	
 	
 </div> <!--cssbox division ends here-->
-
+<input type="hidden" id="dummy" name="hidden" value="#000000">
 </body>
 
 
