@@ -22,11 +22,6 @@ overflow: scroll;
 	
 }
 
-#imageproperties{
-
-	display:none;
-}
-
 .Fontval{
 height:20px;
 width:20px;
@@ -45,7 +40,7 @@ border:solid 1px #c3c3c3;
 padding:5px;
 display:none;
 }
-#TextTransformContent,#AlignmentContent,#ImageAlignmentContent,#ImageSpaceContent
+#TextTransformContent,#AlignmentContent
 {
 text-align:center;
 }

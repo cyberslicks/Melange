@@ -254,4 +254,16 @@ class oAuthLogin
 	
 }
 
+?>ILTER_SANITIZE_EMAIL);
+			 $userData['id'] = $user['id'];
+			return $userData;
+			
+			
+		}
+			
+	}
+	
+	
+}
+
 ?>
