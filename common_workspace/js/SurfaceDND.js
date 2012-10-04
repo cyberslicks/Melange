@@ -369,6 +369,8 @@ Surface.deleteObject = function(id) {
 	
 	
 	document.getElementById(Surface.id).removeChild(document.getElementById(id)); 		// object deleted
+	Surface.propertyPane.hidePropertyBox();
+	
 	//$('#dustbin').effect("shake", { times:5 }, 5); 
 	
 	/*animation*/

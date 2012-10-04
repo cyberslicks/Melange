@@ -142,6 +142,7 @@ PropertyBox.prototype.colorPickerBinder = function(previewId,targetId,targetType
 			
 			/*hiding the different property boxes*/
 			$('#textproperties').hide();
+			$('#imageproperties').hide();
 			$('#'+this.id).hide();
 			
 			
@@ -192,6 +193,13 @@ PropertyBox.prototype.colorPickerBinder = function(previewId,targetId,targetType
 			$("#TextTransformContent").hide();
 			$("#AlignmentContent").hide();
 			$("#TextDirectionContent").hide();
+			
+			$("#ImageAlignmentContent").hide();
+			$("#ImageSizeContent").hide();
+			$("#ImageSpaceContent").hide();				
+			$("#ImageBorderContent").hide()
+				
+
 			
 			
 		}
@@ -672,28 +680,16 @@ PropertyBox.prototype.colorPickerBinder = function(previewId,targetId,targetType
 			
 		}
 
-		PropertyBox.prototype.hidePropertyBox = function() {
+		PropertyBox.prototype.hideImageProperties = function() {
 			
-			/*hiding the different property boxes*/
+			
 			$('#imageproperties').hide();
-			$('#'+this.id).hide();
+			
 			
 			
 		}
 		
-		PropertyBox.prototype.refreshimagePropertyPane = function() {
-			
-					
-		}
 
-
-		PropertyBox.prototype.imagepropertyBoxTransition = function() {
-			
-			//this.hidePropertyBox();
-			this.refreshimagePropertyPane();
-			$('#'+this.id).fadeIn(300);
-		}
-		
 		
 		PropertyBox.prototype.imagePropertiesBinder = function(id) {
 			
@@ -851,14 +847,14 @@ PropertyBox.prototype.colorPickerBinder = function(previewId,targetId,targetType
 //Image segment ends here
 PropertyBox.prototype.clickResponder = function(id) {
 	
-this.hidePropertyBox();
+//this.hidePropertyBox();
 this.propertyBoxTransition();
 var type = document.getElementById(id).type;
 
 
 if(type!='img') 
 {
-
+this.hideImageProperties();
 this.textPropertiesBinder(id);
 this.showTextProperties();
 
@@ -866,9 +862,11 @@ this.showTextProperties();
 
 else
 {
+
 this.hideTextProperties();
 this.imagePropertiesBinder(id);
 this.showImageProperties();
+
 }
 
 
