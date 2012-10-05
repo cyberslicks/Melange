@@ -328,6 +328,8 @@ background-color: #ff5c00;
 
 #page-footer section {
 	text-align: center;
+	text-shadow: 5px 4px 10px black;
+	
 }
 #page-footer ul {
 	margin-left:30%;
