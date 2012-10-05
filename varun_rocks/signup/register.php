@@ -2,7 +2,8 @@
 	
 	
 	require_once ('../mysqli_connect.php'); // Connect to the db.
-		
+	//session_start();
+    
 	$errors = array(); // Initialize an error array.
 	if (empty($_POST['first'])) {
 		$errors[] = 'You forgot to enter your last name.';
@@ -55,7 +56,7 @@
 		
 			// Print a message:
 			echo '<h1>Thank you!</h1>
-		<p>You are now registered. In Chapter 11 you will actually be able to log in!</p><p><br /></p>';	
+		<p>You are now registered. </p><p><br /></p>';	
 		
 		} else { // If it did not run OK.
 			

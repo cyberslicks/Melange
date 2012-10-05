@@ -8,7 +8,7 @@ www.buildinternet.com / www.onemightyroar.com
 <html>
 	<head>
 		<title>Sliding Boxes and Captions with JQuery</title>
-		
+		<link rel="stylesheet" type="text/css" href="passchk.css" />
 		<style type="text/css">
 		
 			*{ padding:0px; margin:0px; }
@@ -69,40 +69,49 @@ www.buildinternet.com / www.onemightyroar.com
 			margin-left:20px;
 			}
 body{
-background:#a1a1a1;
+background:#e1e1e1;
 }
 #div1
 {
 
 width:400px;
 height:900px;
-background:black;
+background:rgb(245,245,247);
 margin-left:800px;
 margin-top:10px;
 opacity:0.8;
-color:white;
+color:rgb(53,54,57);
 border-radius:7px;
 box-shadow: 4px 0px 5px 5px #777777;
 }	
 #head{
 width:400px;
 height:50px;
-background:#2b414f;
+background:#7ebef3;
 color:#fefefe;
 border: 1px;
 border-radius:7px;
+border-bottom-right-radius:0px;
+border-bottom-left-radius:0px;
 border-shadow:2px 3px 3px #425564;
 
 }
 #forall{
 position:absolute;
 margin-left:10px;
+font-family:Century Gothic,Sans-Serif;
+font-weight:bold;
 
 }
 #mst{
 width:800px;
 height:0%;
 background:red;
+}
+input[type="text"]
+{
+width:150px;
+height:23px;
 }
 #header
 {
@@ -133,21 +142,29 @@ background:#00aadf;
 #field,#field1,#field2,#field3,#field4
 {
 position:relative;
-margin-left:10px;}
+margin-left:10px;
+outline:none;
+
+}
 
 #field:hover,#field1:hover,#field2:hover,#field3:hover,#field4:hover,#field5:hover,#field6:hover
 {
-border:2px solid;
-border-color:#818181;
-background:#a1a1a1;
+background:#e5f2fe;
+border :1px thin ;
+border-color:#2de321;
 
+outline:none;
 }
-#demo,#demo2,#demo3,#demo4,#demo5
+#demo,#demo2,#demo3,#demo4,#demo5,#demo7
 {
 margin-left:10px;
 font-weight:bold;
-
+font-family:Helvetica;
 }
+#txtCaptcha{
+	height:50px;
+	font-size:1.4em;
+	}
 
 		</style>
 		<script type="text/javascript" src="signup.js"></script>
@@ -198,10 +215,10 @@ font-weight:bold;
 		</script>
 		
 	</head>
-	<body>
+	<body onload="DrawCaptcha()">
 	
 	<div id="header"><div id="text">Melange</div>
-	<div id="again" align="center"><p style="margin-top:10px">Sign Up</p></div>
+	<div id="again" align="center"><p style="margin-top:10px;">Sign Up</p></div>
 	</div>
 	<p style="margin-top:10px;margin-left:50px;font-weight:bold;">Create a new Melange Account</p>
 	<div id="mst">
@@ -244,8 +261,9 @@ font-weight:bold;
 			<p id="text">Hello </p>
 </div>
 	<div id="div1">
-<div id="head" ><p id="forall">Sign up with Melange</p></div>
-<form  name="signupform" id="sign" action="signup.php" method="post" >
+<div id="head" ><p id="forall" style="font-size:1.3em; margin-top:10px;position:absolute;">Sign up with Melange</p></div>
+
+<form  name="signupform" id="sign" action="register.php" onsubmit="return allval()" method="post" >
 </br>
 <b><p id="forall" >Name*</p></b></br>
 <input type="text" placeholder="First" name="first" id="field" size="15" onblur="fname()"  value="<?php if (isset($_POST['first'])) echo $_POST['first']; ?>"/>
@@ -255,7 +273,7 @@ font-weight:bold;
 <input type="text"  name="username" size="25px" value="<?php if (isset($_POST['username'])) echo $_POST['username']; ?>" placeholder="varun.malhotra" id="field2" onblur="uname()"/>@melange.com<br/>
 <p id="demo2"></p></br>
 <p id="forall">Create a password</p><br/>
-<input type="password" name="pass1" id="field3" onblur="passw1()">
+<input type="password" name="pass1" id="field3" onblur="passw1()" onkeypress="passwordStrength(this.value,document.getElementById('field3'))"/> <img src="#"></img>
 <p id="demo3"></p>
 <br/></br>
 <p id="forall">Confirm your password</p><br/>
@@ -289,15 +307,20 @@ font-weight:bold;
 <option value="" selected="selected">I'm</option>
 </select>
 </br></br>
-<label for="security_code" id="forall">Security Code Verification: </label></br>
-<img src="CaptchaSecurityImages.php?width=100&height=40&characters=5" id="imag" style="margin-left:10px;"/></br></br>
-<input id="security_code" name="security_code" type="text"  style="margin-left:10px;" />
+<label for="txtInput" id="forall">Security Code Verification: </label></br>
+<input type="text" id="txtCaptcha" 
+            style="background-image:url(1.jpg); text-align:center; border:none;
+            font-weight:bold; font-family:Modern,font-size:1.5em;font-family:Helvetica;margin-left:10px;" />
+        <input type="button" id="btnrefresh" value="Refresh" onclick="DrawCaptcha();" /></br></br>
+  
+		<input id="txtInput" name="txtInput" type="text"  style="margin-left:10px;" onblur="chkcap()"/>
+<p id="demo7"></p>
 		
 		
 <br/><br/>
 <input type="checkbox" name="tc" value="tc" id="field"  />  I agree to the Melange <a href="#">Terms of service</a> and <a href="#">Privacy Policy</a><br />
-</br></br><input type="submit" value="submit" onclick="allval()" style="margin-left:10px;" />
-<input type="hidden" name="submitted" />
+</br></br><input type="submit" value="submit"  style="margin-left:10px;" />
+
 </form>
 
 </div>
