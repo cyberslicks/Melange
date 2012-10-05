@@ -155,7 +155,7 @@ PropertyBox.prototype.colorPickerBinder = function(previewId,targetId,targetType
 			/*hiding the different property boxes*/
 			$('#textproperties').hide();
 			$('#imageproperties').hide();
-			$('#'+this.id).hide();
+			$('#'+this.id).fadeOut('slow');
 			
 			
 		}

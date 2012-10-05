@@ -114,7 +114,9 @@ this.id = "surface";
 this.idPrefix="sobj";
 this.idNumber=1;
 
-this.leftOffset = $('#'+this.id).offset().left;
+
+this.leftOffset = document.getElementById(this.id).style.marginLeft + document.getElementById(this.id).style.paddingLeft;
+//this.leftOffset = $('#'+this.id).offset().left;
 this.topOffset  = $('#'+this.id).offset().top;
 
 
@@ -123,7 +125,7 @@ this.width = $('#'+this.id).width();
 this.height = $('#'+this.id).height();
 
 
-this.rightBoundry = parseInt(this.leftOffset,10) + parseInt(this.width,10);
+this.rightBoundry = $('#'+this.id).offset().left + parseInt(this.width,10);
 this.bottomBoundry = parseInt(this.topOffset,10) + parseInt(this.height,10);
 
 this.propertyPane = new PropertyBox('cssbox');
@@ -402,6 +404,7 @@ Surface.deleteObject = function(id) {
 function Dustbin() {
 	
 	this.name = "dustbin";
+	this.eventBinder();
 	
 	
 };
