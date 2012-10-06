@@ -59,7 +59,7 @@ xmlhttp.onreadystatechange=function()
     document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
     }
   }
-xmlhttp.open("GET","search_ajax.php?q="+str,true);
+xmlhttp.open("GET","useravail.php?username="+str,true);
 xmlhttp.send();
 }
 </script>
