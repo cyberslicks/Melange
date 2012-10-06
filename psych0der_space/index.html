@@ -11,9 +11,9 @@
 <link rel="stylesheet" type="text/css" href="./styles/propertybox.css"/>
 
 <script src="./js/modernizr.js"></script>
-<script src="./js/jquery.js"></script>
+<script src="./js/jquery-old.js"></script>
+<script src="./js/jquery.transit.js"></script>
 <script src="./js/jquery-ui-1.js"></script>
-<script src="./js/rotate.js"></script>
 <script src="./js/colorpicker.js"></script>
 <script src="./js/propertybox.js"></script>
 <script src="./js/toolbar.js"></script>
@@ -38,15 +38,24 @@
 
 <body>
 
-
+<div style="overflow:hidden;">
 
 <header id="main-header">
           <div class="wrap">
+               <div id="back-arrow">
+               <img src="./images/left.png" id="left">
+               </div>
                
                <div id="user">Welcome User!</div>
                &nbsp;&nbsp;
                <button id="mybutton">settings</button>
-               <span id="info">User-info</span>
+               <div id="info">
+               <section >
+               User-info 
+               </section>
+	               &nbsp; &nbsp;
+               <img src="./images/cogs.png" id="cogs"> 
+               </div>
           </div>
      </header>
 	
@@ -56,7 +65,7 @@
 <section id="toolbar">
 
 <div id="toolbar-icon">
-<img id="icon" src="./images/property.png">
+<img id="switch-icon" src="./images/switch-off.png">
 </div>
 
 <div id="vertical-list">
@@ -82,8 +91,12 @@
 		
 </div>	
 </div>
-</section>
 
+<div id="trash">
+<img id="dustbin" src="./images/trash-empty.png">
+</div>
+
+</section>
 
 
 
@@ -94,20 +107,28 @@
 </aside>-->
 </section>
 
-<section id="trash">
-<img id="dustbin" src="./images/trash1.png">
-</section>
+<!--<section id="trash">
+<img id="dustbin" src="./images/trashcan.png">
+</section> -->
 
 
 <!--  property box -->
 
 <div class="cssbox" id="cssbox"	>
+<div id="lock">
+<img src="./images/lock.png" id="lock-img">
+</div>
 	<h2><center>
 		Properties
 		</h2>
+		
 	<!--Text Property Division starts here-->
 	<div id="textproperties"> 
-		
+		<div Class="Property" id="font">
+			  Font :
+			</div>
+			<div class="PropertyContent" id="FontContent">
+			
 			<center>
 			<input type="button" class="propbutton" id="FontInc" value="Size++">
 			<input type="button" class="propbutton" id="Fontdec" value="Size--">
@@ -237,6 +258,32 @@
 				  
 			</select>
 			<input type="button" class="propbutton" id="fontface" value="Set Font">  
+			</div>
+			
+			<div Class="Property" id="bg-color">
+				Background-color :
+			</div><center>
+			<div class="PropertyContent" id="background-color">
+			
+			<input type="button" id="bgcolor-changer" style="background-color:#000000; border:thin solid white;height:50px;width:50px;margin-left:5px;">
+			
+			</div>
+			</center>
+			
+			<div Class="Property" id="textPreview">
+				Text :
+			</div>
+			<div class="PropertyContent" id="textContent">
+			<p id="text-preview" contenteditable="true" style="overflow:scroll; height:200px; width:250px;border:1px solid #bbbbbb;"></p>
+			<center>
+			<input type="button" class="propbutton" id="text-update" value="update">			
+			</div>
+			</center>
+			
+			
+			
+			
+			
 			<div Class="Property" id="Alignment">
 				Alignment :
 			</div><center>
@@ -347,7 +394,40 @@
 				<input type="button" class="propbutton" id="AddShadow" value="Addshadow">
 				<input type="button" class="propbutton" id="RemoveShadow" value="Removeshadow">
 			</div>
-			<br>
+			
+			
+			<div Class="Property" id="TextBorder">
+				Border :
+			</div>
+			<div class="PropertyContent" id="TextBorderContent">
+				
+				<input type="button" id="text-border-color" style="background-color:#000000; border:thin solid white;height:50px;width:50px;margin-left:5px;">
+				&nbsp; &nbsp;
+				
+				<select id="text-border-style">
+				
+				<option>none</option>
+				<option>hidden</option>
+				<option>dotted</option>
+				<option>dashed</option>
+				<option>solid</option>
+				<option>double</option>
+				<option>groove</option>
+				<option>ridge</option>
+				<option>inset</option>
+				<option>outset</option>
+				</select>
+				<br><br>
+				<input type="range" id="text-border-width" min="1" max="20" width="100px" value="0">
+				<br>
+				
+				
+				<input type="button" class="propbutton" id="text-border" value="set">
+				
+				
+				</div>
+			</center>
+			</br>
 			
 			<input type="button" class="propbutton" id="Reset" value="Reset Text">
 		
@@ -442,7 +522,7 @@ copyright &copy; Melange 2012
 </footer>
 
 
-
+</div>
 
 </body>
 

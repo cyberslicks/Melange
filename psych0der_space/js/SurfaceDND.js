@@ -115,8 +115,8 @@ this.idPrefix="sobj";
 this.idNumber=1;
 
 
-this.leftOffset = document.getElementById(this.id).style.marginLeft + document.getElementById(this.id).style.paddingLeft;
-//this.leftOffset = $('#'+this.id).offset().left;
+//this.leftOffset = document.getElementById(this.id).style.marginLeft + document.getElementById(this.id).style.paddingLeft;
+this.leftOffset = $('#'+this.id).offset().left;
 this.topOffset  = $('#'+this.id).offset().top;
 
 
@@ -292,6 +292,8 @@ Surface.prototype.createObject = function(type,args) {
 	
 	newElement.draggable = "true";
 	
+	newElement.locked = 1;
+	
 	
 	newElement.style.position = "absolute";
 	
@@ -373,32 +375,22 @@ Surface.deleteObject = function(id) {
 	document.getElementById(Surface.id).removeChild(document.getElementById(id)); 		// object deleted
 	Surface.propertyPane.hidePropertyBox();
 	
-	//$('#dustbin').effect("shake", { times:5 }, 5); 
+/* animation */
+	(function(){
+		
+		$("#dustbin").transition({ rotate: '30deg' },30,'snap');
+		$("#dustbin").transition({ rotate: '-60deg' },30,'snap');
+		$("#dustbin").transition({ rotate: '0deg' },30,'snap'); 
+		
+		
 	
-	/*animation*/
-	//$('#dustbin').rotate(40);
-/*	(function(){
-		
-		
-		$("#dustbin").animate({ 
-           webkikTransform:rotate(40)
-        }, 600).animate({ 
-          webkitTransform:rotate(-40)
-        }, 600).animate({ 
-            webkitTransform:rotate(-40)
-            
-        }, 600).animate({ 
-           webkitTransform:rotate(40)
-        }, 600); 
-     
-		
 		
 	
 	
 	
 	})();
 
-*/	
+	
 };
 
 function Dustbin() {

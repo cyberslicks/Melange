@@ -4,12 +4,27 @@ function Toolbar(surface) {
 this.toggleBinder();	
 this.surfaceObject = surface;	
 this.clickBinder();
+document.getElementById('switch-icon').value= -1;
 	
 }
 
 Toolbar.prototype.toggleBinder = function() {
 	
 	$("#toolbar-icon").click(function(){
+	
+	if(document.getElementById('switch-icon').value==1)
+	{
+		document.getElementById('switch-icon').src = "./images/switch-off.png";
+		document.getElementById('switch-icon').value = -1;
+		
+	}
+	else
+	{
+		document.getElementById('switch-icon').src = "./images/switch-on.png";
+		document.getElementById('switch-icon').value= 1;
+	}
+	
+	
 	$("#vertical-list").fadeToggle("10");
 			  });
 	

@@ -30,6 +30,7 @@ this.whitespace=-1;
 this.linebreak=-1;
 this.unicodebidi=-1; 
 this.textindent =1; 
+this.lockState = 1;
 
 /*   dummy variable for color values   */
 this.dummy_var = null;
@@ -42,11 +43,117 @@ this.ImageSegmentTransitionInitializer();
 }
 
 
-
-
-
-PropertyBox.prototype.refreshColorPicker = function(color_picker,id) {					// for introducing dynamicity in binding color picker
+PropertyBox.prototype.changeLockState = function(id) {
 	
+	
+	var obj = document.getElementById(id);
+
+
+	//alert(element);
+	if(obj.locked == 1)
+	{
+		
+		document.getElementById('lock-img').src="./images/unlock.png";
+		this.lockState = -1;
+		
+		
+		
+		$('#'+id).resizable({ stop: $.proxy(function(event,ui) {
+				
+				var surface = $('#surface');
+				//alert(ui.width);
+				var element = $('#'+event.target.id);
+				if(ui.position.left + ui.size.width > parseInt(surface.width(),10) + 18)
+				{
+					
+					//ui.size.width = surface.width() - ui.position.left;
+					element.width(surface.width() - ui.position.left+18);
+				}
+				
+				if(ui.position.top + ui.size.height > parseInt(surface.height(),10) + 18)
+				{
+										//ui.size.width = surface.width() - ui.position.left;
+					element.height(surface.height() - ui.position.top+18);
+				}
+				
+				//alert(Surface.parent.id);
+				
+				
+			},this) }); // jquery-ui dependency: resizing function
+			//newElement.contentEditable="true";
+
+		obj.setAttribute('draggable', 'false');
+		obj.locked=-1;
+		
+		if(obj.type !='img')
+		{
+			obj.setAttribute('contentEditable', 'true');
+			
+		}
+		
+		
+		
+	}
+	
+	else {
+		
+		document.getElementById('lock-img').src="./images/lock.png";
+		this.lockState = 1;
+		obj.setAttribute('draggable', 'true');
+		obj.locked = 1;
+		$("#"+id).resizable('destroy');
+		obj.removeAttribute('contenteditable');
+		
+		if(obj.type !='img')
+		{
+			obj.setAttribute('contentEditable', 'false');
+			
+		}
+
+		
+	}
+	
+	
+}
+
+PropertyBox.prototype.updateLock  = function(id) {
+	
+	
+	if(document.getElementById(id).locked ==1)
+	{
+		
+		this.lockStatus = 1;
+		document.getElementById('lock-img').src="./images/lock.png";
+		
+		
+	}
+	
+	else 
+	{
+		
+		this.lockStatus = -1;
+		document.getElementById('lock-img').src="./images/unlock.png";
+		
+		
+	}
+	
+	
+	
+}
+
+
+PropertyBox.prototype.bindLock = function (id)
+{
+
+document.getElementById("lock").onclick = $.proxy(function(){ this.changeLockState(id);},this);
+
+
+}
+
+
+PropertyBox.prototype.refreshColorPicker = function(color_picker,id,type) {					// for introducing dynamicity in binding color picker
+	
+	type= type || -1;
 	/*color changer=the id of color of box shown*/
 	var colorpicker_id = $("#"+color_picker).data('colorpickerId');
 	if(colorpicker_id) {
@@ -55,6 +162,7 @@ PropertyBox.prototype.refreshColorPicker = function(color_picker,id) {					// fo
 
 		}
 		var _color = document.getElementById(id).style.color;
+		if(type==1)
 		document.getElementById(color_picker).style.backgroundColor = _color;
 	
 }
@@ -163,6 +271,19 @@ PropertyBox.prototype.colorPickerBinder = function(previewId,targetId,targetType
 		PropertyBox.prototype.textSegmentTransitionInitializer = function() {
 
 				
+			  
+			  $("#font").click(function(){
+				$("#FontContent").slideToggle("slow");
+			  });
+			   
+			  $("#bg-color").click(function(){
+				$("#background-color").slideToggle("slow");
+			  });
+			  
+			  $("#textPreview").click(function(){
+				$("#textContent").slideToggle("slow");
+			  });
+			  
 			  $("#Spacing").click(function(){
 				$("#SpacingContent").slideToggle("slow");
 			  });
@@ -194,6 +315,11 @@ PropertyBox.prototype.colorPickerBinder = function(previewId,targetId,targetType
 			  $("#TextPadding").click(function(){
 				$("#TextPaddingContent").slideToggle("slow");
 			  });
+			  
+			  $("#TextBorder").click(function(){
+				$("#TextBorderContent").slideToggle("slow");
+			  });
+			  
 			
 		}
 
@@ -205,6 +331,12 @@ PropertyBox.prototype.colorPickerBinder = function(previewId,targetId,targetType
 			$("#TextTransformContent").hide();
 			$("#AlignmentContent").hide();
 			$("#TextDirectionContent").hide();
+			$("#TextBorderContent").hide();
+			$("#background-color").hide();
+			$("#textContent").hide();
+			$("#fontContent").hide();
+			$("#textContent").hide();
+			
 			
 			$("#ImageAlignmentContent").hide();
 			$("#ImageSizeContent").hide();
@@ -242,10 +374,19 @@ PropertyBox.prototype.colorPickerBinder = function(previewId,targetId,targetType
 		document.getElementById("Overline").onclick = $.proxy(function(){ this.setFontOverline(id);},this);
 		document.getElementById("Linethrough").onclick = $.proxy(function(){ this.setFontlinethrough(id);},this);
 
-		this.refreshColorPicker("color-changer",id);
+		this.refreshColorPicker("color-changer",id,1);
 		this.colorPickerBinder("color-changer",id,1);
+		
+		this.refreshColorPicker("bgcolor-changer",id,2);
+		this.colorPickerBinder("bgcolor-changer",id,2);
+		
+		
 
 		document.getElementById("fontface").onclick = $.proxy(function(){ this.setFontFace(id);},this);	
+		
+		document.getElementById("text-update").onclick = $.proxy(function(){ this.updateText(id);},this);
+
+		
 
 		document.getElementById("Left").onclick = $.proxy(function(){ this.setFontAlignLeft(id);},this);
 		document.getElementById("Center").onclick = $.proxy(function(){ this.setFontAlignCenter(id);},this);	
@@ -295,6 +436,12 @@ PropertyBox.prototype.colorPickerBinder = function(previewId,targetId,targetType
 		document.getElementById("TextPaddingBottomDec").onclick = $.proxy(function(){ this.TextPaddingBottomDecrease(id);},this);
 		
 		
+		this.refreshColorPicker("text-border-color",id,9);
+		this.colorPickerBinder("text-border-color",id,9);
+		document.getElementById("text-border").onclick = $.proxy(function(){ this.setTextBorder(id);},this);
+
+		
+		
 		document.getElementById("Reset").onclick = $.proxy(function(){ this.setFontReset(id);},this);
 				
 		}
@@ -304,6 +451,7 @@ PropertyBox.prototype.colorPickerBinder = function(previewId,targetId,targetType
 
 		 
 		   var p = document.getElementById(id);
+		   
 		   
 		 
 			  if(p.style.fontSize) {
@@ -419,6 +567,23 @@ PropertyBox.prototype.colorPickerBinder = function(previewId,targetId,targetType
 		  
 
 		}  
+		
+		
+		
+		PropertyBox.prototype.updatePreview = function(id) {
+			
+			
+			document.getElementById('text-preview').innerHTML = document.getElementById(id).innerHTML;
+			
+		}
+		
+		PropertyBox.prototype.updateText = function(id) {
+			
+			
+			document.getElementById(id).innerHTML = document.getElementById('text-preview').innerHTML;
+		}
+		
+		
 		  
 		//alignment control  
 		PropertyBox.prototype.setFontAlignCenter =function(id)
@@ -665,6 +830,25 @@ PropertyBox.prototype.colorPickerBinder = function(previewId,targetId,targetType
 			document.getElementById(id).style.textShadow="none";
 		}
 
+
+		PropertyBox.prototype.setTextBorder =function(id)
+		{
+		var ele = document.getElementById('text-border-style');
+		var border_type = ele.options[ele.selectedIndex].text;
+		document.getElementById(id).style.border = document.getElementById('text-border-width').value+"px "+border_type+" "+document.getElementById('dummy').value;
+		
+		
+		//alert(document.getElementById('dummy').value+"~~"+document.getElementById('image-border-width').value);
+		
+		}
+
+
+
+
+
+
+
+
 		//reset button
 
 		PropertyBox.prototype.setFontReset = function(id) 
@@ -721,7 +905,7 @@ PropertyBox.prototype.colorPickerBinder = function(previewId,targetId,targetType
 		document.getElementById("ImageVSpaceInc").onclick = $.proxy(function(){ this.increaseImageVSpace(id);},this);
 		document.getElementById("ImageVSpaceDec").onclick = $.proxy(function(){ this.decreaseImageVSpace(id);},this);
 		
-		this.refreshColorPicker("border-color",id);
+		this.refreshColorPicker("border-color",id,9);
 		this.colorPickerBinder("border-color",id,9);
 		document.getElementById("image-border").onclick = $.proxy(function(){ this.setImageBorder(id);},this);
 
@@ -880,7 +1064,9 @@ PropertyBox.prototype.colorPickerBinder = function(previewId,targetId,targetType
 //Image segment ends here
 PropertyBox.prototype.clickResponder = function(id) {
 	
-//this.hidePropertyBox();
+	
+this.bindLock(id);
+this.updateLock(id);
 this.propertyBoxTransition();
 var type = document.getElementById(id).type;
 
@@ -890,6 +1076,7 @@ if(type!='img')
 this.hideImageProperties();
 this.textPropertiesBinder(id);
 this.showTextProperties();
+this.updatePreview(id);
 
 }
 

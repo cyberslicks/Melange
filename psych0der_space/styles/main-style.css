@@ -20,7 +20,11 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 
 /***********************/
 
+body {
+
+
 	
+}	
 
 	.wrap {
 		position:relative;
@@ -43,19 +47,50 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 		/*background:rgba(7,164,249,0.84);*/
 		background: rgba(21,15,15,0.83);
 		padding-left: 20px;
-		
+		padding-bottom: 0px;
 		box-shadow: 2px 6px 8px 6px black;
 		/*border: 1px solid rgba(255, 255, 255, 0.1);*/
 		margin-bottom: 30px;
 	
 		}
 		
+		#left{
+			
+			float:left;
+			margin-top:-5px;
+			margin-left:-75px;
+		}
+		
 		#info {
 			right:0px;
 			position: absolute;
-			margin-top: -18px;
+			margin-top: -20px;
 			
 		}	
+		
+		#info section {
+			
+			float:left;
+		}
+		#cogs {
+			
+			margin-left:50px;
+			margin-top:-5px;
+		}
+		
+		
+		#user {
+			float: left;
+			margin-right:10px;
+		}
+		#mybutton {
+			
+			margin-top:-5px;
+			float:left;
+			
+		}
+		
+		
 	
 	
 	
@@ -88,22 +123,22 @@ body {
 	
 	float:left;
 	width: 140px;
-	margin-left: 15px;
+	margin-left: 8px;
 	margin-right:-10px;
 	
 }
 
 #surface {
 	
-	margin-left:15px;
+	margin-left:5px;
 	
 	border: 0px solid black;
 	
-	width:850px;
-	height: 570px;
+	width:860px;
+	height: 550px;
 	display: inline-block;
 	
-	float: left;
+	/*float: left;*/
 	box-shadow: 13px 10px 12px black;
 	
 	
@@ -129,15 +164,23 @@ body {
 #trash {
 	
 	
-	margin-left:30px;
-	padding-top:550px;
+	top:525px;
+	margin-left:10px;
+	position: absolute;
+	
 }
 
+#trash img {
+	width: 100px;
+	height: 100px;
+}
 
 
 #tool-bar {
 	
 	padding:10px;
+	margin-left: 10px;
+	
 }
 #toolbar-icon img{
 	
@@ -312,6 +355,7 @@ background-color: #ff5c00;
 
 #page-footer {
 	
+	display: block;
 	clear:both;
 	margin-top: 100px;
 	border-top:2px solid rgba(167,167,167,0.71);
