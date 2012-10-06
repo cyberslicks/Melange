@@ -48,6 +48,7 @@ font-family: 'Proxima-Nova-1', Proxima Nova, Myriad Pro, Arial, sans-serif;
 *font-size:small; 
 -webkit-font-smoothing: antialiased;
 color: #666;
+background:black;
 overflow-x: hidden;
 /*padding-top: 70px;*/
 }

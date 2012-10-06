@@ -3,27 +3,30 @@ width:200px;
 float:left;
 height:70px;
 background:black;
-margin-left:5px;
+/*margin-left:5px;*/
 top:0;
 background:black;
+outline: 1px #ffffff solid;
 }
 
 .header{
+margin-top:1px;
 margin-left:150px;
+margin-bottom:1px;
 background:black;
 }
 
 .headertile:hover{
-outline: 1px #ffffff solid;
-background:white;
-opacity:0.3;
+
+background:#37b8de;
+opacity:0.9;
 }
 
 #heading 
 {
-color:#D9D9D9;
+color:white;
 margin:25px 10px 10px 40px;
-
+font:Times New Roman, serif;
 }
 
 #heading:hover{
