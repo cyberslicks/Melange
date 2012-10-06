@@ -49,7 +49,7 @@ font-family: 'Proxima-Nova-1', Proxima Nova, Myriad Pro, Arial, sans-serif;
 -webkit-font-smoothing: antialiased;
 color: #666;
 overflow-x: hidden;
-padding-top: 70px;
+/*padding-top: 70px;*/
 }
 
 select, input, textarea, button { font:99% sans-serif; }
@@ -560,7 +560,7 @@ footer .social .facebook:hover span{background-position: -161px -238px;}
 {
 	#background: #1c1d21;
 	background: rgba( 0,0,0,0.15 );
-	margin-top: 33px;
+	margin-top: 0px;
 	padding: 25px 0 10px 0;
 	
 	border-top: 1px solid rgba( 255,255,255,0.05 );
