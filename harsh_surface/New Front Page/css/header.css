@@ -1,7 +1,7 @@
 .headertile{
 width:200px;
 float:left;
-height:70px;
+height:40px;
 background:black;
 /*margin-left:5px;*/
 top:0;
@@ -25,7 +25,7 @@ opacity:0.9;
 #heading 
 {
 color:white;
-margin:25px 10px 10px 40px;
+margin:5px 10px 10px 40px;
 font:Times New Roman, serif;
 }
 

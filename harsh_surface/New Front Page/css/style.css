@@ -116,7 +116,7 @@ html
 }
 
 .welcome h1
-{
+{ color:white; /*the color of melange*/
 	font-size: 187px;
 	text-transform: uppercase;
 	line-height: 218px;
