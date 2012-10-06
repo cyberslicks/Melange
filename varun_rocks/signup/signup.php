@@ -73,7 +73,7 @@ www.buildinternet.com / www.onemightyroar.com
 {
 
 width:400px;
-height:900px;
+height:920px;
 background:rgb(245,245,247);
 margin-left:800px;
 margin-top:10px;
@@ -85,7 +85,7 @@ box-shadow: 4px 0px 15px 5px #000000;
 #head{
 width:400px;
 height:50px;
-background:#7ebef3;
+background: #7ebef3;
 color:#fefefe;
 border: 1px;
 border-radius:7px;
@@ -182,11 +182,11 @@ font-family:Helvetica;
 	border: 1px solid rgba(0,0,0,0.5);
 	border-bottom: 3px solid rgba(0,0,0,0.5);
 	
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
 	
-	background: rgba(0	,178,	238,0.8);
+	background: #7ebef3;
 
     -o-box-shadow: 
         0 2px 8px rgba(0,0,0,0.5),
@@ -217,7 +217,7 @@ font-family:Helvetica;
         inset 0 -15px 30px rgba(0,0,0,0.3); /* Dark Background */
 
 	margin: 20px;
-	opacity:0.9;
+	opacity:1.0;
 	display: inline-block;
 	text-decoration: none;
 }
@@ -267,7 +267,37 @@ font-family:Helvetica;
 			});
 			
 			
+function showCustomer(str)
+{
+var xmlhttp;    
+if (str=='')
+  {
+  document.getElementById("demo2").innerHTML="";
+  //alert("l");
+  return;
+  }
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
 
+xmlhttp.onreadystatechange=function()
+  {//alert("2");
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {//alert("3");
+    document.getElementById("demo2").innerHTML=xmlhttp.responseText;
+    }
+  }
+xmlhttp.open("GET","useravail.php?username="+str,true);
+xmlhttp.send();
+var c=document.getElementById("demo2").innerHTML;
+if(c=="available")
+{document.getElementById("im").style.background=" url(img/ok-icon.png)";
+document.getElementById("im").innerHTML="kya";
+}
+else if(c=="")
+document.getElementById("im").style.background=" url()";
+}
 		</script>
 		
 	</head>
@@ -326,8 +356,8 @@ font-family:Helvetica;
 <input type="text" placeholder="Last" name="last" id="field1" onblur="lname()" value="<?php if (isset($_POST['last'])) echo $_POST['last']; ?>"/>
 <p id="demo"></p></br>
 <p id="forall">Choose your username</p><br/>
-<input type="text"  name="username" size="25px" value="<?php if (isset($_POST['username'])) echo $_POST['username']; ?>" placeholder="varun.malhotra" id="field2" onblur="uname()"/>@melange.com<br/>
-<p id="demo2"></p></br>
+<input type="text"  name="username" size="25px" value="<?php if (isset($_POST['username'])) echo $_POST['username']; ?>" placeholder="varun.malhotra" id="field2" onblur="uname()" onkeyup="showCustomer(this.value)"/>@melange.com<br/>
+<p id="demo2"></p><p id="im"></p></br>
 <p id="forall">Create a password</p><br/>
 <input type="password" name="pass1" id="field3" onblur="passw1()" onkeypress="passwordStrength(this.value,document.getElementById('field3'))"/> <div id="im"></div>
 <p id="demo3"></p>
