@@ -68,9 +68,7 @@ www.buildinternet.com / www.onemightyroar.com
 			color:white;
 			margin-left:20px;
 			}
-body{
-background:#e1e1e1;
-}
+
 #div1
 {
 
@@ -79,10 +77,10 @@ height:900px;
 background:rgb(245,245,247);
 margin-left:800px;
 margin-top:10px;
-opacity:0.8;
+opacity:1.0;
 color:rgb(53,54,57);
 border-radius:7px;
-box-shadow: 4px 0px 5px 5px #777777;
+box-shadow: 4px 0px 15px 5px #000000;
 }	
 #head{
 width:400px;
@@ -147,13 +145,15 @@ outline:none;
 
 }
 
-#field:hover,#field1:hover,#field2:hover,#field3:hover,#field4:hover,#field5:hover,#field6:hover
+#field:hover,#field1:hover,#field2:hover,#field4:hover,#field5:hover,#field6:hover
 {
-background:#e5f2fe;
-border :1px thin ;
-border-color:#2de321;
+background:#DDE5FF;/*#e5f2fe*/
+border :2px solid #7094FF;
 
 outline:none;
+}
+#field3:hover{
+border :2px solid #7094FF;
 }
 #demo,#demo2,#demo3,#demo4,#demo5,#demo7
 {
@@ -165,6 +165,62 @@ font-family:Helvetica;
 	height:50px;
 	font-size:1.4em;
 	}
+#btnrefresh {
+	font-family: 'PT Sans', arial, serif;
+	color:#ffffff;
+	text-align:center;
+	font-size:16px;
+	font-weight:bold;
+	padding:5px;
+	
+	text-shadow: /* Simulating Text Stroke */
+        -1px -1px 0 #000, 
+        1px -1px 0 #000, 
+        -1px 1px 0 #000, 
+        1px 1px 0 #000;
+	
+	border: 1px solid rgba(0,0,0,0.5);
+	border-bottom: 3px solid rgba(0,0,0,0.5);
+	
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	
+	background: rgba(0	,178,	238,0.8);
+
+    -o-box-shadow: 
+        0 2px 8px rgba(0,0,0,0.5),
+        inset 0 1px rgba(255,255,255,0.3),
+        inset 0 10px rgba(255,255,255,0.2),
+        inset 0 10px 20px rgba(255,255,255,0.25),
+        inset 0 -15px 30px rgba(0,0,0,0.3);
+
+    -webkit-box-shadow: 
+        0 2px 8px rgba(0,0,0,0.5),
+        inset 0 1px rgba(255,255,255,0.3),
+        inset 0 10px rgba(255,255,255,0.2),
+        inset 0 10px 20px rgba(255,255,255,0.25),
+        inset 0 -15px 30px rgba(0,0,0,0.3);
+
+    -moz-box-shadow:
+        0 2px 8px rgba(0,0,0,0.5),
+        inset 0 1px rgba(255,255,255,0.3),
+        inset 0 10px rgba(255,255,255,0.2),
+        inset 0 10px 20px rgba(255,255,255,0.25),
+        inset 0 -15px 30px rgba(0,0,0,0.3);
+	
+	box-shadow: 
+        0 2px 8px rgba(0,0,0,0.5), /* Exterior Shadow */
+        inset 0 1px rgba(255,255,255,0.3), /* Top light Line */
+        inset 0 10px rgba(255,255,255,0.2), /* Top Light Shadow */
+        inset 0 10px 20px rgba(255,255,255,0.25), /* Sides Light Shadow */
+        inset 0 -15px 30px rgba(0,0,0,0.3); /* Dark Background */
+
+	margin: 20px;
+	opacity:0.9;
+	display: inline-block;
+	text-decoration: none;
+}
 
 		</style>
 		<script type="text/javascript" src="signup.js"></script>
@@ -215,7 +271,7 @@ font-family:Helvetica;
 		</script>
 		
 	</head>
-	<body onload="DrawCaptcha()">
+	<body  background="img/images.jpg"  onload="DrawCaptcha()">
 	
 	<div id="header"><div id="text">Melange</div>
 	<div id="again" align="center"><p style="margin-top:10px;">Sign Up</p></div>
@@ -273,7 +329,7 @@ font-family:Helvetica;
 <input type="text"  name="username" size="25px" value="<?php if (isset($_POST['username'])) echo $_POST['username']; ?>" placeholder="varun.malhotra" id="field2" onblur="uname()"/>@melange.com<br/>
 <p id="demo2"></p></br>
 <p id="forall">Create a password</p><br/>
-<input type="password" name="pass1" id="field3" onblur="passw1()" onkeypress="passwordStrength(this.value,document.getElementById('field3'))"/> <img src="#"></img>
+<input type="password" name="pass1" id="field3" onblur="passw1()" onkeypress="passwordStrength(this.value,document.getElementById('field3'))"/> <div id="im"></div>
 <p id="demo3"></p>
 <br/></br>
 <p id="forall">Confirm your password</p><br/>
@@ -318,8 +374,8 @@ font-family:Helvetica;
 		
 		
 <br/><br/>
-<input type="checkbox" name="tc" value="tc" id="field"  />  I agree to the Melange <a href="#">Terms of service</a> and <a href="#">Privacy Policy</a><br />
-</br></br><input type="submit" value="submit"  style="margin-left:10px;" />
+<input type="checkbox" name="tc" value="tc" id="field"  />  I agree to the Melange <a href="#">Terms of service</a> and <a href="#">Privacy Policy</a>
+<input type="submit" value="Submit"  id="btnrefresh" style="margin-left:10px;" />
 
 </form>
 

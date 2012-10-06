@@ -32,6 +32,9 @@ if (password.length > 12) score++;
 
 if (password.length==0) score=0;
 //passwordStrength.innerHTML = desc[score];
+if (score==5)
+{//document.getElementById("im").style.background="background-image:url('thumb-up.jpg')";
+}
 passwordStrength.className = "strength" + score;
 }
 function chkcap()
@@ -40,13 +43,14 @@ var x=document.forms["signupform"]["txtInput"].value;
 if (x=="")
   {
   document.getElementById("demo7").style.color="#ff7f81";
-  document.getElementById("txtInput").style.borderColor="#ff7f81";
+  document.getElementById("txtInput").style.border="2px solid #ff7f81";
+  document.getElementById("txtInput").style.border="1px thin";
   document.getElementById("demo7").innerHTML="Fill captcha";
   return 1;
   }
 else
 {document.getElementById("demo7").innerHTML="";
-document.getElementById("txtInput").style.borderColor="#ffffff";
+document.getElementById("txtInput").style.borderColor="#7094FF";
 return 0;}
 }
 function fname()
@@ -54,13 +58,13 @@ function fname()
 if (x=="")
   {
   document.getElementById("demo").style.color="#ff7f81";
-  document.getElementById("field").style.borderColor="#ff7f81";
+  document.getElementById("field").style.border="2px solid #ff7f81";
   document.getElementById("demo").innerHTML="Fill ur name";
   return 1;
   }
 else
 {document.getElementById("demo").innerHTML="";
-document.getElementById("field").style.borderColor="#ffffff";
+document.getElementById("field").style.borderColor="#7094FF";
 return 0;}  
 }
 /*
@@ -80,12 +84,13 @@ function lname()
 if (y=="")
   {
   document.getElementById("demo").style.color="#ff7f81";
-  document.getElementById("field1").style.borderColor="#ff7f81";
+  document.getElementById("field1").style.border="2px solid #ff7f81";
+  
   document.getElementById("demo").innerHTML="Fill ur name";
   return 1;}
 else
 {document.getElementById("demo").innerHTML="";
-document.getElementById("field1").style.borderColor="#ffffff";
+document.getElementById("field1").style.borderColor="#7094FF";
 return 0;}  
 }
 function uname()
@@ -93,12 +98,12 @@ function uname()
 if (z=="")
   {
   document.getElementById("demo2").style.color="#ff7f81";
-  document.getElementById("field2").style.borderColor="#ff7f81";
+  document.getElementById("field2").style.border="2px solid #ff7f81";
   document.getElementById("demo2").innerHTML="Fill ur username";
   return 1;}
  else
 {document.getElementById("demo2").innerHTML="";
-document.getElementById("field2").style.borderColor="#ffffff";
+document.getElementById("field2").style.borderColor="#7094FF";
 return 0;}  
 }
 function passw1()
@@ -106,12 +111,12 @@ function passw1()
 if (a=="")
   {
   document.getElementById("demo3").style.color="#ff7f81";
-  document.getElementById("field3").style.borderColor="#ff7f81";
+  document.getElementById("field3").style.border="2px solid #ff7f81";
   document.getElementById("demo3").innerHTML="Fill ur password";
   return 1;}
  else
 {document.getElementById("demo3").innerHTML="";
-document.getElementById("field3").style.borderColor="#ffffff";
+document.getElementById("field3").style.borderColor="#7094FF";
 return 0;}  
 }
 function passw2()
@@ -120,7 +125,7 @@ function passw2()
 if (b=="")
   {
    document.getElementById("demo4").style.color="#ff7f81";
-  document.getElementById("field4").style.borderColor="#ff7f81";
+  document.getElementById("field4").style.border="2px solid #ff7f81";
   document.getElementById("demo4").innerHTML="Confirm password !";
   return 1;
   }
@@ -129,14 +134,14 @@ if (b=="")
 if (b!=a)
 {
   document.getElementById("demo4").style.color="#ff7f81";
-  document.getElementById("field3").style.borderColor="#ff7f81";
-  document.getElementById("field4").style.borderColor="#ff7f81";
+  document.getElementById("field3").style.border="2px solid #ff7f81";
+  document.getElementById("field4").style.border="2px solid #ff7f81";
   document.getElementById("demo4").innerHTML="Password must be same";
   return 1;}
  
 else
  {document.getElementById("demo4").innerHTML="";
- document.getElementById("field4").style.borderColor="#ffffff";
+ document.getElementById("field4").style.borderColor="#7094FF";
   return 0; 
  }
  }
@@ -154,12 +159,12 @@ var d=document.forms["signupform"]["day"].value;
 if(d=="")
 {
    document.getElementById("demo5").style.color="#ff7f81";
-  document.getElementById("field5").style.borderColor="#ff7f81";
+  document.getElementById("field5").style.border="2px solid #ff7f81";
   document.getElementById("demo5").innerHTML="Fill your date !";
   return 1;}
  else
  {document.getElementById("demo5").innerHTML="";
- document.getElementById("field5").style.borderColor="#ffffff";
+ document.getElementById("field5").style.borderColor="#7094FF";
  return 0;}
 }
 function chkyear()
@@ -169,12 +174,12 @@ if(d=="")
 
 {
    document.getElementById("demo5").style.color="#ff7f81";
-  document.getElementById("field6").style.borderColor="#ff7f81";
+  document.getElementById("field6").style.border="2px solid #ff7f81";
   document.getElementById("demo5").innerHTML="Fill your date";
   return 1;}
  else
  {document.getElementById("demo5").innerHTML="";
- document.getElementById("field6").style.borderColor="#ffffff";
+ document.getElementById("field6").style.borderColor="#7094FF";
  return 0;}
 }
 function chkgen()
@@ -213,7 +218,7 @@ function DrawCaptcha()
         if (str1 == str2) return true;        
         else
 		{document.getElementById("demo7").style.color="#ff7f81";
-		 document.getElementById("txtInput").style.borderColor="#ff7f81";
+		 document.getElementById("txtInput").style.border="2px solid #ff7f81";
 		 document.getElementById("demo7").innerHTML="Captcha didn't match";
 		 return false;
         }
