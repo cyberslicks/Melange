@@ -62,6 +62,20 @@ www.buildinternet.com / www.onemightyroar.com
  					top: 220;
  					left: 0;
  				}
+#hea{
+background:rgb(207,211,210);
+width:100%;
+height:200px;
+margin-top:0px;
+margin-left:0px;
+}
+#bel{
+background:rgb(69,188,210);
+width:100%;
+height:900px;
+margin-top:0px;
+margin-left:0px;
+}
 			#text{
 			position:absolute;
 			margin-top:20px;
@@ -72,18 +86,19 @@ www.buildinternet.com / www.onemightyroar.com
 #div1
 {
 
-width:400px;
+width:500px;
 height:920px;
 background:rgb(245,245,247);
-margin-left:800px;
-margin-top:10px;
+margin-left:430px;
+margin-top:70px;
 opacity:1.0;
 color:rgb(53,54,57);
 border-radius:7px;
+position:absolute;
 box-shadow: 4px 0px 15px 5px #000000;
 }	
 #head{
-width:400px;
+width:500px;
 height:50px;
 background: #7ebef3;
 color:#fefefe;
@@ -117,7 +132,7 @@ margin-left:0px;
 margin-top:0px;
 width:99.7%;
 height:70px;
-background:black;
+background:rgb(240,240,240);
 color:white;
 
 opacity:0.8;
@@ -301,58 +316,23 @@ document.getElementById("im").style.background=" url()";
 		</script>
 		
 	</head>
-	<body  background="img/images.jpg"  onload="DrawCaptcha()">
+	<body   style="background: rgb(199,202,201);"  onload="DrawCaptcha()">
 	
-	<div id="header"><div id="text">Melange</div>
-	<div id="again" align="center"><p style="margin-top:10px;">Sign Up</p></div>
-	</div>
-	<p style="margin-top:10px;margin-left:50px;font-weight:bold;">Create a new Melange Account</p>
-	<div id="mst">
-			<div class="boxgrid captionfull">
-				<img src="jareck.jpg"/>
-				<div class="cover boxcaption">
-					<h3>Jarek Kubicki</h3>
-					<p>Artist<br/><a href="http://www.nonsensesociety.com/2009/03/art-by-jarek-kubicki/" target="_BLANK">More Work</a></p>
-				</div>
-					
-			</div>
-			<div class="boxgrid caption">
-				<img src="kamil.jpg"/>
-				<div class="cover boxcaption">
-					<h3>Kamil Smala</h3>
-					<p>Artist<br/><a href="http://www.nonsensesociety.com/2009/03/the-art-of-kamil-smala/" target="_BLANK">More Work</a></p>
-				</div>
-			</div>
-				
-			<div class="boxgrid slideright">
-				<img class="cover" src="martin.jpg"/>
-				<h3>Martin Stranka</h3>
-				<p>Photographer<br/><a href="http://www.nonsensesociety.com/2009/03/photography-by-martin-stranka/" target="_BLANK">More Work</a></p>
-			</div>
-			<div class="boxgrid thecombo">
-				<img class="cover" src="florian.jpg"/>
-				<h3>Florian Nicolle</h3>
-				<p>Graphic Designer<br/><a href="http://www.nonsensesociety.com/2009/03/portrait-week-florian-nicolle/" target="_BLANK">More Work</a></p>
-			</div>
-			
-			<div class="boxgrid slidedown">
-				<img class="cover" src="nonsense.jpg"/>
-					<h3>The Nonsense Society</h3>
-					<p>Art, Music, Word<br/><a href="http://www.nonsensesociety.com" target="_BLANK">Website</a></p>	
-			</div>
-			<div class="boxgrid peek">
-				<a href="http://feeds2.feedburner.com/buildinternet" target="_BLANK"><img src="birss.jpg"/></a>
-				<a href="http://www.buildinternet.com" target="_BLANK"><img class="cover" src="buildinternet.jpg"/></a>
-			</div>
-			<p id="text">Hello </p>
-</div>
+	
+	<div id="hea">
+	
+	<p style="margin-top:10px;margin-left:50px;font-weight:bold;font-family:Brush script MT;
+font-size:4.0em;
+font-weight:1.2em;color:black">Create a new Melange Account</p>
+	
+	
 	<div id="div1">
 <div id="head" ><p id="forall" style="font-size:1.3em; margin-top:10px;position:absolute;">Sign up with Melange</p></div>
 
 <form  name="signupform" id="sign" action="register.php" onsubmit="return allval()" method="post" >
 </br>
 <b><p id="forall" >Name*</p></b></br>
-<input type="text" placeholder="First" name="first" id="field" size="15" onblur="fname()"  value="<?php if (isset($_POST['first'])) echo $_POST['first']; ?>"/>
+<input type="text" placeholder="First" name="first" id="field" size="15"  onblur="fname()"  value="<?php if (isset($_POST['first'])) echo $_POST['first']; ?>"/>
 <input type="text" placeholder="Last" name="last" id="field1" onblur="lname()" value="<?php if (isset($_POST['last'])) echo $_POST['last']; ?>"/>
 <p id="demo"></p></br>
 <p id="forall">Choose your username</p><br/>
@@ -405,10 +385,12 @@ document.getElementById("im").style.background=" url()";
 		
 <br/><br/>
 <input type="checkbox" name="tc" value="tc" id="field"  />  I agree to the Melange <a href="#">Terms of service</a> and <a href="#">Privacy Policy</a>
-<input type="submit" value="Submit"  id="btnrefresh" style="margin-left:10px;" />
+</br><input type="submit" value="Submit"  id="btnrefresh" style="margin-left:10px;" />
 
 </form>
 
 </div>
+</div>
+<div id="bel"></div>
 	</body>
 </html>

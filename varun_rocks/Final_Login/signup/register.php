@@ -50,7 +50,7 @@
 		// Register the user in the database...
 		
 		// Make the query:
-		$q = "INSERT INTO users (first, last, username, pass, day,year,registration_date) VALUES ('$fn', '$ln', '$e', SHA1('$p'),'$d','$y', NOW() )";		
+		$q = "INSERT INTO users (first, last, username, pass, day,year,registration_date) VALUES ('$fn', '$ln', '$e', '$p','$d','$y', NOW() )";		
 		$r = @mysqli_query ($dbc, $q); // Run the query.
 		if ($r) { // If it ran OK.
 		

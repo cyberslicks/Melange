@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<html>
+<head>
+<script src="passcheck.js"></script>
+<link rel="stylesheet" type="text/css" href="passcheck.css" >
+<link rel="stylesheet" type="text/css" href="main.css"/>
+<link rel="stylesheet" type="text/css" href="form.css"/>
+<link rel="stylesheet" type="text/css" href="tooltip.css" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="jquery.js">
+
+<script type="text/javascript">
+$(document).ready(function(){
+$("#tooltip span").fadeIn(3000);
+);
+
+
+function showCustomer(str,str1)
+{
+var xmlhttp;    
+if (str=='')
+  {
+  document.getElementById("prt").innerHTML="";
+  //alert("l");
+  return;
+  }
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+
+xmlhttp.onreadystatechange=function()
+  {//alert("2");
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {//alert("3");
+    document.getElementById("prt").innerHTML=xmlhttp.responseText;
+    }
+  }
+xmlhttp.open("GET","useraver.php?username="+str"password="+str1,true);
+xmlhttp.send();
+var c=document.getElementById("prt").innerHTML;
+if(c=="match")
+return true;
+else
+{
+document.getElementById("prt").innerHTML="Username or password didn't match";
+return false;
+}
+}</script>
+
+
+</head>
+<body>
+<div id="header"><p style="font-family:Brush script MT;
+font-size:4.0em;
+font-weight:1.2em;position:absolute;margin-left:360px;margin-top:20px;color:rgb(250,253,253)">Melange</p>
+<form name="new" onsubmit="">
+<input type="submit" value="Create a new Melange Account" id="new"/></form>
+<div id="box">
+<p style="font-size:1.6em;">Sign in </p>
+
+
+<form action="signup.html" onsubmit="return showCustomer(username.value,password.value) ">
+<p>Username</br></br>
+<a class="tooltip" href="#"><input type="text" id="field" class="tooltip" name="username"/><span class="classic">Fill ur name</span></a>
+<p>Password</br></br>
+<a class="tooltip" href="#"><input type="password"  name="password" class="tooltip" id="field" onkeypress="passwordStrength(this.value,document.getElementById('strendth'),document.getElementById('passError'))" />
+<span class="classic" >Fill Password</span></a>
+<div id="strendth"></div>
+</p>
+<p id="prt"></p>
+<form name="log">
+<input type="submit" id="sub" value="Login" />
+</form>
+</div>
+</div>
+<div id="downa">
+
+</body>
+</html>
