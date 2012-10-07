@@ -276,6 +276,20 @@ text-align:center;
 }
 
 
+#download{
+width:60px;
+height:60px;
+float:right;
+position:relative;
+margin-right:10px;
+margin-bottom:10px;
+
+}
+#down{
+margin-bottom:40px;
+margin-right:60px;
+text-align:left;
+}
 /*responsible after hover*/
 .tile:hover {
   outline: 1px #ffffff solid;
