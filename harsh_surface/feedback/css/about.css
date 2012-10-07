@@ -1,0 +1,99 @@
+@font-face {
+	font-family:handwriting;
+
+	src:url('../fonts/BeAggressive.ttf');
+	
+	}
+	@font-face {
+		font-family:heading;
+
+		src:url('../fonts/incubus.ttf');
+
+		}
+
+#bold
+{
+	font-family:heading;
+	font-weight:bold;
+	font-size:1.5em;
+	
+}
+#abouttec
+{
+	margin-top:20px;
+	margin-bottom:30px;
+	background:#fff;
+	color:#444;
+	text-shadow:none;
+	padding:20px;
+
+}
+#teclogo
+{
+	width:100px;
+}
+
+
+#mayank
+{
+	float:left;
+	margin-top:30px;
+	margin-bottom:30px;
+	
+	
+}
+#aboutmayank
+{
+	padding:20px;
+	margin-left:50px;
+	color:#000;
+	font-size:1.3em;
+	margin-top:270px;
+	background-color:#fff;
+	font-family:handwriting;
+	width:350px;
+	text-shadow:none;
+}
+#varun
+{
+	float:right;
+	margin-top:30px;
+	margin-bottom:30px;
+}
+#aboutvarun
+{
+	padding:20px;
+	margin-right:50px;
+	color:#000;
+	font-size:1.3em;
+	margin-top:55px;
+	font-family:handwriting;
+	width:350px;
+	text-shadow:none;
+background-color:#fff;
+}
+
+ul.polaroids li { display: inline; }
+ul.polaroids a { background: #fff; display: inline; float: left; margin: 0 0 27px 30px; width: auto; padding: 10px 10px 15px; text-align: center; font-family: "Marker Felt", sans-serif; text-decoration: none; color: #333; font-size: 18px; -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.25); -moz-box-shadow: 0 3px 6px rgba(0,0,0,.25); -webkit-transform: rotate(-2deg); -webkit-transition: -webkit-transform .15s linear; -moz-transform: rotate(-2deg); }
+ul.polaroids img { display: block; width: 200px; height:170px; margin-bottom: 12px; }
+ul.polaroids a:after { content: attr(title); color:#000;}
+ul.polaroids li a:hover { -webkit-transform: scale(1.25); -moz-transform: scale(1.25); -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.5); -moz-box-shadow: 0 3px 6px rgba(0,0,0,.5); position: relative; z-index: 5; }
+
+#varunimg
+{
+	margin-right:50px;
+	 -webkit-transform: rotate(5deg);  -moz-transform: rotate(5deg);
+	height:200px;
+}
+#aboutvarun,#aboutmayank
+{
+	border-radius:4px;
+	line-height:20px;
+
+}
+#mayankimg
+{
+	margin-left:50px;
+}
+
+

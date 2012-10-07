@@ -1,0 +1,394 @@
+
+
+body
+{
+	background-image:url(../img/layout/black_patt.jpg);
+	color:#ffffff;
+}
+
+
+
+#error header
+{
+	margin-bottom:10px;
+	color:red;
+	font-family:Arial;
+	
+}
+
+#error header h4
+{
+	color:white;
+	text-align:center;
+}
+
+#error 
+{
+	
+	padding:20px;
+	border:thin solid #999999;
+
+	font-size:1.1em;
+	font-family:Verdana;
+	color:#2c9fd9;	
+	text-transform:uppercase;
+	margin-bottom:30px;
+	
+}
+
+
+/* this is for verify.php */
+#message
+{
+	padding:10px;
+	margin-top:50px;
+	margin-bottom:50px;
+	border:thin solid red;
+	text-align:center;
+	text-transform:uppercase;
+	font-family:Verdana;
+}
+
+#message h3
+{
+	color:#999999;
+}
+
+
+
+
+
+#ad-wrap
+{
+	padding-top:20px;
+	padding-bottom:20px;
+	border-bottom:thin solid #222222;
+}
+
+#advert
+{
+	width:700px;
+	margin-left:auto;
+	margin-right:auto;
+	border: thin solid #222222;
+	font-style:italic;
+	padding:10px;
+}
+
+
+
+
+
+
+
+#user
+{
+	margin-top:-34px;
+	margin-right:-10px;
+	font-style:italic;
+	float:right;
+	color:#777777;
+	font-family:Verdana;
+	font-size:90%;
+}
+#user a
+{
+	text-decoration:none;
+	color:#777777;
+}
+
+
+#main
+{
+	width:1000px;
+	padding:20px;
+	margin-left:auto;
+	margin-right:auto;
+	
+	
+}
+
+
+
+
+#page_head
+{
+	
+	padding:10px;
+
+/*	border:thin solid #333333;  */
+	
+	
+}
+
+#page_head img
+{
+	height:170px;
+	width:300px;
+	margin-top:-30px;
+	margin-bottom:-40px;
+}
+
+#page_head nav
+{
+	clear:both;
+	padding-bottom:4px;
+	/*border-bottom:2px solid #ff5c00;*/
+	border-bottom:2px solid #17354f; 
+	
+}
+	
+#page_head nav ul
+{
+	list-style:none;
+	margin:0;
+	padding:0;
+	padding-top:10px;
+	padding-bottom:10px;
+	
+	
+}
+	
+#page_head nav ul li
+{
+	display:inline;
+		font:0.9em Arial,Helvetica,"Bitstream Vera Sans",sans-serif;
+}
+
+#page_head nav ul li a:link , #page_head nav ul li a:visited
+{
+	padding:6px;
+	text-decoration:none;
+	text-transform:uppercase;
+	color:#767a7a;
+	margin-right:8px;
+	font-size:120%;
+}
+
+#page_head nav ul li a:hover
+{
+ color:#ffffff;
+text-transform:uppercase;
+background-image:url(../img/layout/button.jpg);	
+border-radius:4px;
+	
+	
+}
+	
+#search
+{
+
+	float:right;
+	
+}	
+#search input[type="text"]
+{
+	margin-top:-10px;
+	background :url(../img/layout/search-white.png) no-repeat 10px 6px #444;
+	border: 0 none;
+	font: bold 12px Arial,Helvetica,Sans-serif;
+	color:#777;
+	width:150px;
+	padding: 6px 15px 6px 35px;
+	-webkit-border-radius:20px;
+	-moz-border-radius:20px;
+	border-radius:20px;
+	text-shadow:0 2px 2px rgba(0,0,0,0.3);
+	-webkit-box-shadow:0 1px 0 rgba(255,255,255,0.1),0 1px 3px rgba(0,0,0,0.2) inset;
+	-moz-box-shadow:0 1px 0 rgba(255,255,255,0.1),0 1px 3px rgba(0,0,0,0.2) inset;
+	box-shadow:0 1px 0 rgba(255,255,255,0.1),0 1px 3px rgba(0,0,0,0.2) inset;
+	-webkit-transition: all 0.7s ease 0s;
+	-moz-transition: all 0.7s ease 0s;
+	-o-transition: all 0.7s ease 0s;
+	transition: all 0.7s ease 0s;
+	
+}
+
+#search input[type="text"]:focus
+{
+	background: url(../img/layout/search-dark.png) no-repeat 10px 6px #fcfcfc;
+	color:#6a6f75;
+	width:220px;
+	-webkit-box-shadow:0 1px 0 rgba(255,255,255,0.1) , 0 1px 0 rgba(0,0,0,0.9) inset;
+	-moz-box-shadow:0 1px 0 rgba(255,255,255,0.1) , 0 1px 0 rgba(0,0,0,0.9) inset;
+	box-shadow:0 1px 0 rgba(255,255,255,0.1) , 0 1px 0 rgba(0,0,0,0.9) inset;
+	text-shadow: 0 2px 3px rgba(0,0,0,0.1);
+}
+
+
+
+#register-form ,#login-form
+{
+	
+	padding:30px;
+	margin-bottom:30px;
+	margin-top:20px;
+	border-bottom:solid #181818 1px;
+	
+}
+
+
+#form-head 
+{
+	
+	padding:30px;
+	margin-bottom:30px;
+	margin-top:20px;
+	
+	color:#999999;
+	font-size:5em;
+	font-family:Impact;
+	text-shadow:15px 15px 10px black;
+	text-align:center;
+}
+#form
+{
+	margin-top:10px;
+	margin-bottom:80px;
+/*	margin-left:-30px;
+	padding-left:120px;*/
+		
+		padding-top:0;
+		text-align:center;
+	margin-left:0;
+	
+}
+i
+{
+	font-size:1.1em;
+}
+#form a , i a
+{
+	text-shadow:0px -1px 0px #000;
+	text-decoration:none;
+
+	color:#2c9fd9;
+}
+#form label
+{
+
+}
+form,input
+{
+/*	text-align:left; */
+	text-shadow:10px 10px 5px black;
+	margin:0;
+	
+	padding:5px;
+	border:none;
+	font-family:Helvetica , Arial , sans-serif;
+	font-size:1em;
+	color:#dddddd;
+	margin-left:10px;
+	
+	box-shadow:10px 10px 5px black;
+}
+em
+{
+	color:red;
+}
+
+
+
+
+input.text
+{
+	/*text-align:center;*/
+		margin-left:10px;
+		margin-bottom:20px;
+	border-radius:5px;
+	border:solid 1px #444;
+	font-size:16px;
+	background:url(../img/layout/InputSprite.png) no-repeat 4px 6px ,-webkit-gradient(linear,left bottom,left top,color-stop(0,rgb(255,255,255)),color-stop(0.54, rgb(215,215,215)),color-stop(1,rgb(173,173,173)));
+	color:#ddd;
+	text-align:left;
+	text-shadow:0px 0px 0px black;
+	padding:7px 8px 7px 30px;
+	background: url(../img/layout/cal.png) no-repeat 4px 6px;
+	
+	
+}
+input.text:focus
+{
+		border:2px solid #ff5c00;
+}
+
+input#email
+{
+
+background:url(../img/layout/InputSprite.png) no-repeat 4px 6px;  
+background-position: 4px 5px,0px 0px;
+}
+
+input#pass
+{
+ background-position: 4px -20px;
+	background:url(../img/layout/InputSprite.png) no-repeat 4px 6px;
+ background-position: 4px -20px,0px 0px;
+}
+
+input#fname,input#lname , input#uname
+{
+ background-position: 4px -46px;
+background:url(../img/layout/InputSprite.png) no-repeat 4px 6px;
+ background-position: 4px -46px,0px 0px;
+}
+
+input#tel
+{
+ background-position: 4px -76px;
+background:url(../img/layout/InputSprite.png) no-repeat 4px 6px;
+ background-position: 4px -76px,0px 0px;
+}
+input#date
+{
+
+ background-image:url(../img/layout/cal.png) 16px 16px;
+}
+#form button
+{
+	width:150px;
+	height:40px;
+	padding:5px;
+	cursor:pointer;
+	background:#2c9fd9;
+	color:white;
+	font-weight:bold;
+	border-radius:5px;
+	border:thin solid black;
+}
+
+#form button:hover
+{
+	background:#0064bd;
+}
+#page-foot
+{
+	border-top:2px solid #17354f;
+	text-align:center;
+	clear:both;
+	padding-top:5px;
+}
+
+#page-foot nav ul
+{
+	list-style:none;
+	margin:0;
+	padding:0;
+	
+	
+}
+	
+#page-foot nav ul li
+{
+	display:inline;
+}
+
+#page-foot nav ul li a
+{
+	text-decoration:none;
+	padding:5px;
+	color:#999999;
+	
+
+}
