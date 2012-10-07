@@ -138,8 +138,11 @@ a:hover
 
 /* 960 gs */
 body{min-width:960px}
+.grid_4{display:inline;float:left;margin-left:50px;margin-right:10px}
+
+
 .container_12{margin-left:auto;margin-right:auto;width:960px}
-.grid_1,.grid_2,.grid_3,.grid_4,.grid_5,.grid_6,.grid_7,.grid_8,.grid_9,.grid_10,.grid_11,.grid_12{
+.grid_1,.grid_2,.grid_3,.grid_5,.grid_6,.grid_7,.grid_8,.grid_9,.grid_10,.grid_11,.grid_12{
 display:inline;float:left;margin-left:10px;margin-right:10px}
 .push_1,.pull_1,.push_2,.pull_2,.push_3,.pull_3,.push_4,.pull_4,.push_5,.pull_5,.push_6,.pull_6,.push_7,.pull_7,.push_8,.pull_8,.push_9,.pull_9,.push_10,.pull_10,.push_11,.pull_11{
 position:relative}
@@ -148,7 +151,7 @@ position:relative}
 .container_12 .grid_1{width:60px}
 .container_12 .grid_2{width:140px}
 .container_12 .grid_3{width:220px}
-.container_12 .grid_4{width:300px}
+.container_12 .grid_4{width:400px}
 .container_12 .grid_5{width:380px}
 .container_12 .grid_6{width:460px}
 .container_12 .grid_7{width:540px}
