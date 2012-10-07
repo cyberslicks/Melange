@@ -4,6 +4,7 @@ function Toolbar(surface) {
 this.toggleBinder();	
 this.surfaceObject = surface;	
 this.clickBinder();
+this.modalBinder();
 document.getElementById('switch-icon').value= -1;
 	
 }
@@ -30,6 +31,25 @@ Toolbar.prototype.toggleBinder = function() {
 	
 }
 
+Toolbar.prototype.modalBinder = function () {
+	
+ 
+ 	$('#modal-profile').css('top',"200px");
+ 	$('#modal-profile').css('left',$('#img').offset().left+50+"px");
+ 
+ 
+    $('#modal-close-profile, #modal-lightsout').click(function() {
+        $('#modal-profile').fadeOut("slow");
+        $('#modal-lightsout').fadeOut("slow");
+    });
+	
+	
+}
+
+
+
+
+
 Toolbar.prototype.clickBinder = function() {
 	
 		document.getElementById("a").onclick = $.proxy(function(){ this.createA(this.surfaceObject);},this);
@@ -38,7 +58,7 @@ Toolbar.prototype.clickBinder = function() {
 		document.getElementById("section").onclick = $.proxy(function(){ this.createSection(this.surfaceObject);},this);
 		document.getElementById("text").onclick = $.proxy(function(){ this.createText(this.surfaceObject);},this);
 
-	
+		document.getElementById("img").onclick = $.proxy(function(){ this.createImage(this.surfaceObject);},this);
 	
 }
 
@@ -77,4 +97,15 @@ Toolbar.prototype.createText = function(surf) {
 
 }
 
+Toolbar.prototype.createImage = function(surf) {
+	
+	
+$('#modal-profile').fadeIn("slow");
+ $('#modal-lightsout').fadeTo("slow", .9);	
+	
+	
+	
+	
+	
+}
 
