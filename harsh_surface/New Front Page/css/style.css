@@ -87,7 +87,7 @@ html
 	overflow: hidden;
 	float: left;
 	z-index: 1;
-	background: #ececee url( ./images/bg_white.png );
+	background: #ececee
 }
 
 #home_loader
@@ -152,16 +152,16 @@ html
 {
 	margin-top: 19px;
 	display: block;
-	width: 300px;
+	width: 500px;
 	height: 13px;
-	background: url( ../../SD_globals/images/horizontal_b_sep.png ) repeat-x
+	
 }
 
 .welcome div.grid_4:after
 {
 	content: "";
 	position: absolute;
-	width: 300px;
+	width: 500px;
 	margin-top: 15px;
 	height: 1px;
 	background: url( ../../SD_globals/images/horizontal_b_sep.png ) repeat-x;
@@ -230,7 +230,7 @@ html
 	position: absolute;
 	width: 45px;
 	height: 36px;
-	background: url( ../images/fancy_icons.png );
+	
 	background-position: -20px 0;
 	margin-left: -60px;
 	margin-top: -5px;
@@ -366,8 +366,11 @@ html
 	transition: background 0.3s ease;
 }
 
+#welcometab{
+margin-left:270px;
+}
 .menuslide a.grid_3
-{
+{ align:center;
 	width: 218px;
 	font-size: 18px;
 	line-height: 50px;
@@ -376,7 +379,7 @@ html
 
 .menuslide a span.icon
 {
-	background: url( ../images/menu_icons.png );
+	
 	display: block;
 	width: 54px;
 	height: 54px;
@@ -427,5 +430,52 @@ html
 .menuslide a span.facebook{ background-position: -486px 0; }
 .menuslide a:hover span.facebook{ background-position: -486px -54px; }
 
+/*logo management*/
+#wikiicon{
+background:url('wikiicon.png');
+}
 
+#giticon{
+background:url('github.png');
+}
+#abouticon{
+background:url('aboutus.jpg');
+}
+#fbicon{
+background:url('fb.jpg');
+}
+#blogicon{
+background:url('blogicon.png');
+}
+#resourceicon{
+background:url('tools.png');
+}
+
+
+#twittericon{
+background:url('twitter.png');
+}
+
+#contacticon{
+background:url('contacticon.jpg');
+}
+
+.menuslide a span.grid4logo
+{
+	
+	display: block;
+	width: 50px;
+	height: 50px;
+	margin-left: 85px;
+	margin-top: 15px;
+}
+.menuslide a span.grid3logo
+{
+	
+	display: block;
+	width: 50px;
+	height: 50px;
+	margin-left: 170px;
+	margin-top: 15px;
+}
 
