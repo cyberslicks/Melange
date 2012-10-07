@@ -37,9 +37,8 @@ html
 {
 	width: 11px;
 	height: 17px;
-	background: url( ../images/navigation_assets.png );
+	background: url('brown.jpg');/*side arrows of navigation*/
 	background-position: -17px 0;
-	
 	margin-right: 10px;
 }
 
@@ -57,7 +56,7 @@ html
 {
 	width: 14px;
 	height: 17px;
-	background: url( ../images/navigation_assets.png );
+	background: url('as.jpg'); /*the center navigation buttons*/
 	background-position: 0 0px;
 }
 
