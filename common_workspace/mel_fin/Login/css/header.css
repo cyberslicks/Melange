@@ -1,0 +1,46 @@
+.headertile{
+width:200px;
+float:left;
+height:40px;
+background:black;
+/*margin-left:5px;*/
+top:0;
+background:black;
+/*outline: 1px #ffffff solid;*/
+}
+
+.header{
+margin-top:1px;
+margin-left:150px;
+margin-bottom:1px;
+background:black;
+
+}
+
+.headertile:hover{
+
+background:#37b8de;
+opacity:0.9;
+}
+
+#heading 
+{
+color:white;
+margin:10px 10px 10px 40px;
+font:Times New Roman, serif;
+font-weight:700;
+}
+
+#heading:hover{
+color:white;
+
+}
+
+#userinfo{
+float:right;
+text-align:right;
+color:white;
+margin-right:60px;
+margin-top:10px;
+
+}
