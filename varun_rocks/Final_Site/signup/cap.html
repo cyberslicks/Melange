@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>Captcha</title>
+    <style>
+	#txtCaptcha{
+	height:50px;
+	font-size:1.4em;
+	}
+	</style>
+    <script type="text/javascript">
+
+   //Created / Generates the captcha function    
+    function DrawCaptcha()
+    {
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+		var a = possible.charAt(Math.floor(Math.random() * possible.length));
+		var b = possible.charAt(Math.floor(Math.random() * possible.length));
+		var c = possible.charAt(Math.floor(Math.random() * possible.length));
+		var d = possible.charAt(Math.floor(Math.random() * possible.length));
+		var e = possible.charAt(Math.floor(Math.random() * possible.length));
+		var f = possible.charAt(Math.floor(Math.random() * possible.length));
+		var g = possible.charAt(Math.floor(Math.random() * possible.length));
+        var code = a + ' ' + b + ' ' + ' ' + c + ' ' + d + ' ' + e + ' '+ f + ' ' + g;
+        document.getElementById("txtCaptcha").value = code
+    }
+
+    // Validate the Entered input aganist the generated security code function   
+    function ValidCaptcha(){
+        var str1 = removeSpaces(document.getElementById('txtCaptcha').value);
+        var str2 = removeSpaces(document.getElementById('txtInput').value);
+        if (str1 == str2) return true;        
+        return false;
+        
+    }
+
+    // Remove the spaces from the entered and generated code
+    function removeSpaces(string)
+    {
+        return string.split(' ').join('');
+    }
+    
+ 
+    </script>
+    
+    
+    
+</head>
+<body onload="DrawCaptcha();">
+<table>
+<tr>
+    <td>
+        Welcome To Captcha<br />
+    </td>
+</tr>
+<tr>
+    <td>
+        <input type="button" id="txtCaptcha" 
+            style="background-image:url(1.jpg); text-align:center; border:none;
+            font-weight:bold; font-family:Modern,font-size:1.0em;font-family:Helvetica;" />
+        <input type="button" id="btnrefresh" value="Refresh" onclick="DrawCaptcha();" />
+    </td>
+</tr>
+<tr>
+    <td>
+        <input type="text" id="txtInput"/>    
+    </td>
+</tr>
+<tr>
+    <td>
+        <input id="Button1" type="button" value="Check" onclick="alert(ValidCaptcha());"/>
+    </td>
+</tr>
+</table>
+</body>
+</html>
