@@ -164,7 +164,7 @@ html
 	width: 500px;
 	margin-top: 15px;
 	height: 1px;
-	background: url( ../../SD_globals/images/horizontal_b_sep.png ) repeat-x;
+	
 }
 
 .welcome p
@@ -216,9 +216,9 @@ html
 
 .webmadeclean h1, .imake h1, .myphotoblog h1
 {
-	font-size: 18px;
-	background: url( ../../SD_globals/images/horizontal_b_sep.png ) repeat-x bottom;
-	margin-top: 60px;
+	font-size: 30px;/*controlling the heading of eadh slider page*/
+	
+		margin-top: 60px;
 	padding-bottom: 20px;
 	margin-bottom: 15px;
 	padding-left: 55px;
@@ -256,7 +256,7 @@ html
 {
 	color: #fff;
 	text-decoration: none;
-	background: #c2c3c8 url( ../../SD_globals/images/right_arrow.png ) no-repeat;
+	background: #c2c3c8;
 	background-position: right center;
 	font-size: 13px;
 	
@@ -271,7 +271,7 @@ html
 
 .webmadeclean a:hover, .imake a:hover, .myphotoblog a:hover
 {
-	background: #4a4b4f url( ../../SD_globals/images/right_arrow.png ) no-repeat;
+	background: #4a4b4f no-repeat;
 	background-position: right;
 }
 

@@ -11,7 +11,7 @@ background:black;
 
 .header{
 margin-top:1px;
-margin-left:150px;
+
 margin-bottom:1px;
 background:black;
 
@@ -22,8 +22,12 @@ background:black;
 background:#37b8de;
 opacity:0.9;
 }
+#heading{
+margin-left:150px;
 
-#heading 
+}
+
+.heading 
 {
 color:white;
 margin:10px 10px 10px 40px;
@@ -40,7 +44,11 @@ color:white;
 float:right;
 text-align:right;
 color:white;
-margin-right:60px;
+margin-right:140px;
 margin-top:10px;
 
+}
+
+#userimage{
+margin-left:20px;
 }
