@@ -1,13 +1,111 @@
-<html>
-<head>
-<title>
-Melange:Feedback Form
 
-</title>
-<link href="./css/header.css" rel="stylesheet">
+<html class="js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths wf-proximanova1proximanova2-n3-active wf-proximanova1proximanova2-n4-active wf-proximanova1proximanova2-i4-active wf-proximanova1proximanova2-n7-active wf-proximanova1proximanova2-n8-active wf-proximanova1proximanova2-n9-active wf-chaparralpro1chaparralpro2-n3-active wf-chaparralpro1chaparralpro2-n4-active wf-active" lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	-->
+	
+	
+	<title>Melange: feedback</title>
+	
+	<!-- Typekit -->
+	<script async="" src="./js/ga.js"></script>
+	<script type="text/javascript" src="./js/qhr0pzy.js"></script>
+	<style type="text/css"></style>
+	<style type="text/css">
+	.tk-proxima-nova{font-family:proxima-nova-1,proxima-nova-2,sans-serif;}
+	.tk-chaparral-pro{font-family:chaparral-pro-1,chaparral-pro-2,sans-serif;}
+	</style>
+	<!--link rel="stylesheet" type="text/css" href="./styles/propertybox.css"/-->
+	<link rel="stylesheet" href="./css/qhr0pzy-d.css">
+	<link href="./css/modern.css" rel="stylesheet">
+	<link href="./css/header.css" rel="stylesheet">
+	<script type="text/javascript">
+	try{Typekit.load();}catch(e){}
+	</script>
+	
+	<!-- modernizr -->
+	<script src="./js/modernizr-1.7.min.js"></script>
+	
+
+
+<!-- CCS globals -->
+<link rel="stylesheet" href="./css/global.css">
+
+
+<!-- css home -->
+<link rel="stylesheet" href="./css/style.css">
+
+<style></style><style></style><script type="text/javascript" src="./js/injected.js"></script>
+</head>
+
+<body id="top">
+<!--header-->
+<div class="header">
+
+		<div class="headertile"id="heading">
+		<h1 class="heading" ><B>
+		Home</h1>
+		</div>
+		<div class="headertile">
+		<h1 class="heading">
+		About</h1>
+		</div>
+		<div class="headertile">
+		<h1 class="heading">
+		Contact</h1>
+		</div>
+		<div class="headertile">
+		<h1 class="heading">
+		Blog </h1>
+		</div>
+		<div id="userinfo">
+			
+		User
+		<img src="user.jpg" height="20px" width="20px" id="userimage">
+		</div>
+		
+</div>
+
+<div id="inside">
+
+
+
+<p id="feedhead">
+Give us your Feedback
+</p>
+<br>
+<div id="feedform" >
+Name:
+<input type="text" placeholder="Full Name" class="text"  id="name"><br>
+Emial-id:<input type="text" placeholder="john@123" class="text" id="email"><br>
+
+<label for="feed"> Feedback
+<textarea rows="10" class="text" id="feed" > </textarea>
+ <br>
+ <br>
+<input type="button" value="Submit" id="subbutton">
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
 <style>
 
-html,div, span, applet, object, iframe,
+
+
+html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, font, img, ins, kbd, q, s, samp,
@@ -38,7 +136,7 @@ background: black;
 
 #footer-wrap {
 	
-	top:50px;
+	
 	position:relative;
 		margin:0 auto;
 		width:900px;
@@ -114,57 +212,22 @@ background: black;
 }
 
 
-#feedback{
-float:none;
-color:white;
 
+#inside{
+background:white;
+padding-top:50px;
+margin-left:0 auto;
+margin-right:0 auto;
 text-align:center;
-left:200px;
-top:30px;
-height:100%;
 }
 
-#feedform{
-position:relative;
-
-margin-left:200px;
-top:40px;
-line-height:200%;
-
-}
-.text{
-position:absolute;
-text-align:left;
-display:inline;
-}
-
-#subbutton
-{
-position:relative;
-background:black;
-border-color:white;
+#feedhead{
+font-size:30px;
 text-align:center;
-margin-left:150px;
-color: white;
-font-size:16px;
-width:150px;
-height:40px;
-top:150px;
+font-family:arial narrow;
 }
 
-#feed{
-width:500px;
-}
 
-#name{
-
-position:relative;
-left:40px;
-}
-#email{
-position:relative;
-
-left:15px;}
 
 </style>
 
@@ -176,60 +239,6 @@ left:15px;}
 
 </head>
 <body>
-<body bgcolor="black">
-<div class="header">
-		<div class="headertile">
-		<h1 id="heading"><B>
-		Home</h1>
-		</div>
-		<div class="headertile">
-		<h1 id="heading">
-		About</h1>
-		</div>
-		<div class="headertile">
-		<h1 id="heading">
-		Contact</h1>
-		</div>
-		<div class="headertile">
-		<h1 id="heading">
-		Blog</h1>
-		</div>
-		<div id="userinfo">
-			
-		User
-		<img src="user.jpg" height="20px" width="20px">
-		</div>
-		
-</div>
-
-
-
-
-<body>
-
-<div id="feedback" align="center"><br><br>
-Give us a Feedback
-<br>
-<div id="feedform" align="left">
-Name:
-<input type="text" placeholder="Full Name" class="text" align="center" id="name"><br>
-Emial-id:<input type="text" placeholder="john@123" class="text" id="email"><br>
-To: <td>	Cyberslicks@gmail.com
-<br>
-Feedback:
-<textarea rows="10" class="text" id="feed" placeholder="your feedback:its valuable for us"> </textarea>
- <br>
- <br>
-<input type="button" value="Submit" id="subbutton">
-
-</div>
-
-
-
-
-</div>
-
-
 
 <footer id="main-footer">
 <section id="footer-wrap">
@@ -309,5 +318,38 @@ All Rights Reserved | Site Map |</br>
  
 </footer>
 
+
+	<!-- JavaScript at the bottom for fast page loading -->
+
+<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
+<script src="./js/jquery.js"></script>
+<script>window.jQuery || document.write("<script src='js/jquery-1.8.2.min.js'>\x3C/script>")</script>
+
+<!--[if lt IE 7 ]>
+<script src="js/libs/dd_belatedpng.js"></script>
+<script>DD_belatedPNG.fix("img, .png_bg"); // Fix any <img> or .png_bg bg-images. Also, please read goo.gl/mZiyb </script>
+<![endif]-->
+
+
+
+<!-- scripts concatenated and minified via ant build script-->
+<!-- end scripts-->
+
+
+
+<!-- mathiasbynens.be/notes/async-analytics-snippet Change UA-XXXXX-X to be your site's ID -->
+<script>
+var _gaq=[["_setAccount","UA-11149531-1"],["_trackPageview"]];
+(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+s.parentNode.insertBefore(g,s)}(document,"script"));
+</script>
+	<script src="./js/script.js"></script>
+    <script src="./js/jribbble.js"></script>
+	<script src="./js/home_custom.js"></script>
+</body></html>
+
 </body>
 </html>
+
+

@@ -244,7 +244,8 @@ background:#00a300;
 }
 
 #tile3{
-background:#da532c;
+/*background:#da532c;*/
+background:white;
 }
 #tile4{
 background:#02AEDC;
@@ -269,7 +270,7 @@ height:200px;
 #loginbox{
 width:350px;
 height:310px;
-background-image:url('glass.png');
+background:white;
 /*opacity:0.2;*/
 float:right;
 /*margin-left:20px;*/
@@ -278,6 +279,7 @@ margin-right:30px;
 font-size:20px;
 color:white;
 text-align:center;
+
 }
 
 
@@ -312,7 +314,7 @@ font-weight:500;
 
 #designicon{
 position:relative;
-margin-top:5px;
+margin-top:25px;
 width:60px;
 height:70px;
 vertical-align: middle ;
@@ -324,7 +326,7 @@ left:40px;
 padding-top:20px;
 padding-left:6px;
 font-size:16px;
-color:red;
+color:white;
 margin-right:5px;
 }
 
@@ -372,9 +374,14 @@ height:120px;
 }
 #downhead{
 font-size:20px;
-color:Black;
+color:White;
+font-weight:600;
 }
 
+#dhome{
+margin-left:10px;
+color:black;
+}
 
 #ricon{
 position:relative;

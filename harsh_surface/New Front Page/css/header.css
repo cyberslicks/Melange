@@ -1,19 +1,20 @@
 .headertile{
 width:200px;
 float:left;
-height:40px;
-background:black;
+height:50px;
 /*margin-left:5px;*/
 top:0;
 background:black;
 /*outline: 1px #ffffff solid;*/
+
 }
 
 .header{
 margin-top:1px;
 margin-bottom:1px;
 background:black;
-
+height:50px;
+box-shadow:50px 50px 50px 20px black;	
 }
 
 .headertile:hover{
@@ -29,9 +30,12 @@ margin-left:150px;
 .heading 
 {
 color:white;
-margin:10px 10px 10px 40px;
+text-align:center;
+margin:10px 10px 0px 0px;
 font:Times New Roman, serif;
-font-weight:700;
+font-weight:400;
+font-size:20px;
+
 }
 
 #heading:hover{
@@ -45,9 +49,10 @@ text-align:right;
 color:white;
 margin-right:140px;
 margin-top:10px;
-
+font-size:20px;
 }
 
 #userimage{
 margin-left:20px;
 }
+

@@ -216,12 +216,13 @@ html
 
 .webmadeclean h1, .imake h1, .myphotoblog h1
 {
-	font-size: 30px;/*controlling the heading of eadh slider page*/
+	font-size: 50px;/*controlling the heading of eadh slider page*/
 	
 		margin-top: 60px;
 	padding-bottom: 20px;
 	margin-bottom: 15px;
-	padding-left: 55px;
+	font-family:Arial Narrow;
+	/*padding-left: 55px;*/
 }
 
 .webmadeclean h1:before, .imake h1:before, .myphotoblog h1:before
@@ -459,7 +460,11 @@ background:url('twitter.png');
 #contacticon{
 background:url('contacticon.jpg');
 }
-
+#poster{
+margin-right:30px;
+width:700px;
+margin-top:-120px;
+}
 .menuslide a span.grid4logo
 {
 	
