@@ -24,6 +24,10 @@ class oAuthLogin
 	private $_username = null;
 	private $_useremailid = null;
 	private $_user_dp = null;
+	private $logged_in = -1;
+	private $logoutUrl = null;
+	private $googleloginUrl = null;
+	private $facebookLoginUrl = null;
 	
 	
 	
@@ -85,9 +89,11 @@ class oAuthLogin
   		  	  $_SESSION['logged_in'] = 1;
   		  	  $_SESSION['oauth_token'] = $this->facebook->getAccessToken();
 			  $this->status = 1; // logged in using facebook
-			
+			  $this->logged_in  = 1;
+			  
 			$url = $this->facebook->getLogoutUrl(array('next' =>'http://'.$_path.'/logout.php'));
-			$this->printFbLogOutButton($url);
+			$this->logoutUrl = $url;
+			//$this->printFbLogOutButton($url);
 			//$this->printFbUserData($this->user_profile);
 			
 				
@@ -114,10 +120,7 @@ class oAuthLogin
 		  
 		  $_SESSION['token'] = $this->google->getAccessToken();
 		  $to =  json_decode($this->google->getAccessToken());
-		  $_SESSION['oauth_vendor'] = "google";
-		  $_SESSION['logged_in'] = 1;
-		  $_SESSION['oauth_token'] = $to->access_token;
-		  
+		 
 				  
 		  $redirect = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
 		  header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
@@ -136,7 +139,7 @@ class oAuthLogin
 
 		if ($this->google->getAccessToken()) {
 		  $user = $this->goauth->userinfo->get();
-		  print_r($user);
+		  
 		 
 		  $email = filter_var($user['email'], FILTER_SANITIZE_EMAIL);
 		  $img = filter_var($user['picture'], FILTER_VALIDATE_URL);
@@ -145,13 +148,19 @@ class oAuthLogin
 		  //echo $email;
 		  echo "<br>".$user['name'];
 		  
+		  
+		  $_SESSION['oauth_vendor'] = "google";
+		  $_SESSION['logged_in'] = 1;
+		  $_SESSION['oauth_token'] = $this->google->getAccessToken();
+		  $this->logged_in = 1;
+		  
 		  $this->status = 2;
 		 // $this->printGOAuthData($personMarkup);
 		  // The access token may have been updated lazily.
 		  $_SESSION['token'] = $this->google->getAccessToken();
-		  echo "     ";
+		  //echo "     ";
 		  //echo "<a class='logout' href=\""."http://".$_path."/logout.php"."\">google Logout</a>";
-		  $this->printLogOutButton();
+		  $this->logoutUrl = 'http://'.$_path.'/logout.php';
 		
 		} 
 		
@@ -173,9 +182,11 @@ class oAuthLogin
 		 if($this->status == 0)
 		{
 			$url = $this->facebook->getLoginUrl(array('scope' => 'email'));
-			$this->printFbLoginButton($url);
+			$this->facebookLoginUrl = $url;
+			//$this->printFbLoginButton($url);
 			$url = $this->google->createAuthUrl();
-			$this->printGoogleLoginButton($url);
+			$this->googleLoginUrl = $url;
+			//$this->printGoogleLoginButton($url);
 			
 			
 		}
@@ -188,35 +199,34 @@ class oAuthLogin
 		
 	}
 	
-	public function printFbLogOutButton($url) 
-	{
+	public function isLoggedIn() {
 		
-		echo "<a href=\"".$url."\">logout</a>";
-		
+		return $this->logged_in;
 		
 	}
 	
-	public function printFbLoginButton($url) 
-	{
+	public function getLogoutUrl() {
 		
-		echo "<a href=\"".$url."\"><img src=\"./images/fb.png\"></a>";
-		
+		return $this->logoutUrl;
 		
 	}
 	
-	public function printGoogleLoginButton($url)
-	{
+	public function getFacebookLoginUrl() {
 		
-		echo "<a href=\"".$url."\"><img src=\"./images/google.png\"></a>";
+		return $this->facebookLoginUrl;
 		
 	}
 	
-	public function printLogOutButton()
-	{
-		include 'oauth_config.php';
-		echo "<a class='logout' href=\""."http://".$_path."/logout.php"."\">google Logout</a>";
+	public function getGoogleLoginUrl() {
+		
+		return $this->googleLoginUrl;
 		
 	}
+	
+	
+	
+	
+	
 	
 	public function getUserData()
 	{
@@ -243,18 +253,6 @@ class oAuthLogin
   			 $userData['img'] = $img.'?sz=50';
 			 $userData['name'] = filter_var($user['name'], FILTER_VALIDATE_URL);
 			 $userData['email'] = filter_var($user['email'], FILTER_SANITIZE_EMAIL);
-			 $userData['id'] = $user['id'];
-			return $userData;
-			
-			
-		}
-			
-	}
-	
-	
-}
-
-?>ILTER_SANITIZE_EMAIL);
 			 $userData['id'] = $user['id'];
 			return $userData;
 			

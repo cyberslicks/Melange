@@ -139,16 +139,17 @@ if(isset($_SESSION['logged_in']) && ($_SESSION['logged_in']==1))
 <div class="button-set">
 
 	<div class='button' id="section">&lt;se&gt;</div>
-	<div class='button' id="text">&lt;txt&gt;</div>
+	<div class='button' id="img">img</div>
+	<!--><div class='button' id="text">&lt;txt&gt;</div>-->
 		
 </div>	
 
-<div class="button-set">
+<!--><div class="button-set">
 
 	<div class='button' id="img">img</div>
 	
 		
-</div>
+</div>-->
 
 
 </div>
