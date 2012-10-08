@@ -322,9 +322,17 @@ height:150px;
 
 }
 #codep{
-font-size:15px;
-padding-top:15px;
-margin-left:10px;
+position:relative;
+font-size:20px;
+margin-top:-25px;
+margin-left:15px;
+
+}
+#feedp{
+position:relative;
+font-size:20px;
+margin-top:-25px;
+margin-left:25px;
 
 }
 
