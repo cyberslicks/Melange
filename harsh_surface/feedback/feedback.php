@@ -3,13 +3,6 @@
 session_start();
 include('./resources/config.php');
 include('./resources/templates/header.php');
-
-
-
-
-
-
-
 ?>
 
 
