@@ -63,14 +63,14 @@ www.buildinternet.com / www.onemightyroar.com
  					left: 0;
  				}
 #hea{
-background:white;
+background:rgb(233,241,250);
 width:100%;
-height:200px;
+height:130px;
 margin-top:0px;
 margin-left:0px;
 }
 #bel{
-background:rgb(171,222,233);
+background:rgb(149,183,220);
 width:100%;
 height:1200px;
 margin-top:0px;
@@ -90,7 +90,7 @@ width:500px;
 height:920px;
 background:rgb(245,245,247);
 margin-left:430px;
-margin-top:70px;
+margin-top:22px;
 opacity:1.0;
 color:rgb(53,54,57);
 position:absolute;
@@ -345,11 +345,11 @@ document.getElementById("im").style.background=" url()";
 	<body     onload="DrawCaptcha()">
 	
 	
-	<div id="bel">
+	<div id="hea">
 	
-	<p style="margin-top:10px;margin-left:50px;font-weight:bold;font-family:Brush script MT;
-font-size:3.0em;
-font-weight:bold;color:grey">Create a new Melange Account</p>
+	<p style="margin-top:10px;margin-left:50px;font-weight:bold;font-family:Impact;
+font-size:2.0em;
+font-weight:bold;color:black">Create a new Melange Account</p>
 	
 	
 	<div id="div1">
@@ -418,5 +418,6 @@ font-weight:bold;color:grey">Create a new Melange Account</p>
 
 </div>
 </div>
+<div id="bel"></div>
 	</body>
 </html>
