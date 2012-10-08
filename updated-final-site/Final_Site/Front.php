@@ -161,7 +161,7 @@ $oAuth = new oAuthLogin();
 					<p>DesignHouse is the designing section of Melange only for members. Desgin house Contents all the equiment a user needs to build his/her website.<br>It has simplistic UI with hassle free work area, where user can focus on entirely the looks</br>without taking care of coding issues
 					</br>Though Its still in alpha phase , you can appreciate the the intent of this app. <br>GO CREATIVE !!</p>
 					
-					<a >Aplha preview of Design House</a>
+					<a href="design-room.php">Aplha preview of Design House</a>
 					<br>
 					</div>
 				
