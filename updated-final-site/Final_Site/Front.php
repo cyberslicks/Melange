@@ -546,7 +546,7 @@ background: black;
 Contact Us:
 </header>
 <div>
-<span class="bold">Call:</span> +91 9910239493,9953267725
+<span class="bold">Call:</span> +91-9953267725</br>9910239493
 </br>
 <span class="bold">Email:</span> cyberslicks@gmail.com
 </br>
