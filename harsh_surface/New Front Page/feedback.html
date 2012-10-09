@@ -6,7 +6,7 @@
 	-->
 	
 	
-	<title>Melange: feedback</title>
+	<title>Melange: apology</title>
 	
 	<!-- Typekit -->
 	<script async="" src="./js/ga.js"></script>
@@ -35,7 +35,7 @@
 
 <!-- css home -->
 <link rel="stylesheet" href="./css/style.css">
-
+<link rel="stylesheet" type="text/css" href="./css/contactform.css">
 <style></style><style></style><script type="text/javascript" src="./js/injected.js"></script>
 </head>
 
@@ -66,45 +66,62 @@
 		</div>
 		
 </div>
-
 <div id="inside">
 
-
-
-<p id="feedhead">
-Give us your Feedback
-</p>
-<br>
-<div id="feedform" >
-Name:
-<input type="text" placeholder="Full Name" class="text"  id="name"><br>
-Emial-id:<input type="text" placeholder="john@123" class="text" id="email"><br>
-
-<label for="feed"> Feedback
-<textarea rows="10" class="text" id="feed" > </textarea>
- <br>
- <br>
-<input type="button" value="Submit" id="subbutton">
+<table width="400px" class="contactform">
+	<tr>
+	 <td colspan="2">
+	  <div class="contactformheader">Contact Us Form</div>
+	   </td>
+	</tr>
+	<tr>
+	 <td valign="top">
+	  <label for="Full_Name" class="required">Full Name </span></label>
+	 </td>
+	 <td valign="top">
+	  <input type="text" name="Full_Name" id="Full_Name" maxlength="80" style="width:230px">
+	 </td>
+	</tr>
+	<tr>
+	 <td valign="top">
+	  <label for="Email_Address" class="required">Email Address </span></label>
+	 </td>
+	 <td valign="top">
+	  <input type="text" name="Email_Address" id="Email_Address" maxlength="100" style="width:230px">
+	 </td>
+	</tr>
+	
+	<tr>
+	 <td valign="top">
+	  <label for="Your_Message" class="required" id="ym">Your Message</span></label>
+	 </td>
+	 <td valign="top">
+	  <textarea style="width:230px;height:160px" name="Your_Message" id="Your_Message" maxlength="2000"></textarea>
+	 </td>
+	</tr>
+	
+	<tr>
+	 <td colspan="2" style="text-align:center" >
+	 <br /><br />
+	  <input type="submit" value=" Submit Form " style="width:200px;height:40px" id="contactsub">
+	  <br /><br />
+	 
+	  </div>
+	  <br /><br />
+	 </td>
+	</tr>
+	</table>
 
 </div>
 
 
 
 
-</div>
 
 
 
-
-
-
-
-</div>
 
 <style>
-
-
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -215,17 +232,12 @@ background: black;
 
 #inside{
 background:white;
+padding-left:400px;
 padding-top:50px;
 margin-left:0 auto;
 margin-right:0 auto;
-text-align:center;
 }
 
-#feedhead{
-font-size:30px;
-text-align:center;
-font-family:arial narrow;
-}
 
 
 
