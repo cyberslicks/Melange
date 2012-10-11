@@ -255,14 +255,15 @@ $oAuth = new oAuthLogin();
         <div class="page-region">
             <div class="page-region-content">
                  <div class="tiles clearfix">
-				 <a href="sorry.html">
+				 <a href="design-room.php">
                     <div class="tile double-vertical" id="tile1">
 					
-						 <p id="dhome"> Design House </p>
+						 <!--p id="dhome"> Design House </p-->
 						<h5 id="creat">
-						The creativity zone of Melange which helps you build your own website.</h5>
+						Design House 
+						</h5>
                         <div >
-                            <img src="./images/designicon1.png" id="designicon">
+                            <img src="./images/designhouse.png" id="designicon">
                         </div>
                         <!--div class="brand"> <!--the brand name>
                             <span class="name">Calendar</span>
@@ -274,7 +275,7 @@ $oAuth = new oAuthLogin();
                     <div class="tile selected" id="tile2">
                         <b class="check"></b>
                         <div class="tile-content icon">
-                            <img src="./images/codeicon.png">
+                            <img src="./images/code.png" id="codeicon">
                         </div>
                        <h5 id="codep"> Code Preview</h5>
                     </div>
@@ -283,9 +284,9 @@ $oAuth = new oAuthLogin();
 					<a href="sorry.html">
                     <div class="tile selected" id="tile3" >
                         <div class="tile-content icon">
-                            <img src="./images/showcase.png" id="showcase">
+                            <img src="./images/showcase.png" id="showcaseicon">
                         </div>
-                        
+                        <h5 id="codep"> ShowCase</h5>
                     </div>
 					</a>
 
@@ -293,19 +294,20 @@ $oAuth = new oAuthLogin();
 					<div class="tile double" id="tile4">
                         <div class="tile-content">
                             
-                            <p id="downhead">
-                                Downloads
-                                </p>
+                            
 								<div class="tile-content icon">
-                            <img src="./images/download.png" id="download">
-								<div id="down">
+                            <img src="./images/download.png" id="doubletileicon">
+								<!--div id="down">
                            	<li> PHP form</li>							
                             <li> javascript validations</li>
 							<li> Navigation bar </li>
 							<li> prebuilt templates and etc</li>
-							</p></div>
+							</p></div-->
 							
                         </div>
+						<p id="doubletiletitle">
+                                Downloads
+                                </p>
                         </div>
                     </div>
 					</a>
@@ -314,38 +316,36 @@ $oAuth = new oAuthLogin();
 					<a href="sorry.html">
 					<div class="tile double" id="tile5">
                         <div class="tile-content">
-                            <p id="downhead">Resources</p>
-                           
-							
-                            <p id="res">
+                            
+                           <div class="tile-content icon">
+                            <img src="./images/resourcetile.png" id="doubletileicon">
+							</div>
+                            <!--p id="res">
 							 Web development in parts<br>
                                 Create speciic part of code using different tools.
-                            </p>
-							
+                            </p-->
+							<p id="doubletiletitle">Resources</p>
                         </div>
                      </div>
 					</a>
 					
 					<a href="feedback.html">
 					<div class="tile bottom" id="tile6">
-					<h2 id="codep">
-					Code Preview
-					</h2>
-                        <div class="tile-content icon">
+					    <div class="tile-content icon">
                             <img src="./images/feedback.png" id="codeicon">
                         </div>
-                        <h2 id="feedp"> Feedback </h2>
+                        <h2 id="codep"> Feedback </h2>
                     </div>
                     </a>
 					
 					
 					
-					<a href="sorry.html">
+					<a href="login.php">
                     <div class="tile" id="tile7">
 				
 					
-                      <img src="./images/diary.png" id="signup">
-					  <h2 id="signupt"> Sign Up here !!</h2>
+                      <img src="./images/signup.png" id="signupicon">
+					  <h2 id="codep"> Sign Up !!</h2>
 					 
                     </div>
 					</a>
@@ -562,8 +562,8 @@ Follow Us:
 </header>
 <div>
 <div style="margin-left:-10px;">
-<img src="./images/facebook.png"> &nbsp;
-<img src="./images/twitter.png"> &nbsp;
+<img src="./images/facebook.png" > &nbsp;
+<img src="./images/twitter.png" > &nbsp;
 <img src="./images/google+.png"> &nbsp;
 </br>
 <img src="./images/github.png"> &nbsp;
