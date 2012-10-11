@@ -74,7 +74,7 @@ $oAuth = new oAuthLogin();
 		if(isset($_SESSION['oauth_vendor']) && (($_SESSION['oauth_vendor']=='facebook') || ($_SESSION['oauth_vendor']=='google')))
 		{
 		$userData = $oAuth->getUserData();
-		echo "<img  src=\"".$userData['img']."\  width=\"30px\" height=\"30px\"style=\"margin-left:-1112px;position:absolute; top:10px;\">";
+		echo "<img  src=\"".$userData['img']."\"  width=\"30px\" height=\"30px\"style=\"margin-left:-1112px;position:absolute; top:10px;\">";
 		
 		}
 		echo "<span id=\"stwel\">Welcome "  .$_SESSION['user_name'];

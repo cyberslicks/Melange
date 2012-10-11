@@ -1033,6 +1033,7 @@ PropertyBox.prototype.colorPickerBinder = function(previewId,targetId,targetType
 		{
 		this.vspacevalue-=5;
 		document.getElementById(id).vspace=this.vspacevalue;
+		
 		}
 		
 		//Source Management

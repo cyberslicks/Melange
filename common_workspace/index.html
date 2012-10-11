@@ -10,6 +10,90 @@
 <link rel="stylesheet" type="text/css" href="./styles/main-style.css"/>
 <link rel="stylesheet" type="text/css" href="./styles/propertybox.css"/>
 
+<style>
+
+#dim {
+    
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+    z-index:9999;
+    background:url('./images/pattern.gif');
+}
+
+.circle {
+	background-color: rgba(0,0,0,0);
+	border:5px solid rgba(0,183,229,0.9);
+	opacity:.9;
+	border-right:5px solid rgba(0,0,0,0);
+	border-left:5px solid rgba(0,0,0,0);
+	border-radius:50px;
+	box-shadow: 0 0 35px #2187e7;
+	width:50px;
+	height:50px;
+	margin:0 auto;
+	
+	-moz-animation:spinPulse 1s infinite ease-in-out;
+	-webkit-animation:spinPulse 1s infinite linear;
+	z-index:10000;
+}
+.circle1 {
+	background-color: rgba(0,0,0,0);
+	border:5px solid rgba(0,183,229,0.9);
+	opacity:.9;
+	border-left:5px solid rgba(0,0,0,0);
+	border-right:5px solid rgba(0,0,0,0);
+	border-radius:50px;
+	box-shadow: 0 0 15px #2187e7; 
+	width:30px;
+	height:30px;
+	margin:0 auto;
+	position:relative;
+	top:-50px;
+	
+	-moz-animation:spinoffPulse 1s infinite linear;
+	-webkit-animation:spinoffPulse 1s infinite linear;
+	z-index:10000;
+}
+@-moz-keyframes spinPulse {
+	0% { -moz-transform:rotate(160deg); opacity:0; box-shadow:0 0 1px #2187e7;}
+	50% { -moz-transform:rotate(145deg); opacity:1; }
+	100% { -moz-transform:rotate(-320deg); opacity:0; }
+}
+@-moz-keyframes spinoffPulse {
+	0% { -moz-transform:rotate(0deg); }
+	100% { -moz-transform:rotate(360deg);  }
+}
+@-webkit-keyframes spinPulse {
+	0% { -webkit-transform:rotate(160deg); opacity:0; box-shadow:0 0 1px #2187e7; }
+	50% { -webkit-transform:rotate(145deg); opacity:1;}
+	100% { -webkit-transform:rotate(-320deg); opacity:0; }
+}
+@-webkit-keyframes spinoffPulse {
+	0% { -webkit-transform:rotate(0deg); }
+	100% { -webkit-transform:rotate(360deg); }
+}
+
+
+#v-align {
+	
+	
+	top:50%;
+	left:50%;
+	position:absolute;
+	
+	
+	
+}
+
+
+
+
+
+</style>
+
 <script src="./js/modernizr.js"></script>
 <script src="./js/jquery.js"></script>
 <script src="./js/jquery-ui-1.js"></script>
@@ -31,6 +115,16 @@
  var toolbar = new Toolbar(surface);
  var dustbin = new Dustbin();
  //dustbin.eventBinder();
+ 
+ 
+ $('#design-room').hide();
+ 
+ $('body').append('<div id="dim"><div id="v-align"><div class="circle"></div><div class="circle1"></div></div></div>');
+		
+		$('#dim').delay(2000).fadeOut('slow', function() {
+		$('#design-room').fadeIn('fast'); 
+ });
+ 
  });
 </script>
 </head>
@@ -39,7 +133,7 @@
 <body>
 
 
-
+<div id="design-room">
 <header id="main-header">
           <div class="wrap">
                
@@ -442,7 +536,7 @@ copyright &copy; Melange 2012
 </footer>
 
 
-
+</div>
 
 </body>
 
