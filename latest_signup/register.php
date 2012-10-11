@@ -56,7 +56,9 @@
 		
 			// Print a message:
 			echo '<h1>Thank you!</h1>
-		<p>You are now registered. </p><p><br /></p>';	
+		<p>You are now registered. </p><p><br /></p>';
+			echo "Redirecting...Plz wait.";
+		header( "refresh:3;url=Front.php" );
 		
 		} else { // If it did not run OK.
 			
