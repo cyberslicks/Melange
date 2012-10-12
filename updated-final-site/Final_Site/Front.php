@@ -164,6 +164,9 @@ $oAuth = new oAuthLogin();
 					<a href="design-room.php">Aplha preview of Design House</a>
 					<br>
 					</div>
+					<aside class="grid_6">
+				<img class="poster" src="./images/architect.png" width="300px" height="350px" id="dicon">
+				</aside>
 				
 				
 			</article>
@@ -365,7 +368,7 @@ $oAuth = new oAuthLogin();
 	   <!--login box-->
 	   
 	   <div id="loginbox">
-			<p style="font-size:1.2em;font-weight:bold;color:black;">Login Room</p>
+			<p style="font-size:1.2em;font-weight:bold;color:white;">Login Room</p>
 	   <?php
 			
 			//if(!(isset($_SESSION['logged_in']) && ($_SESSION['logged_in']==1))) :
@@ -562,12 +565,12 @@ Follow Us:
 </header>
 <div>
 <div style="margin-left:-10px;">
-<img src="./images/facebook.png" > &nbsp;
-<img src="./images/twitter.png" > &nbsp;
+<a href="https://www.facebook.com/pages/Cyberslicks/279407935509252"><img src="./images/facebook.png" > </a> &nbsp;
+<a href="https://twitter.com/cyberslicks"> <img src="./images/twitter.png" > </a>&nbsp;
 <img src="./images/google+.png"> &nbsp;
 </br>
-<img src="./images/github.png"> &nbsp;
-<img src="./images/wordpress.png"> &nbsp;
+<a href="https://github.com/cyberslicks/Melange"><img src="./images/github.png"> </a>&nbsp;
+<a href="http://cyberslicks.wordpress.com"><img src="./images/wordpress.png"> </a>&nbsp;
 </div>
 
 

@@ -270,8 +270,8 @@ height:200px;
 #loginbox{
 width:350px;
 height:310px;
-background:#e1e1e1;
-border:2px solid #ffffff;
+background:#525252;
+
 /*opacity:0.2;*/
 float:right;
 /*margin-left:20px;*/
@@ -280,7 +280,7 @@ margin-right:30px;
 font-size:20px;
 color:#488bf5;
 text-align:center;
-box-shadow: 2px 2px  2px 2px #ffffff;
+
 opacity:0.9;
 }
 
@@ -385,5 +385,12 @@ margin-left:10px;
 position:relative;
 left:200px;
 top:100px;
+
+}
+
+#dicon{
+position:relative;
+left:200px;
+top:00px;
 
 }
