@@ -31,7 +31,7 @@ if(isset($_SESSION['logged_in']) && ($_SESSION['logged_in']==1))
 <!--<script src="./js/dnd.js"></script> -->
 
 <script type="text/javascript" >
- 
+
  $(document).ready(function() {
  
  var surface = new Surface();
@@ -62,11 +62,9 @@ if(isset($_SESSION['logged_in']) && ($_SESSION['logged_in']==1))
 <div id="modal-profile">
 
     <a id="modal-close-profile" title="Close profile window" href="#"><img src="./images/close.png" alt="Close profile window" /></a>
-   
-    <div id="dropzone" >
-		<span id="drop_text">Drop files here</span>
+    <div id="dropzone" >Drop files here</div>
 	
-							<div id="fileinfo">
+						<!-->	<div id="fileinfo">
 		                        <div id="filename"></div>
 		                        <div id="filesize"></div>
 		                        <div id="filetype"></div>
@@ -88,12 +86,14 @@ if(isset($_SESSION['logged_in']) && ($_SESSION['logged_in']==1))
 		                            <div class="clear_both"></div>
 		                        </div>
 		                        <div id="upload_response"></div>
-							</div> 
+							</div> -->
 	 
 	 
-	<output id="list"></output> 
-  </div>
-    </div>
+<!-->	<output id="list"></output> -->
+	
+ 
+  
+   
     
    <div id="modal-lightsout"></div>
     

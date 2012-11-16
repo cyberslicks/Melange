@@ -26,7 +26,7 @@ margin-left:0px;
 {
 
 width:600px;
-height:980px;
+height:1020px;
 background:rgb(245,245,247);
 margin-bottom:20px;
 margin-left:340px;
@@ -136,7 +136,7 @@ outline:none;
 #field3:hover{
 border :2px solid #7094FF;
 }
-#demo,#demo2,#demo3,#demo4,#demo5,#demo7
+#demo,#demo2,#demo3,#demo4,#demo5,#demo7,#demo8
 {
 margin-left:10px;
 font-weight:bold;

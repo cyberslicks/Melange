@@ -1,7 +1,7 @@
 function allval()
 {
 var l=document.getElementById("demo2").innerHTML;
-var r=fname() + lname() + uname() + passw1()  +  passw2() +chkday() +  chkyear() + chkcap() +ValidCaptcha() ;
+var r=fname() + lname() + uname() + passw1()  +  passw2() +chkday() +  chkyear() + chkcap() +ValidCaptcha() + chktick();
 //alert(r);
 if (r==0)
 {
@@ -60,7 +60,7 @@ if (x=="")
   {
   document.getElementById("demo").style.color="#ff7f81";
   document.getElementById("field").style.border="2px solid #ff7f81";
-  document.getElementById("demo").innerHTML="Fill ur name";
+  document.getElementById("demo").innerHTML="Fill your name";
   return 1;
   }
 else
@@ -109,7 +109,7 @@ if (z=="")
   {
   document.getElementById("demo2").style.color="#ff7f81";
   document.getElementById("field2").style.border="2px solid #ff7f81";
-  document.getElementById("demo2").innerHTML="Fill ur username";
+  document.getElementById("demo2").innerHTML="Fill your username";
   return 1;}
  else
  {
@@ -145,7 +145,7 @@ if (a=="")
   {
   document.getElementById("demo3").style.color="#ff7f81";
   document.getElementById("field3").style.border="2px solid #ff7f81";
-  document.getElementById("demo3").innerHTML="Fill ur password";
+  document.getElementById("demo3").innerHTML="Fill your password";
   return 1;}
  else
  {
@@ -220,7 +220,7 @@ if(d=="")
  else
  {
 var da = document.forms["signupform"]["day"].value;
- var ck_day =  /^[0-9]{1,2}$/;
+ var ck_day =  /^[0-2]{1}[0-9]{1}$/;
  if (!ck_day.test(da)) {
   document.getElementById("demo5").style.color="#ff7f81";
   document.getElementById("field5").style.border="2px solid #ff7f81";
@@ -267,7 +267,17 @@ alert("please specify your gender");
 function chktick()
 {
 if(!(document.forms["signupform"]["tc"].checked))
-alert("agree t&c before submitting");
+{
+    document.getElementById("demo8").style.color="#ff7f81";
+    document.getElementById("field8").style.border="2px solid #ff7f81";
+    document.getElementById("demo8").innerHTML="Accept T&C";
+	return 1;
+}
+else
+{
+	document.getElementById("demo8").innerHTML="";
+	return 0;
+}
 }
 
 function DrawCaptcha()

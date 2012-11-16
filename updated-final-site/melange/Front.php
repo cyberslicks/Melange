@@ -76,6 +76,20 @@ $oAuth = new oAuthLogin();
 		$userData = $oAuth->getUserData();
 		echo "<img  src=\"".$userData['img']."\"  width=\"30px\" height=\"30px\"style=\"margin-left:-1112px;position:absolute; top:10px;\">";
 		
+	    /*****  Folder creation   ********/
+  
+	    if(!is_dir("./user_content/".$_SESSION['user_name']))
+	    {
+  	
+	  	mkdir("./user_content/".$_SESSION['user_name'], 0700);
+	
+	
+	    }
+	    
+  
+  
+	    /****************/
+		
 		}
 		echo "<span id=\"stwel\">Welcome "  .$_SESSION['user_name'];
 		echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
@@ -555,7 +569,7 @@ background: black;
 Contact Us:
 </header>
 <div>
-<span class="bold">Call:</span> +91-9953267725</br>9910239493
+<span class="bold">Call:</span> +91-9953267725</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+91-9910239493
 </br>
 <span class="bold">Email:</span> cyberslicks@gmail.com
 </br>

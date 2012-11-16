@@ -176,6 +176,7 @@ text-align:center;
 
 /* ajax uploader property */
 
+
 #modal-profile h2 {
     font-size:2em;
     letter-spacing:-1px;
@@ -183,8 +184,8 @@ text-align:center;
 }
 #modal-profile {
     display:none;
-    height: 200px;
-    width: 500px;
+    height: 230px;
+    width: 550px;
     padding:10px;
     border:1px solid #fff;
     box-shadow: 0px 2px 7px #292929;
@@ -195,9 +196,13 @@ text-align:center;
     -webkit-border-radius:10px;
     background: #f2f2f2;
     z-index:10000;
-    
     position: absolute;
+     /*top:600px;
+     left:600px;*/
+	 margin-left:350px;
    
+	 margin-top:70px;
+
 }
 #modal-close-profile {
     position:absolute;
@@ -218,16 +223,70 @@ text-align:center;
 }
 #dropzone {
 	
-	width:400px;height:100px;
-	border:thin dashed #a1a1a1;
+	width:550px;height:145px;
+	border:2px dashed #a1a1a1;
 	color:#a2a2a2;
 	font-family: Helvetica;
-	font-size: 1.2em;
-	
+	font-size: 1.5em;
+	text-align: center;
+	border-radius:3px;
+	padding-top: 88px;
 }
 
+.thumb {
+    height: 75px;
+    border: 1px solid #000;
+    margin: 10px 5px 0 0;
+  }
 
+  
+ 
+  #speed,#remaining {
+      float:left;
+      width:100px;
+  }
+  #b_transfered {
+      float:right;
+      text-align:right;
+  }
+  .clear_both {
+      clear:both;
+  }
 
+  #progress_info {
+      font-size:10pt;
+  }
+  #fileinfo,#error,#error2,#abort,#warnsize {
+      color:#aaa;
+      display:none;
+      font-size:10pt;
+      font-style:italic;
+      margin-top:-68px;
+  }
+  #progress {
+      border:1px solid #ccc;
+      display:none;
+      margin-left:60px;
+      height:14px;
 
+      border-radius:10px;
+      -moz-border-radius:10px;
+      -ms-border-radius:10px;
+      -o-border-radius:10px;
+      -webkit-border-radius:10px;
 
+      background: -moz-linear-gradient(#66cc00, #4b9500);
+      background: -ms-linear-gradient(#66cc00, #4b9500);
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #66cc00), color-stop(100%, #4b9500));
+      background: -webkit-linear-gradient(#66cc00, #4b9500);
+      background: -o-linear-gradient(#66cc00, #4b9500);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#66cc00', endColorstr='#4b9500');
+      -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#66cc00', endColorstr='#4b9500')";
+      background: linear-gradient(#66cc00, #4b9500);
+  	  margin-bottom:5px;
+  }
+  #progress_percent {
+      float:right;
+  }
 
+  

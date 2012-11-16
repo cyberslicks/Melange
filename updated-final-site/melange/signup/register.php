@@ -48,7 +48,7 @@ ob_start();
 	if (empty($errors)) { // If everything's OK.*/
 	
 		// Register the user in the database...
-		
+		$p = md5($p); // hashing it with md5
 		// Make the query:
 		$q = "INSERT INTO users (first, last, username, pass, day,year,registration_date) VALUES ('$fn', '$ln', '$e', '$p','$d','$y', NOW() )";		
 		$r = mysql_query ($q, $dbc); // Run the query.

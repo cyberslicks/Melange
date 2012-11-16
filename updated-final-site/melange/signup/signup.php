@@ -158,7 +158,7 @@ xmlhttp.send();
 		
 		
 </div>
-<div style="height:1020px;width:100%;background:white;">
+<div style="height:1060px;width:100%;background:white;">
 
 <div id="div1">
 <div id="hea"><p style="margin-top:5px;position:absolute;margin-left:160px;">Create a New Melange Account</p></div>
@@ -218,7 +218,8 @@ xmlhttp.send();
 		
 		
 <br/><br/>
-<input type="checkbox" name="tc" value="tc" id="field"  />  I agree to the Melange <a href="#">Terms of service</a> and <a href="#">Privacy Policy</a>
+<input type="checkbox" name="tc" value="tc" id="field8"  onchange="chktick()"/>  I agree to the Melange <a href="#">Terms of service</a> and <a href="#">Privacy Policy</a>
+<p id="demo8"></p>
 </br></br></br><input type="submit" value="Submit"  class="awesome" id="btnrefresh" style="margin-left:10px;" />
 
 </form>

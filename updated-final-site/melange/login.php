@@ -4,7 +4,8 @@ $var=1;
 if(isset($_POST["username"]) && isset($_POST["username"]))
 {
 $q=$_POST["username"];
-$w=$_POST["password"];
+$w=md5($_POST["password"]);
+
 require_once ('../mysqli_connect.php');
 
 if (!$dbc)
@@ -26,6 +27,20 @@ if($row['username'])
 	{//echo "<h1>match</h1>";
 	$_SESSION['user_name'] = $q;
   $_SESSION['logged_in'] = 1;
+  
+  /*****  Folder creation   ********/
+  
+  if(!is_dir("./user_content/".$_SESSION['user_name']))
+  {
+  	
+	mkdir("./user_content/".$_SESSION['user_name'], 0700);
+	
+  }
+  
+  
+  /****************/
+  
+  
   
 	 header('Location:Front.php');}
   else{
