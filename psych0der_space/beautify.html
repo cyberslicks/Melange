@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+
+<head>
+<title>beautify</title>
+<link rel="stylesheet" type="text/css" href="./themes/sunburst.css">
+<script src="./js/rainbow.js"></script>
+<script src="./js/html.js"></script>
+<script src="./js/generic.js"></script>
+<script src="./js/jquery.js"></script>
+<script src="./js/clean.js"></script>
+<script src="./js/css-engine.js"></script>
+<script>
+
+ $(document).ready(function() {
+ 
+ 
+	 var c = new CssEngine();
+	
+ 
+$('#click').click($.proxy(function(){
+	
+	
+	var x = $('#inp').val();
+	$("#op").remove();
+	if($('#temp_div'))
+	$('#temp_div').remove();
+	
+var c = htmlencode($.htmlClean(x, {format:true ,bodyOnly:false ,  allowedAttributes: [
+                    ["width"],["id"],["class"],["type"],["name"],["width"],["height"],["src"],["href"]],allowedClasses : ["*"] }));
+
+
+
+var div = document.createElement('div');
+div.id="temp_div";
+div.innerHTML = '<pre><code data-language="html">'+c+'</code></pre>';
+Rainbow.color(div, function() {
+    document.getElementById('output').appendChild(div);
+});
+
+
+
+
+},document));
+
+ 
+ });
+ 
+function htmlencode(str) {
+    return str.replace(/[&<>"']/g, function($0) {
+        return "&" + {"&":"amp", "<":"lt", ">":"gt", '"':"quot", "'":"#39"}[$0] + ";";
+    });
+}
+</script>
+
+
+</head>
+<body>
+<div id="output"></div>
+<pre id="op"><code data-language="html" id="code">
+&lt;style type="text/css"&gt;
+    body span.blah {
+        background: #000;
+        color: #fff;
+    }
+&lt;/style&gt;
+
+&lt;body&gt;
+    &lt;span class="blah" width="200" height="200"&gt;test code goes here&lt;/span&gt;
+&lt;/body&gt;
+
+&lt;!-- inline php! --&gt;
+&lt;?php
+    $test = true;
+
+    /**
+     * test
+     */
+    function what($test) {
+        return $test;
+    }
+?&gt;
+</code></pre>
+
+</br>
+</br>
+<textarea rows="10" cols="40" id="inp"></textarea>
+<button id="click">beautify</button>
+
+
+
+
+
+
+</html>

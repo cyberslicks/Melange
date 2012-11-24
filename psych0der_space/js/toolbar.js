@@ -87,13 +87,14 @@ Toolbar.prototype.createSection = function(surf) {
 	
 	
 	surf.createObject('section');
+		
 
 }
 
 Toolbar.prototype.createText = function(surf) {
 	
 	
-	surf.createObject('input',{type:"text"});
+	surf.createObject('input',{type:"password"});
 
 }
 
@@ -108,4 +109,11 @@ $('#modal-profile').fadeIn("slow");
 	
 	
 }
+
+
+
+
+
+
+
 

@@ -56,7 +56,10 @@ PropertyBox.prototype.changeLockState = function(id) {
 		document.getElementById('lock-img').src="./images/unlock.png";
 		this.lockState = -1;
 		
-		
+	
+		if(obj.type!="password" && obj.type!="text")
+		{
+		obj.setAttribute('draggable', 'false');
 		
 		$('#'+id).resizable({ stop: $.proxy(function(event,ui) {
 				
@@ -82,7 +85,8 @@ PropertyBox.prototype.changeLockState = function(id) {
 			},this) }); // jquery-ui dependency: resizing function
 			//newElement.contentEditable="true";
 
-		obj.setAttribute('draggable', 'false');
+		
+		
 		obj.locked=-1;
 		
 		if(obj.type !='img')
@@ -91,20 +95,33 @@ PropertyBox.prototype.changeLockState = function(id) {
 			
 		}
 		
-		
-		
+	}
+	else
+	{
+	obj.style.resize="both";
+	alert("lol");
+	obj.locked=-1;
+	}	
+	
+	
 	}
 	
 	else {
 		
 		document.getElementById('lock-img').src="./images/lock.png";
 		this.lockState = 1;
+		
+		
+		if(obj.type!="password" && obj.type!="text")
+		{
+		
 		obj.setAttribute('draggable', 'true');
+	
 		obj.locked = 1;
 		$("#"+id).resizable('destroy');
-		obj.removeAttribute('contenteditable');
 		
-		if(obj.type !='img')
+		
+		if(obj.type !='img' && obj.type!='input')
 		{
 			obj.setAttribute('contentEditable', 'false');
 			
@@ -113,7 +130,13 @@ PropertyBox.prototype.changeLockState = function(id) {
 		
 	}
 	
+	else
+	{
+	obj.style.resize="none";	
+	obj.locked = 1;
+	}
 	
+	}
 }
 
 PropertyBox.prototype.updateLock  = function(id) {

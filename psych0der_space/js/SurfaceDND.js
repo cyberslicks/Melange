@@ -290,7 +290,9 @@ Surface.prototype.createObject = function(type,args) {
 	this.incrementIdNumber();
 	Surface.incrementZIndex();
 	
+	if(type!="input")
 	newElement.draggable = "true";
+	
 	
 	newElement.locked = 1;
 	
