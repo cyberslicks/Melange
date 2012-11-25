@@ -33,7 +33,7 @@ var c = htmlencode($.htmlClean(x, {format:true ,bodyOnly:false ,  allowedAttribu
 
 var div = document.createElement('div');
 div.id="temp_div";
-div.innerHTML = '<pre><code data-language="html">'+c+'</code></pre>';
+div.innerHTML = '<pre style="overflow:scroll;white-space:pre-wrap;"><code data-language="html">'+c+'</code></pre>';
 Rainbow.color(div, function() {
     document.getElementById('output').appendChild(div);
 });
@@ -58,17 +58,43 @@ function htmlencode(str) {
 	margin-left:380px;
 	margin-top:30px;
 	
-	padding-left:98px;
+	padding-left:38px;
 	padding-top:9px;
-	background : url(./images/paper2.jpg);
+	background : url(./images/bgrid.jpg);
 	font-size:0.9em;
-	line-height:1.7em;
+	line-height:1em;
 	outline:none;
-	font-family:Times;
-	
+	font-family:courier;
+	color:white;
 	
 	
 }
+
+
+
+.bawesome{
+
+display: inline-block;
+padding: 5px 10px 6px;
+color: #fff;
+text-decoration: none;
+font-weight: bold;
+line-height: 1;
+
+
+text-shadow: 0 -1px 1px #222;
+
+position: relative;
+cursor: pointer;
+background-color: #2bbff4;
+
+-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+border-bottom: 1px solid rgba(0,0,0,0.25);
+
+}
+
 
 
 
@@ -83,10 +109,10 @@ function htmlencode(str) {
 
 </br>
 </br>
-<tt><textarea rows="20" cols="50" id="inp"></textarea></tt>
+<tt><textarea rows="30" cols="60" id="inp"></textarea></tt>
 </br>
 </br>
-<center><button id="click">beautify</button></center>
+<center><button id="click" class="bawesome">beautify</button></center>
 </br>
 </br>
 
