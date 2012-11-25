@@ -3,7 +3,7 @@
 
 <head>
 <title>beautify</title>
-<link rel="stylesheet" type="text/css" href="./themes/sunburst.css">
+<link rel="stylesheet" type="text/css" href="./themes/theme.css">
 <script src="./js/rainbow.js"></script>
 <script src="./js/html.js"></script>
 <script src="./js/generic.js"></script>
@@ -15,7 +15,7 @@
  $(document).ready(function() {
  
  
-	 var c = new CssEngine();
+	 $('#output').hide();
 	
  
 $('#click').click($.proxy(function(){
@@ -39,7 +39,7 @@ Rainbow.color(div, function() {
 });
 
 
-
+$('#output').fadeIn(2000);
 
 },document));
 
@@ -52,41 +52,43 @@ function htmlencode(str) {
     });
 }
 </script>
+<style>
+#inp {
+	
+	margin-left:380px;
+	margin-top:30px;
+	
+	padding-left:98px;
+	padding-top:9px;
+	background : url(./images/paper2.jpg);
+	font-size:0.9em;
+	line-height:1.7em;
+	outline:none;
+	font-family:Times;
+	
+	
+	
+}
 
+
+
+</style>
 
 </head>
 <body>
 <div id="output"></div>
-<pre id="op"><code data-language="html" id="code">
-&lt;style type="text/css"&gt;
-    body span.blah {
-        background: #000;
-        color: #fff;
-    }
-&lt;/style&gt;
 
-&lt;body&gt;
-    &lt;span class="blah" width="200" height="200"&gt;test code goes here&lt;/span&gt;
-&lt;/body&gt;
 
-&lt;!-- inline php! --&gt;
-&lt;?php
-    $test = true;
-
-    /**
-     * test
-     */
-    function what($test) {
-        return $test;
-    }
-?&gt;
 </code></pre>
 
 </br>
 </br>
-<textarea rows="10" cols="40" id="inp"></textarea>
-<button id="click">beautify</button>
-
+<tt><textarea rows="20" cols="50" id="inp"></textarea></tt>
+</br>
+</br>
+<center><button id="click">beautify</button></center>
+</br>
+</br>
 
 
 
