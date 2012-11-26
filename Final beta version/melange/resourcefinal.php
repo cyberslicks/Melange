@@ -158,7 +158,17 @@ $oAuth = new oAuthLogin();
 				<img src="./images/ser.jpg" alt="Search on Web">
 			</a>
 		</li>
-		
+		<br>
+		<li>
+			<a href="NavBarfinal.php" title="NavBar Builder">
+				<img src="./images/beautify.jpg" alt="Nav Bar Builder">
+			</a>
+		</li>
+		<li>
+			<a href="" title="Form Builder">
+				<img src="./images/beautify.jpg" alt="Form Builder">
+			</a>
+		</li>
 		
 	</ul>
 </div></center>
