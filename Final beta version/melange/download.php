@@ -153,36 +153,7 @@ $oAuth = new oAuthLogin();
 				<img src="./Polaroid_files/image-02.jpg" alt="Discussion">
 			</a>
 		</li>
-		<li>
-			<a href="" title="A Hearty Laugh">
-				<img src="./Polaroid_files/image-03.jpg" alt="A Hearty Laugh">
-			</a>
-		</li>
-		<li>
-			<a href="" title="Evil Matt Coding">
-				<img src="./Polaroid_files/image-04.jpg" alt="Evil Matt Coding">
-			</a>
-		</li>
-		<li>
-			<a href="" title="Amanda Glares...">
-				<img src="./Polaroid_files/image-05.jpg" alt="Amanda Glares...">
-			</a>
-		</li>
-		<li>
-			<a href="" title="Scribble scribble...">
-				<img src="./Polaroid_files/image-06.jpg" alt="Scribbles">
-			</a>
-		</li>
-		<li>
-			<a href="" title="The Dougernaut">
-				<img src="./Polaroid_files/image-07.jpg" alt="The Dougernaut">
-			</a>
-		</li>
-		<li>
-			<a href="" title="I See You!">
-				<img src="./Polaroid_files/image-08.jpg" alt="I See You!">
-			</a>
-		</li>
+		
 		
 	</ul>
 </div>
@@ -195,7 +166,7 @@ font-size:20px;
 }
 
 #poldiv{
-margin-left:150px;
+margin-left:300px;
 }
 
 
@@ -347,12 +318,13 @@ background: black;
 	</header>
 	<div>
 	<div style="margin-left:-10px;">
-	<img src="./images/facebook.png"> &nbsp;
-	<img src="./images/twitter.png"> &nbsp;
-	<img src="./images/google+.png"> &nbsp;
-	</br>
-	<img src="./images/github.png"> &nbsp;
-	<img src="./images/wordpress.png"> &nbsp;
+	<a href="https://www.facebook.com/pages/Cyberslicks/279407935509252"><img src="./images/facebook.png" > </a> &nbsp;
+<a href="https://twitter.com/cyberslicks"> <img src="./images/twitter.png" > </a>&nbsp;
+<img src="./images/google+.png"> &nbsp;
+</br>
+<a href="https://github.com/cyberslicks/Melange"><img src="./images/github.png"> </a>&nbsp;
+<a href="http://cyberslicks.wordpress.com"><img src="./images/wordpress.png"> </a>&nbsp;
+<a href="index.php"><img src="./images/rsss.png"> </a>&nbsp;
 	</div>
 
 

@@ -425,11 +425,12 @@ margin-right:0 auto;
 	<div>
 	<div style="margin-left:-10px;">
 	<a href="https://www.facebook.com/pages/Cyberslicks/279407935509252"><img src="./images/facebook.png" > </a> &nbsp;
-	<a href="https://twitter.com/cyberslicks"> <img src="./images/twitter.png" > </a>&nbsp;
-	<img src="./images/google+.png"> &nbsp;
-	</br>
-	<a href="https://github.com/cyberslicks/Melange"><img src="./images/github.png"> </a>&nbsp;
-	<a href="http://cyberslicks.wordpress.com"><img src="./images/wordpress.png"> </a>&nbsp;
+<a href="https://twitter.com/cyberslicks"> <img src="./images/twitter.png" > </a>&nbsp;
+<img src="./images/google+.png"> &nbsp;
+</br>
+<a href="https://github.com/cyberslicks/Melange"><img src="./images/github.png"> </a>&nbsp;
+<a href="http://cyberslicks.wordpress.com"><img src="./images/wordpress.png"> </a>&nbsp;
+<a href="index.php"><img src="./images/rsss.png"> </a>&nbsp;
 	</div>
 
 

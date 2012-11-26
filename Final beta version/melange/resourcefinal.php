@@ -108,7 +108,7 @@ $oAuth = new oAuthLogin();
 		/* --------------polaroids css------------------------------------ */
 		body{
 		background-color:black;}
-		ul.polaroids { width: 970px; margin: 0 0 18px -30px; }
+		ul.polaroids { width: 850px; margin: 0 0 18px -30px; }
 		ul.polaroids li { display: inline; }
 		ul.polaroids a { background: #fff; display: inline; float: left; margin: 0 0 27px 30px; width: auto; padding: 10px 10px 15px; text-align: center; font-family: "Marker Felt", sans-serif; text-decoration: none; color: #333; font-size: 18px; -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.25); -moz-box-shadow: 0 3px 6px rgba(0,0,0,.25); -webkit-transform: rotate(-2deg); -webkit-transition: -webkit-transform .15s linear; -moz-transform: rotate(-2deg); }
 		ul.polaroids img { display: block; width: 190px; margin-bottom: 12px; }
@@ -158,7 +158,7 @@ $oAuth = new oAuthLogin();
 				<img src="./images/ser.jpg" alt="Search on Web">
 			</a>
 		</li>
-		<br>
+	
 		<li>
 			<a href="NavBarfinal.php" title="NavBar Builder">
 				<img src="./images/beautify.jpg" alt="Nav Bar Builder">
@@ -330,12 +330,13 @@ background: black;
 	</header>
 	<div>
 	<div style="margin-left:-10px;">
-	<img src="./images/facebook.png"> &nbsp;
-	<img src="./images/twitter.png"> &nbsp;
-	<img src="./images/google+.png"> &nbsp;
-	</br>
-	<img src="./images/github.png"> &nbsp;
-	<img src="./images/wordpress.png"> &nbsp;
+	<a href="https://www.facebook.com/pages/Cyberslicks/279407935509252"><img src="./images/facebook.png" > </a> &nbsp;
+<a href="https://twitter.com/cyberslicks"> <img src="./images/twitter.png" > </a>&nbsp;
+<img src="./images/google+.png"> &nbsp;
+</br>
+<a href="https://github.com/cyberslicks/Melange"><img src="./images/github.png"> </a>&nbsp;
+<a href="http://cyberslicks.wordpress.com"><img src="./images/wordpress.png"> </a>&nbsp;
+<a href="index.php"><img src="./images/rsss.png"> </a>&nbsp;
 	</div>
 
 

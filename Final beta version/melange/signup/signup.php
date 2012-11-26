@@ -255,6 +255,7 @@ Follow Us:
 </br>
 <a href="https://github.com/cyberslicks/Melange"><img src="./images/github.png"> </a>&nbsp;
 <a href="http://cyberslicks.wordpress.com"><img src="./images/wordpress.png"> </a>&nbsp;
+
 </div>
 
 

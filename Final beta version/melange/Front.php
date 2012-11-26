@@ -232,7 +232,7 @@ $oAuth = new oAuthLogin();
 			<article class="container_12">
 				
 				<!--a  class="grid_4"><span class="icon portfolio"></span>portfolio<span>the best of the best Templates</span></a-->
-				<a  class="grid_4" href="sorry.php" ><span class="grid3logo" id="resourceicon"></span>resources<span>high quality resources for you!</span></a>
+				<a  class="grid_4" href="index.php" ><span class="grid3logo" id="resourceicon"></span>RSS FEEDS<span>Uptodate Yourself !!</span></a>
 				<a  class="grid_4" href="http://cyberslicks.wikidot.com" target="_blank"><span class="grid3logo" id="wikiicon"></span>Wiki<span>Official wiki of melange</span></a>
 				<div class="clear"></div>
 				
@@ -591,6 +591,7 @@ Follow Us:
 </br>
 <a href="https://github.com/cyberslicks/Melange"><img src="./images/github.png"> </a>&nbsp;
 <a href="http://cyberslicks.wordpress.com"><img src="./images/wordpress.png"> </a>&nbsp;
+<a href="index.php"><img src="./images/rsss.png"> </a>&nbsp;
 </div>
 
 
