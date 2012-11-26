@@ -1,0 +1,31 @@
+
+
+#navigation {
+	background:black;
+	width:600px;
+	height:40px;
+	list-style:none;
+	
+}
+#navigation li {
+	
+	float:left;
+	width:150px;
+	height:40px;
+	background:black;	
+	border:1px solid #0000ff;
+	list-style:none;
+	color:white;
+	text-align:center;
+}
+
+#navigation a {
+	color:white;
+}
+#navigation a:hover {
+	background:grey;
+
+}
+#navigation .active {
+	background:blue;
+}

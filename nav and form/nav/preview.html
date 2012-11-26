@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="site.css" />
+<link rel="stylesheet" type="text/css" href="navmenu.css" />
+<script src="jquery.js"></script>
+
+ 
+<style type="text/css"> 
+#panel,#flip,#panel1
+{
+height:100px;
+width:1000px;
+padding:20px;
+background:#e5eecc;
+border:solid 1px #c3c3c3;
+}
+#panel
+{
+height:100px;display:none;
+}
+#panel1
+{
+height:100px;display:none;
+margin-left:200px;
+}
+</style>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
+    
+    <style>
+    #sortable { list-style-type: none; margin: 0; padding: 0; width: 20%; }
+    #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+    #sortable li span { position: absolute; margin-left: -1.3em; }
+    </style>
+    <script>
+    $(function() {
+        $( "#sortable" ).sortable();
+		
+        $( "#sortable" ).disableSelection();
+    });
+    </script>
+</head>
+<body>
+<div >
+<a href="#" class="button next black"><span></span>1:Manage Links</a>
+<a href="#" class="button next black"><span></span>2:Design/Color</a>
+<a href="#" class="button next b"><span></span>3.export</a>
+</br>
+<a href="#" class="button black" onclick="prn1()"><span></span>Reset</a>
+<a href="#" class="button black"><span></span>Prev</a>
+<a href="#" class="button black"><span></span>Next</a>
+<a href="#" class="button black" id="flip1"><span></span>Preview</a>
+</br>
+
+</div>
+ 
+
+<div id="panel">Hello world!</div>
+<div id="manage">
+<ul id="sortable">
+<div id="0"><li class="ui-state-default" id="0" name="1"><a href="#">Home</a><input type="button" value="delete"  onclick="dim(0)" id="del1"></li></div>
+<div id="1"><li class="ui-state-default" id="1" name="1"><a href="#">About</a><input type="button" value="delete" onclick="dim(1)" id="del2"></li></div>
+<div id="2"><li class="ui-state-default" id="2" name="1"><a href="#">Contact</a><input type="button" value="delete" onclick="dim(2)" id="del3"></li></div>
+<div id="3"><li class="ui-state-default" id="3" name="1"><a href="#">Help</a><input type="button" value="delete" onclick="dim(3)" id="del4"></li></div>
+<input type="button" value="ok" onclick="know()">
+</ul>
+</div>
+<input type="button" id="flip2" value="New link" style="margin-left:200px;margin-top:-50px;position:fixed;">
+<div id="panel1">
+Link Name<input type="text" id="a1" name="nav"/></br>
+Link Url<input type="text" id="a2" name="link"/></br>
+<input type="button" value="Add Link" onclick="add()"/></br>
+</div>
+<script> 
+var j=1,d=5,c3="",g=3,v="v",h=4,h1,h2,g1,bn;
+$(document).ready(function(){
+  $("#flip1").click(function(){
+    $("#panel").slideToggle("slow");
+	
+  });
+  $("#flip2").click(function(){
+    $("#panel1").slideToggle("slow");
+	
+  });
+});  
+  function dim(r)
+  {
+    var r1=r+1;
+    $("li:eq("+r+")").hide();
+	$("#"+r1).hide();
+	
+  }/*
+  $("li:eq(1)").click(function(){
+    $("#b").hide();
+	v2="";
+	prn(v1,v2,v3,v4);
+  });
+  $("#del3").click(function(){
+    $("li:eq(2)").hide();
+	v3="";
+	prn(v1,v2,v3,v4);
+  });
+  $("#del4").click(function(){
+    $("li:eq(3)").hide();
+	v4="";
+	prn(v1,v2,v3,v4);
+  });*/
+  
+ function know()
+{
+var r=new Array();
+var t=new Array();
+for (var ids=0;ids<(g+1);ids++)
+{
+t[ids]=$("#sortable  li:eq("+ids+") a").text();
+}
+for (var ids1=0;ids1<(g+1);ids1++)
+{
+$("#navigation ul li:eq("+ids1+") a").text(t[ids1]);
+}
+var r0=$('[name="1"]').get(0).id ;
+var r2=$('[name="1"]').get(1).id;
+var r3=$('[name="1"]').get(2).id;
+var r4=$('[name="1"]').get(3).id;
+alert(r0+r2+r3+r4);
+var t1=$("#sortable  li:eq(0) a").text();
+var t2=$("#sortable  li:eq(1) a").text();
+var t3=$("#sortable  li:eq(2) a").text();
+var t4=$("#sortable  li:eq(3) a").text();
+
+$("#navigation ul li:eq(0) a").text(t1);
+$("#navigation ul li:eq(1) a").text(t2);
+$("#navigation ul li:eq(2) a").text(t3);
+$("#navigation ul li:eq(3) a").text(t4);
+} 
+function prn()
+{
+j=j+1;
+document.getElementById("panel").innerHTML="<div id=\"navigation\"><ul><li><a href=\"#\">Home</a></li><li><a href=\"#\">About</a></li><li><a href=\"#\">Contact</a></li><li><a href=\"#\">Help</a></li></ul></div>";
+n2=$("#1").index();
+//document.getElementById("panel").innerHTML=v1+v2+v3+v4;
+
+}
+function prn1()
+{
+
+document.getElementById("panel").innerHTML="<div id=\"navigation\"><ul><li><a href=\"#\">Home</a></li><li><a href=\"#\">About</a></li><li><a href=\"#\">Contact</a></li><li><a href=\"#\">Help</a></li></ul></div>";
+for(h1=0;h1<4;h1++)
+{$("#"+(h1+1)).show();
+}for(h1=h1;h1<h;h1++)
+{$("#manage ul li:eq("+h1+")").hide();
+}
+g=3;
+}
+function add()
+{
+    g=g+1,h=h+1;
+    var c1=document.getElementById("a1").value;
+	var c2=document.getElementById("a2").value;
+    /*var target = $("li:last"); // 
+     
+	if(c1!='' && c2!='')
+	target.after("<div id=\"navigation\"><li><a href=\"" + c2 +"\">" +c1+ "</a><input type=\"button\" value=\"delete\" onclick=\"del("+g+")\"></li></div></br>"); // insert a new list-item
+	*/$("#navigation ul").append("<li><a href=\"" + c2 +"\">" +c1+ "</a></li>");
+	$("#manage ul").append("<div id=\""+h+"\"><li><a href=\"" + c2 +"\">" +c1+ "</a><input type=\"button\" value=\"delete\" onclick=\"del("+(h-1)+","+g+")\"></li></div>");
+	
+}
+function del(g1,g2)
+{bn=g1;
+
+$("li:eq("+g2+")").hide();
+$("#manage ul li:eq("+g1+")").hide();
+}
+prn();
+</script>
+</body>
+</html>
+
