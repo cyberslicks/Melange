@@ -1,5 +1,5 @@
 <?php
-ob_start();
+	
 	
 	require_once ('../mysqli_connect.php'); // Connect to the db.
 	//session_start();
@@ -48,18 +48,18 @@ ob_start();
 	if (empty($errors)) { // If everything's OK.*/
 	
 		// Register the user in the database...
-		$p = md5($p); // hashing it with md5
+		
 		// Make the query:
 		$q = "INSERT INTO users (first, last, username, pass, day,year,registration_date) VALUES ('$fn', '$ln', '$e', '$p','$d','$y', NOW() )";		
 		$r = mysql_query ($q, $dbc); // Run the query.
-		if ($r) { // If it ran OK.
+		$fl=$fn . ' ' .$ln;
+		$q1 = "INSERT INTO stories (title,description,when1) values ('$fl',' has recently been registered on ', NOW())";
+		$r1 = mysql_query ($q1,$dbc);
+		if ($r && $r1) { // If it ran OK.
 		
 			// Print a message:
 			echo '<h1>Thank you!</h1>
-		<p>You are now registered. </p><p><br /></p>';
-			echo "Redirecting...Plz wait.";
-		header( "refresh:3;url=../Front.php" );
-		
+		<p>You are now registered. </p><p><br /></p>';	
 		
 		} else { // If it did not run OK.
 			
@@ -88,7 +88,7 @@ ob_start();
 		echo '</p><p>Please try again.</p><p><br /></p>';
 		
 	} // End of if (empty($errors)) IF.
-	ob_flush();
+	
 	mysql_close($dbc); // Close the database connection.
 
  // End of the main Submit conditional.
