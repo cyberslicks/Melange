@@ -141,15 +141,15 @@ $oAuth = new oAuthLogin();
 		  
 		  
 		  
-		  function scrape_between($data, $start, $end){
+		  function crawl_between($data, $start, $end){
 				$data = stristr($data, $start); // Stripping all data from before $start
 				$data = substr($data, strlen($start));  // Stripping $start
-				$stop = stripos($data, $end);   // Getting the position of the $end of the data to scrape
-				$data = substr($data, 0, $stop);    // Stripping all data from after and including the $end of the data to scrape
-				return $data;   // Returning the scraped data from the function
+				$stop = stripos($data, $end);   // Getting the position of the $end of the data to crawl
+				$data = substr($data, 0, $stop);    // Stripping all data from after and including the $end of the data to crawl
+				return $data;   // Returning the crawld data from the function
 			}
 		  
-		  ///$answer=scrape_between($data1,$start,$end);
+		  ///$answer=crawl_between($data1,$start,$end);
 		   
 		 
 			
@@ -161,17 +161,17 @@ $oAuth = new oAuthLogin();
 			$w3add="http://www.google.com/search?sitesearch=www.w3schools.com&as_q=";
 			$url=$w3add.$tag;
 			
-			 // Assigning the URL we want to scrape to the variable $url
+			 // Assigning the URL we want to crawl to the variable $url
 		 
 			$results_page = curl($url); // Downloading the results page using our curl() funtion
 			 
-			$results_page = scrape_between($results_page, "<div id=\"center_col\">", "<div id=\"foot\">"); // Scraping out only the middle section of the results page that contains our results
+			$results_page = crawl_between($results_page, "<div id=\"center_col\">", "<div id=\"foot\">"); // Scraping out only the middle section of the results page that contains our results
 			 
 			//$separate_results = explode("<td class=\"image\">", $results_page);   // Expploding the results into separate parts into an array
 				 
 		   
 			echo "W3 Schools";
-			print_r($results_page); // Printing out our array of URLs we've just scraped
+			print_r($results_page); // Printing out our array of URLs we've just crawld
 		  
 		  ?>
 
@@ -183,11 +183,11 @@ $oAuth = new oAuthLogin();
 			$jssadd="http://www.javascriptsource.com/search?q=";
 			$url3=$jssadd.$tag;
 			
-			 // Assigning the URL we want to scrape to the variable $url
+			 // Assigning the URL we want to crawl to the variable $url
 		 
 			$results_page3 = curl($url3); // Downloading the results page using our curl() funtion
 			 
-			$results_page3 = scrape_between($results_page3, "<div id=\"search_result_body\">", "<div id=\"search_pagination\">"); // Scraping out only the middle section of the results page that contains our results
+			$results_page3 = crawl_between($results_page3, "<div id=\"search_result_body\">", "<div id=\"search_pagination\">"); // Scraping out only the middle section of the results page that contains our results
 			 
 			
 				 
@@ -198,7 +198,7 @@ $oAuth = new oAuthLogin();
 				{
 				echo "No results Found";
 				}
-			print_r($results_page3); // Printing out our array of URLs we've just scraped
+			print_r($results_page3); // Printing out our array of URLs we've just crawld
 			
 
 
