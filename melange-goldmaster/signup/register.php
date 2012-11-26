@@ -52,7 +52,21 @@ ob_start();
 		// Make the query:
 		$q = "INSERT INTO users (first, last, username, pass, day,year,registration_date) VALUES ('$fn', '$ln', '$e', '$p','$d','$y', NOW() )";		
 		$r = mysql_query ($q, $dbc); // Run the query.
-		if ($r) { // If it ran OK.
+		
+		$fl=$fn . ' ' .$ln;
+		               $q1 = "INSERT INTO stories (title,description,when1) values ('$fl',' has recently been registered on ', NOW())";
+		               $r1 = mysql_query ($q1,$dbc);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		if ($r && $r1) { // If it ran OK.
 		
 			// Print a message:
 			echo '<h1>Thank you!</h1>

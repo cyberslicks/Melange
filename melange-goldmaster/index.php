@@ -4,7 +4,7 @@ require_once('inc/db.inc.php');
 require_once('inc/rss_factory.inc.php');
 
 
-$sSiteUrl = 'http://localhost/mel_fin/Final_done/';
+$sSiteUrl = 'http://localhost:88888/php_sandbox/melange-new/';
 $sRssIcon = 'http://www.script-tutorials.com/logo-tuts.png';
 
 

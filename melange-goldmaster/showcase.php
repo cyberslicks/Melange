@@ -144,7 +144,7 @@ $oAuth = new oAuthLogin();
 <div id="poldiv">
 <center>
 	<ul class="polaroids">
-		<li>
+		<!--	<li>
 			<a href="" title="Click To Download">
 				<img src="./Polaroid_files/image-01.jpg" alt="Click To Download">
 			</a>
@@ -154,7 +154,7 @@ $oAuth = new oAuthLogin();
 				<img src="./Polaroid_files/image-02.jpg" alt="Discussion">
 			</a>
 		</li>
-		
+		-->
 		
 	</ul>
 </center>

@@ -6,7 +6,7 @@
 
 // Set the database access information as constants:
 DEFINE ('DB_USER', 'root');
-DEFINE ('DB_PASSWORD', '');
+DEFINE ('DB_PASSWORD', 'root');
 DEFINE ('DB_HOST', 'localhost:8888');
 DEFINE ('DB_NAME', 'melange');
 

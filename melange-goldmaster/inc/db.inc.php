@@ -29,10 +29,10 @@ class ASysDB {
     function ASysDB() {
         $this->sDbName = 'melange';
         $this->sDbUser = 'root';
-        $this->sDbPass = '';
+        $this->sDbPass = 'root';
 
         // create db link
-        $this->vLink = mysql_connect("localhost", $this->sDbUser, $this->sDbPass);
+        $this->vLink = mysql_connect("localhost:8888", $this->sDbUser, $this->sDbPass);
 
         //select the database
         mysql_select_db($this->sDbName, $this->vLink);

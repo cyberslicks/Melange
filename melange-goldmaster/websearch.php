@@ -11,7 +11,7 @@ $oAuth = new oAuthLogin();
 	-->
 	
 	
-	<title>Melange: Downloads</title>
+	<title>Melange: apology</title>
 	
 	<!-- Typekit -->
 	<script async="" src="./js/ga.js"></script>
@@ -62,7 +62,7 @@ $oAuth = new oAuthLogin();
 	<h1 class="heading">
 	Contact</h1>
 	</div></a>
-	<a href="http://cyberslicks.wordpress.com"><div class="headertile">
+	<a href="http://www.http://cyberslicks.wordpress.com"><div class="headertile">
 	<h1 class="heading">
 	Blog </h1>
 	</div></a>
@@ -97,188 +97,172 @@ $oAuth = new oAuthLogin();
 		
 </div>
 
-	<script src="./js/jquery-1.4.4.min.js" type="text/javascript">
-	</script>
+<p><div id="center"><br>
+						Search Resources on web
+		<script>
+		function change(){
+			var el1 = document.getElementById("tagline");
+			var el2 = document.getElementById("text");
+			el1.innerHTML = el2.value;
+				}
+		</script>
 
-
-		
+<form onsubmit="websearch.php" method="get">
+<center>
+		<input type="text" id="text" onkeyup="change()" name="tagin" autofocus="autofocus">
+		<button type="submit" value="submit"> Search
+		</button>
+		</form></center>
+		<div id="tagline"> </div><br>
+		<div id="w3results">
+		<?php
+			// Defining the basic cURL function
+			function curl($url) {
+				// Assigning cURL options to an array
+				$options = Array(
+					CURLOPT_RETURNTRANSFER => TRUE,  // Setting cURL's option to return the webpage data
+					CURLOPT_FOLLOWLOCATION => TRUE,  // Setting cURL to follow 'location' HTTP headers
+					CURLOPT_AUTOREFERER => TRUE, // Automatically set the referer where following 'location' HTTP headers
+					CURLOPT_CONNECTTIMEOUT => 120,   // Setting the amount of time (in seconds) before the request times out
+					CURLOPT_TIMEOUT => 120,  // Setting the maximum amount of time for cURL to execute queries
+					CURLOPT_MAXREDIRS => 10, // Setting the maximum number of redirections to follow
+					CURLOPT_USERAGENT => "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.1a2pre) Gecko/2008073000 Shredder/3.0a2pre ThunderBrowse/3.2.1.8",  // Setting the useragent
+					CURLOPT_URL => $url, // Setting cURL's URL option with the $url variable passed into the function
+				);
+				 
+				$ch = curl_init();  // Initialising cURL 
+				curl_setopt_array($ch, $options);   // Setting cURL's options using the previously assigned array data in $options
+				$data = curl_exec($ch); // Executing the cURL request and assigning the returned data to the $data variable
+				curl_close($ch);    // Closing cURL 
+				return $data;   // Returning the data from the function 
+			}
+		  
+		  
+		  
+		  
+		  function crawl_between($data, $start, $end){
+				$data = stristr($data, $start); // Stripping all data from before $start
+				$data = substr($data, strlen($start));  // Stripping $start
+				$stop = stripos($data, $end);   // Getting the position of the $end of the data to crawl
+				$data = substr($data, 0, $stop);    // Stripping all data from after and including the $end of the data to crawl
+				return $data;   // Returning the crawld data from the function
+			}
+		  
+		  ///$answer=crawl_between($data1,$start,$end);
+		   
+		 
 			
-		    <style type="text/css">
+			if(isset($_GET["tagin"]))
+				$tag=$_GET["tagin"];
+				else
+				$tag="";
+			
+			$w3add="http://www.google.com/search?sitesearch=www.w3schools.com&as_q=";
+			$url=$w3add.$tag;
+			
+			 // Assigning the URL we want to crawl to the variable $url
+		 
+			$results_page = curl($url); // Downloading the results page using our curl() funtion
+			 
+			$results_page = crawl_between($results_page, "<div id=\"center_col\">", "<div id=\"foot\">"); // Scraping out only the middle section of the results page that contains our results
+			 
+			//$separate_results = explode("<td class=\"image\">", $results_page);   // Expploding the results into separate parts into an array
+				 
+		   
+			echo "W3 Schools";
+			print_r($results_page); // Printing out our array of URLs we've just crawld
+		  
+		  ?>
+
 		
-		/* --------------polaroids css------------------------------------ */
-		body{
-		background-color:black;}
-		ul.polaroids { width: 970px; margin: 0 0 18px -30px; }
-		ul.polaroids li { display: inline; }
-		ul.polaroids a { background: #fff; display: inline; float: left; margin: 0 0 27px 30px; width: auto; padding: 10px 10px 15px; text-align: center; font-family: "Marker Felt", sans-serif; text-decoration: none; color: #333; font-size: 18px; -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.25); -moz-box-shadow: 0 3px 6px rgba(0,0,0,.25); -webkit-transform: rotate(-2deg); -webkit-transition: -webkit-transform .15s linear; -moz-transform: rotate(-2deg); }
-		ul.polaroids img { display: block; width: 190px; margin-bottom: 12px; }
-		ul.polaroids a:after { content: attr(title); }
-		
-		ul.polaroids li:nth-child(even) a { -webkit-transform: rotate(2deg);  -moz-transform: rotate(2deg); }
-		ul.polaroids li:nth-child(3n) a { -webkit-transform: none; position: relative; top: -5px;  -moz-transform: none; }
-		ul.polaroids li:nth-child(5n) a { -webkit-transform: rotate(5deg); position: relative; right: 5px;  -moz-transform: rotate(5deg); }
-		ul.polaroids li:nth-child(8n) a { position: relative; right: 5px; top: 8px; }
-		ul.polaroids li:nth-child(11n) a { position: relative; left: -5px; top: 3px; }
-		
-		ul.polaroids li.messy a { margin-top: -375px; margin-left: 160px; -webkit-transform: rotate(-5deg); -moz-transform: rotate(-5deg); }
-		
-		ul.polaroids li a:hover { -webkit-transform: scale(1.25); -moz-transform: scale(1.25); -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.5); -moz-box-shadow: 0 3px 6px rgba(0,0,0,.5); position: relative; z-index: 5; }
-		
-		code { background: rgba(0,0,0,.5); padding: 2px 3px; color: #fff; text-shadow: 0 1px 1px rgba(0,0,0,.75); -webkit-border-radius: 3px; -moz-border-radius: 3px; }
-		
-		ol.code { background: rgba(0,0,0,.75); margin-bottom: 18px; border: solid rgba(0,0,0,.75); border-width: 1px 1px 0; -webkit-border-radius: 3px; -moz-border-radius: 3px; -webkit-box-shadow: 0 1px 1px rgba(255,255,255,.5); }
-		ol.code li, ol.code li code { font-size: 14px !important; }
-		ol.code code { background: none; }
-    </style>
 
 
+		<div id="tjssresults">
+		<?php
+			$jssadd="http://www.javascriptsource.com/search?q=";
+			$url3=$jssadd.$tag;
+			
+			 // Assigning the URL we want to crawl to the variable $url
+		 
+			$results_page3 = curl($url3); // Downloading the results page using our curl() funtion
+			 
+			$results_page3 = crawl_between($results_page3, "<div id=\"search_result_body\">", "<div id=\"search_pagination\">"); // Scraping out only the middle section of the results page that contains our results
+			 
+			
+				 
+		   
+			echo "The Javascript Source"."<br/>";
+			
+				if(strlen($results_page3)=='24')
+				{
+				echo "No results Found";
+				}
+			print_r($results_page3); // Printing out our array of URLs we've just crawld
+			
+
+
+			
+		  ?>
+
+		</p>
+			</div>
+			</div>
+<style>	
 	
-	</head>
-	
-	<body id="css3PolaroidsPage" class=" " data-twttr-rendered="true" idgust="y">
 
-	<h1 id="title"><center> Downloads</h1></center>
+#tjssresults
+{
+position:relative;
 
-	<!-- All HTML Here -->	
+width:50%;
+float:left;
+height:500px;
+overflow:scroll;
 
-<div id="poldiv">
-	<ul class="polaroids">
-		<li>
-			<a href="" title="Click To Download">
-				<img src="./Polaroid_files/image-01.jpg" alt="Click To Download">
-			</a>
-		</li>
-		<li>
-			<a href="" title="Discussion">
-				<img src="./Polaroid_files/image-02.jpg" alt="Discussion">
-			</a>
-		</li>
-		
-		
-	</ul>
-</div>
-
-	
-<style>
-#title{
-color:white;
-font-size:20px;
+}
+#w3results{width:50%;
+border:1px;
+float:left;
+height:500px;
+overflow:scroll;
 }
 
-#poldiv{
-margin-left:300px;
-}
+#phpnetresults
+{
+position:relative;
 
-
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
-	font-weight: inherit;
-	font-style: inherit;
-	font-size: 100%;
-	vertical-align: baseline;
+width:33%;
+float:left;
+height:500px;
+overflow:scroll;
 
 }
 
 
-#main-footer {
-	
-	clear:both;
-	width:100%;
-	float:left;
-background: black;
-	
+#h{
+font-size:24;
 }
 
-#footer-wrap {
-	
-	
-	position:relative;
-		margin:0 auto;
-		width:900px;
-		color: white;
-		font-family: Arial,Verdana,sans-serif;
-	background: black;
-	
-	padding:30px;
-	padding-left:40px;
-	padding-top:30px;
-	
-	
-	
-}
+#center
+{
+height:600px;
+width:100%
+font-size:14;
+background-color:white;
 
-.foot-tab {
-	float:left;
-	margin-right: 100px;
-	
-}
-.foot-tab header{
-	
-	margin-botom:10px;
-	font-size:1.1em;
-	font-family: sans-serif;
-}
-
-.foot-tab div {
-	margin-top:20px;
-	color:#818181;
-	font-size: 0.8em;
-	font-family: Tahoma;
-	font-weight: normal;
-	margin-bottom: 40px;
-}
-
-.bold {
-	font-size: 0.9em;
-	color:white;
-	font-family: Helvetica;
-	
-	
-}
-
-.footer-email {
-	background: #818181;
-	color:#ffffff;
-	border: none;
-	outline:none;
-	height:25px;
-	width: 130px;
-	margin-left:-3px;	
-
-}
-
-::-webkit-input-placeholder {
-   color: #b1b1b1;
-}
-
-:-moz-placeholder {  
-   color: #b1b1b1;  
-}
-
-.foot-submit {
-	height: 26px;
-	width: 26px;
-	color:black;
-	background: white;
-	font-family: "Lucida Grande";
-	border: none;
-	
-	
 }
 
 
 
+
+
+#inside{
+background:white;
+padding-left:200px;
+padding-top:50px;
+margin-left:0 auto;
+margin-right:0 auto;
+}
 
 
 
@@ -416,40 +400,6 @@ background: black;
 </footer>
 
 
-	<!-- JavaScript at the bottom for fast page loading -->
-
-<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
-<script src="./js/jquery.js"></script>
-<script>window.jQuery || document.write("<script src='js/jquery-1.8.2.min.js'>\x3C/script>")</script>
-
-<!--[if lt IE 7 ]>
-<script src="js/libs/dd_belatedpng.js"></script>
-<script>DD_belatedPNG.fix("img, .png_bg"); // Fix any <img> or .png_bg bg-images. Also, please read goo.gl/mZiyb </script>
-<![endif]-->
-
-
-
-<!-- scripts concatenated and minified via ant build script-->
-<!-- end scripts-->
-
-
-
-<!-- mathiasbynens.be/notes/async-analytics-snippet Change UA-XXXXX-X to be your site's ID -->
-<script>
-var _gaq=[["_setAccount","UA-11149531-1"],["_trackPageview"]];
-(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
-g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
-s.parentNode.insertBefore(g,s)}(document,"script"));
-</script>
-	<script src="./js/script.js"></script>
-    <script src="./js/jribbble.js"></script>
-	<script src="./js/home_custom.js"></script>
-</body></html>
 
 </body>
 </html>
-
-	
-	
-		
-	

@@ -40,6 +40,28 @@ if(isset($_POST['title']) && !empty($_POST['title']) && isset($_POST['html']) &&
 	$css = $_POST['css'];
 	$html = str_replace("\\", "", $html);
 	
+	
+	
+	$dom = new DOMDocument;  
+	libxml_use_internal_errors(true);
+
+	$dom->loadHTML( $html ); 
+	$xpath = new DOMXPath( $dom );
+	libxml_clear_errors();
+
+	$doc = $dom->getElementsByTagName("html")->item(0);
+	$src = $xpath->query(".//@src");
+
+	foreach ( $src as $s ) {
+	  $s->nodeValue = array_pop( explode( "/", $s->nodeValue ) );
+	}
+
+	$html = $dom->saveXML( $doc );
+	
+	
+	
+	
+	
 	$htmlFileContents = '<html> <head><title>'.$title.' </title>   <link rel="stylesheet" type="text/css" href="./style.css">  </head>  <body> '.$html.' </body> </html>';
 	
 	$fh = fopen("./user_content/".$_SESSION['user_name']."/"."index.html", 'w');
