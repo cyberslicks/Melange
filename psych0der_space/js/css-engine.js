@@ -139,6 +139,19 @@ for (var property in style)
 				if(i==0)
 				styleName = property.substr(0, cn[0]);
 	        	
+				else if(i==cn.length)
+				{
+					
+					suffix = property.substr(cn[i-1],cn[i-1]- cn.length);
+					//alert(cn.length - cn[i-1]);
+	        		
+	        		suffix = suffix.charAt(0).toLowerCase() + suffix.substr(1);
+				
+	        		//alert(property+"-"+suffix);
+	        		styleName = styleName+'-'+suffix;
+
+				}
+				
 				else
 				{
 					suffix = property.substr(cn[i-1],cn[i]-cn[i-1]);

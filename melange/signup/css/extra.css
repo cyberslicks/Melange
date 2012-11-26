@@ -1,0 +1,115 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	vertical-align: baseline;
+
+}
+#main-footer {
+	
+	clear:both;
+	width:100%;
+	float:left;
+	
+background: black;
+	
+}
+
+#footer-wrap {
+	
+	
+	position:absolute;
+		margin-top:900;
+		margin-left:150px;
+		width:900px;
+		color: white;
+		font-family: Arial,Verdana,sans-serif;
+	background: black;
+	
+	padding:30px;
+	padding-left:40px;
+	padding-top:30px;
+	
+	
+	
+}
+
+.foot-tab {
+	float:left;
+	margin-right: 100px;
+	
+}
+.foot-tab header{
+	
+	margin-botom:10px;
+	font-size:1.1em;
+	font-family: sans-serif;
+}
+
+.foot-tab div {
+	margin-top:20px;
+	color:#818181;
+	font-size: 0.8em;
+	font-family: Tahoma;
+	font-weight: normal;
+	margin-bottom: 40px;
+}
+
+.bold {
+	font-size: 0.9em;
+	color:white;
+	font-family: Helvetica;
+	
+	
+}
+
+.footer-email {
+	background: #818181;
+	color:#ffffff;
+	border: none;
+	outline:none;
+	height:25px;
+	width: 130px;
+	margin-left:-3px;	
+
+}
+
+::-webkit-input-placeholder {
+   color: #b1b1b1;
+}
+
+:-moz-placeholder {  
+   color: #b1b1b1;  
+}
+
+.foot-submit {
+	height: 26px;
+	width: 26px;
+	color:black;
+	background: white;
+	font-family: "Lucida Grande";
+	border: none;
+	
+	
+}
+
+
+
+#inside{
+background:white;
+padding-left:400px;
+padding-top:50px;
+margin-left:0 auto;
+margin-right:0 auto;
+}
