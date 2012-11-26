@@ -62,7 +62,7 @@ $oAuth = new oAuthLogin();
 	<h1 class="heading">
 	Contact</h1>
 	</div></a>
-	<a href="http://www.http://cyberslicks.wordpress.com"><div class="headertile">
+	<a href="http://cyberslicks.wordpress.com"><div class="headertile">
 	<h1 class="heading">
 	Blog </h1>
 	</div></a>
@@ -212,7 +212,7 @@ $oAuth = new oAuthLogin();
 					<p>Button Generator</p>
 					<a href="button-gen.php">Generate </a>
 					<p>Html Formatter</p>
-					<a href="beautify.php">Edit</a>
+					<a href="beautify.php">Beautify</a>
 					<p>Search on Web</p>
 					<a href="websearch.php">Start searching</a>
 					
@@ -304,7 +304,7 @@ $oAuth = new oAuthLogin();
                     </div>
 					</a>
 
-					<a href="sorry.php">
+					<a href="showcase.php">
                     <div class="tile selected" id="tile3" >
                         <div class="tile-content icon">
                             <img src="./images/showcase.png" id="showcaseicon">
